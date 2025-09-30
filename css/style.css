@@ -1,3 +1,33 @@
+.service-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.service-content {
+  flex: 1; /* Stretches equally */
+}
+
+.service-carousel .owl-item {
+  display: flex;
+  height: auto;
+}
+
+.service-carousel .service-item {
+  flex: 1; /* Equal height for all */
+}
+
+.service-item .service-img {
+  height: 200px; /* set the height you want for all images */
+  overflow: hidden;
+}
+
+.service-item .service-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ensures image fills the box without stretching */
+}
+
 
 /*** Spinner Start ***/
 /*** Spinner ***/
@@ -317,7 +347,7 @@
     top: -150px;
     left: 70px;
     transform: rotate(-30deg);
-    background: rgba(68, 210, 246, 0.2);
+    /* background: rgba(68, 210, 246, 0.2); */
     animation: RotateMoveRight 5s linear infinite;
     z-index: 2 !important;
 }
@@ -480,7 +510,7 @@
 
 /*** Service Start ***/
 .service .service-item {
-    box-shadow: 0 0 45px rgba(0, 0, 0, 0.3);
+    /* box-shadow: 0 0 45px rgba(0, 0, 0, 0.3); */
 }
 
 .service .service-item .service-img {
