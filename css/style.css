@@ -832,12 +832,12 @@
   opacity: 0;
 }
 
-.team .team-item:hover:after,
+/* .team .team-item:hover:after,
 .team .team-item:hover::before {
   width: 100% !important;
   height: 100% !important;
   opacity: 1;
-}
+} */
 
 .team .team-item .team-img {
   position: relative;
