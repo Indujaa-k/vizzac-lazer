@@ -285,8 +285,8 @@
     transform: translateY(-50%);
     padding: 20px 20px;
     border-radius: 40px;
-    background: var(--bs-primary);
-    color: var(--bs-white);
+    background:#ed212a;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -347,7 +347,7 @@
     top: -150px;
     left: 70px;
     transform: rotate(-30deg);
-    /* background: rgba(68, 210, 246, 0.2); */
+     background: rgba(68, 210, 246, 0.2); 
     animation: RotateMoveRight 5s linear infinite;
     z-index: 2 !important;
 }
