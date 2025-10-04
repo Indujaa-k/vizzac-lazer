@@ -1,74 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Vizzac Laser</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
 
-    <head>
-        <meta charset="utf-8">
-        <title>Vizzac Laser</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+    <!-- Icon Font Stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
 
-        <!-- Icon Font Stylesheet -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
 
-        <!-- Libraries Stylesheet -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
 
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- Owl Carousel CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* --- Stitch-style 3-panel styles (integrated with your theme) --- */
+      :root {
+        --panel-bg: rgba(15, 20, 28, 0.85);
+        --muted: #9aa8bd;
+        --primary-color: #102147; /* new primary color */
+        --accent1: #102147; /* unify all accent to primary */
+        --accent2: #102147;
+      }
 
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+      /* Container that sits under your header */
+      .stitch-app {
+        max-width: 1400px;
+        margin: 28px auto;
+        padding: 18px;
+        display: grid;
+        grid-template-columns: 360px 1fr 380px;
+        gap: 22px;
+      }
 
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-    </head>
+      @media (max-width: 1100px) {
+        .stitch-app {
+          grid-template-columns: 1fr;
+          padding: 14px;
+        }
+        .panel-right {
+          order: 3;
+        }
+        .panel-left {
+          order: 1;
+        }
+        .panel-main {
+          order: 2;
+        }
+      }
 
-    <body>
+      .panel-left,
+      .panel-main,
+      .panel-right {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.02),
+          rgba(255, 255, 255, 0.01)
+        );
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.04);
+        padding: 14px;
+        min-height: calc(100vh - 220px);
+        overflow: auto;
+      }
 
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
+      /* Left thumbnails */
+      .brand {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        margin-bottom: 12px;
+      }
+      /* .logo {
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+        background: linear-gradient(135deg, var(--accent1), var(--accent2));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        color: #021625;
+        box-shadow: 0 6px 20px rgba(3, 18, 35, 0.6);
+      } */
+
+      .thumb-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      .thumb {
+        background: rgba(255, 255, 255, 0.01);
+        padding: 8px;
+        border-radius: 8px;
+        cursor: pointer;
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .thumb:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+      }
+      .thumb img {
+        width: 100%;
+        height: 84px;
+        object-fit: cover;
+        border-radius: 6px;
+        display: block;
+      }
+
+      /* Main canvas */
+      .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        margin-bottom: 12px;
+      }
+      .hero h1 {
+        margin: 0;
+        font-size: 20px;
+        color: #fff;
+      }
+      .hero p {
+        margin: 4px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .canvas {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.01),
+          rgba(255, 255, 255, 0.015)
+        );
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.02);
+        height: 302px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .canvas .preview-img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        border-radius: 8px;
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
+      }
+
+      .info-row {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 12px;
+      }
+
+      /* Right detail panel */
+      .meta {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin-bottom: 12px;
+      }
+      .badge {
+        padding: 8px 10px;
+        background: rgba(255, 255, 255, 0.02);
+        border-radius: 8px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .machines-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 8px;
+      }
+      .machines-list li {
+        padding: 8px;
+        background: rgba(255, 255, 255, 0.01);
+        border-radius: 8px;
+        color: #47484a;
+        font-size: 13px;
+      }
+
+      /* Buttons */
+      .btn-primary-custom {
+        background: #102147;
+        color: #ffffff;
+        border: none;
+        padding: 10px 14px;
+        border-radius: 10px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary-custom:hover {
+        background: #1a2e5a; /* slightly lighter/darker shade on hover */
+      }
+
+      .btn-ghost {
+        background: #102147;
+        border: 1px solid #ffffff;
+        color: #ffffff;
+        padding: 8px 12px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .btn-ghost:hover {
+        background: #1a2e5a;
+        border-color: #1a2e5a;
+      }
+
+      footer.site-footer {
+        margin-top: 18px;
+        padding: 18px 0;
+        text-align: center;
+        color: var(--muted);
+      }
+
+      /* subtle entrance */
+      .fade-up {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Spinner Start -->
+    <div
+      id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div
+        class="spinner-border text-primary"
+        style="width: 3rem; height: 3rem"
+        role="status"
+      >
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Topbar Start -->
+    <div class="container-fluid topbar px-0 d-none d-lg-block">
+      <div class="container px-0">
+        <div class="row gx-0 align-items-center" style="height: 45px">
+          <div class="col-lg-8 text-center text-lg-start mb-lg-0">
+            <div class="d-flex flex-wrap">
+              <a href="#" class="text-muted me-4"
+                ><i class="fas fa-map-marker-alt text-primary me-2"></i
+                >Tiruppur</a
+              >
+              <a href="#" class="text-muted me-4"
+                ><i class="fas fa-phone-alt text-primary me-2"></i>+91
+                8048601652</a
+              >
+              <a href="#" class="text-muted me-0"
+                ><i class="fas fa-envelope text-primary me-2"></i
+                >vizzaclasers@gmail.com</a
+              >
             </div>
-        </div>
-        <!-- Spinner End -->
-
-
-        <!-- Topbar Start -->
-        <div class="container-fluid topbar px-0 d-none d-lg-block">
-            <div class="container px-0">
-                <div class="row gx-0 align-items-center" style="height: 45px;">
-                    <div class="col-lg-8 text-center text-lg-start mb-lg-0">
-                        <div class="d-flex flex-wrap">
-                            <a href="#" class="text-muted me-4"><i class="fas fa-map-marker-alt text-primary me-2"></i>Find A Location</a>
-                            <a href="#" class="text-muted me-4"><i class="fas fa-phone-alt text-primary me-2"></i>+01234567890</a>
-                            <a href="#" class="text-muted me-0"><i class="fas fa-envelope text-primary me-2"></i>Example@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 text-center text-lg-end">
-                        <div class="d-flex align-items-center justify-content-end">
-                            <a href="#" class="btn btn-primary btn-square rounded-circle nav-fill me-3"><i class="fab fa-facebook-f text-white"></i></a>
-                            <a href="#" class="btn btn-primary btn-square rounded-circle nav-fill me-3"><i class="fab fa-twitter text-white"></i></a>
-                            <a href="#" class="btn btn-primary btn-square rounded-circle nav-fill me-3"><i class="fab fa-instagram text-white"></i></a>
-                            <a href="#" class="btn btn-primary btn-square rounded-circle nav-fill me-0"><i class="fab fa-linkedin-in text-white"></i></a>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="col-lg-4 text-center text-lg-end">
+            <div class="d-flex align-items-center justify-content-end">
+              <a
+                href="https://www.facebook.com/share/1EkcxgPmJg/"
+                target="_blank"
+                class="btn btn-primary btn-square rounded-circle nav-fill me-3"
+                ><i class="fab fa-facebook-f text-white"></i
+              ></a>
+              <a
+                href="https://www.youtube.com/channel/UCD4y_o-G4Av-ELcOL7ay5jQ"
+                target="_blank"
+                class="btn btn-primary btn-square rounded-circle nav-fill me-3"
+                ><i class="fab fa-youtube text-white"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/vizzac_laser/"
+                target="_blank"
+                class="btn btn-primary btn-square rounded-circle nav-fill me-3"
+                ><i class="fab fa-instagram text-white"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/purushothaman-v-043504b7/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=in"
+                target="_blank"
+                class="btn btn-primary btn-square rounded-circle nav-fill me-0"
+                ><i class="fab fa-linkedin-in text-white"></i
+              ></a>
             </div>
+          </div>
         </div>
-        <!-- Topbar End -->
+      </div>
+    </div>
+    <!-- Topbar End -->
 
-
-        <!-- Navbar & Hero Start -->
-        <div class="container-fluid sticky-top px-0">
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid sticky-top px-0">
       <div
         class="position-absolute bg-dark"
         style="left: 0; top: 0; width: 100%; height: 100%"
@@ -95,9 +372,11 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-              <a href="index.html" class="nav-item nav-link ">Home</a>
+              <a href="index.html" class="nav-item nav-link">Home</a>
               <a href="about.html" class="nav-item nav-link">About</a>
-              <a href="service.html" class="nav-item nav-link active">Services</a>
+              <a href="service.html" class="nav-item nav-link active"
+                >Services</a
+              >
               <a href="product.html" class="nav-item nav-link">Products</a>
               <a href="blog.html" class="nav-item nav-link">Our Blog</a>
               <div class="nav-item dropdown">
@@ -122,351 +401,552 @@
         </nav>
       </div>
     </div>
-        <!-- Navbar & Hero End -->
+    <!-- Navbar & Hero End -->
 
-        <!-- Modal Search Start -->
-        <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-fullscreen">
-                <div class="modal-content rounded-0">
-                    <div class="modal-header">
-                        <h4 class="modal-title mb-0" id="exampleModalLabel">Search by keyword</h4>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body d-flex align-items-center">
-                        <div class="input-group w-75 mx-auto d-flex">
-                            <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
-                            <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
-                        </div>
-                    </div>
-                </div>
+    <!-- Modal Search Start -->
+    <div
+      class="modal fade"
+      id="searchModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content rounded-0">
+          <div class="modal-header">
+            <h4 class="modal-title mb-0" id="exampleModalLabel">
+              Search by keyword
+            </h4>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body d-flex align-items-center">
+            <div class="input-group w-75 mx-auto d-flex">
+              <input
+                type="search"
+                class="form-control p-3"
+                placeholder="keywords"
+                aria-describedby="search-icon-1"
+              />
+              <span id="search-icon-1" class="input-group-text p-3"
+                ><i class="fa fa-search"></i
+              ></span>
             </div>
+          </div>
         </div>
-        <!-- Modal Search End -->
+      </div>
+    </div>
+    <!-- Modal Search End -->
 
-        <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
-            <div class="bg-breadcrumb-single"></div>
-            <div class="container text-center py-5" style="max-width: 900px;">
-                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Our Services</h4>
-                <ol class="breadcrumb justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item active text-primary">Service</li>
-                </ol>    
+    <!-- Header Start -->
+    <div class="container-fluid bg-breadcrumb">
+      <div class="bg-breadcrumb-single"></div>
+      <div class="container text-center py-5" style="max-width: 900px">
+        <h4
+          class="text-white display-4 mb-4 wow fadeInDown"
+          data-wow-delay="0.1s"
+        >
+          Our Services
+        </h4>
+        <ol
+          class="breadcrumb justify-content-center mb-0 wow fadeInDown"
+          data-wow-delay="0.3s"
+        >
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Pages</a></li>
+          <li class="breadcrumb-item active text-primary">Service</li>
+        </ol>
+      </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Services Start -->
+    <div class="stitch-app" id="stitchApp">
+      <!-- LEFT: thumbnails / gallery -->
+      <aside class="panel-left fade-up" id="panelLeft">
+        <div class="brand">
+          <div class="logo">
+            <img
+              src="./img/logo/LOGOO.jpg"
+              style="width: 50px; height: 50px; border-radius: 5px"
+              alt=""
+            />
+          </div>
+          <div>
+            <h5 style="margin: 0; color: #102147">Vizzac Laser — Services</h5>
+            <p style="margin: 0; color: var(--muted); font-size: 13px">
+              Explore industries & machines
+            </p>
+          </div>
+        </div>
+
+        <div class="thumb-grid" id="thumbGrid"></div>
+      </aside>
+
+      <!-- CENTER: canvas -->
+      <main class="panel-main fade-up" id="panelMain">
+        <div class="hero">
+          <div>
+            <h1 id="mainTitle" class="text-dark">
+              Our Services — Textile & Garment
+            </h1>
+            <p id="mainSub" style="color: var(--muted); margin-top: 6px">
+              Reliable machines for textile production
+            </p>
+          </div>
+          <div>
+            <button class="btn-primary-custom" id="quoteBtn">Get Quote</button>
+          </div>
+        </div>
+
+        <div class="canvas" id="canvas">
+          <img
+            id="canvasImg"
+            src="img/garmentIndustry.jpeg"
+            alt="preview"
+            class="preview-img"
+            onerror="this.style.opacity=.12; this.style.background='linear-gradient(90deg,#0d6efd,#00c2ff)';"
+          />
+        </div>
+
+        <div class="info-row">
+          <div
+            style="
+              flex: 1;
+              min-width: 180px;
+              background: rgba(255, 255, 255, 0.01);
+              padding: 12px;
+              border-radius: 8px;
+            "
+          >
+            <div style="color: var(--muted); font-size: 13px">Industry</div>
+            <div style="font-weight: 700; margin-top: 6px" id="infoIndustry">
+              Textile & Garment
             </div>
-        </div>
-        <!-- Header End -->
-
-        <!-- Services Start -->
-        <div class="container-fluid service py-5">
-            <div class="container py-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
-                    <h4 class="text-primary">Our Services</h4>
-                    <h1 class="display-4"> Offering the Best Consulting & Investa Services</h1>
-                </div>
-                <div class="row g-4 justify-content-center text-center">
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item bg-light rounded">
-                            <div class="service-img">
-                                <img src="img/service-1.jpg" class="img-fluid w-100 rounded-top" alt="">
-                            </div>
-                            <div class="service-content text-center p-4">
-                                <div class="service-content-inner">
-                                    <a href="#" class="h4 mb-4 d-inline-flex text-start"><i class="fas fa-donate fa-2x me-2"></i> Business Strategy Invesments</a>
-                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum nobis est sapiente natus officiis maxime
-                                    </p>
-                                    <a class="btn btn-light rounded-pill py-2 px-4" href="#">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="service-item bg-light rounded">
-                            <div class="service-img">
-                                <img src="img/service-2.jpg" class="img-fluid w-100 rounded-top" alt="">
-                            </div>
-                            <div class="service-content text-center p-4">
-                                <div class="service-content-inner">
-                                    <a href="#" class="h4 mb-4 d-inline-flex text-start"><i class="fas fa-donate fa-2x me-2"></i> Consultancy & Advice</a>
-                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum nobis est sapiente natus officiis maxime
-                                    </p>
-                                    <a class="btn btn-light rounded-pill py-2 px-4" href="#">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="service-item bg-light rounded">
-                            <div class="service-img">
-                                <img src="img/service-4.jpg" class="img-fluid w-100 rounded-top" alt="">
-                            </div>
-                            <div class="service-content text-center p-4">
-                                <div class="service-content-inner">
-                                    <a href="#" class="h4 mb-4 d-inline-flex text-start"><i class="fas fa-donate fa-2x me-2"></i> Invesments Planning</a>
-                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum nobis est sapiente natus officiis maxime
-                                    </p>
-                                    <a class="btn btn-light rounded-pill py-2 px-4" href="#">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="service-item bg-light rounded">
-                            <div class="service-img">
-                                <img src="img/service-3.jpg" class="img-fluid w-100 rounded-top" alt="">
-                            </div>
-                            <div class="service-content text-center p-4">
-                                <div class="service-content-inner">
-                                    <a href="#" class="h4 mb-4 d-inline-flex text-start"><i class="fas fa-donate fa-2x me-2"></i> Private Client Investment</a>
-                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum nobis est sapiente natus officiis maxime
-                                    </p>
-                                    <a class="btn btn-light rounded-pill py-2 px-4" href="#">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <a class="btn btn-primary rounded-pill py-3 px-5 wow fadeInUp" data-wow-delay="0.1s" href="#">Services More</a>
-                    </div>
-                </div>
+          </div>
+          <div
+            style="
+              flex: 1;
+              min-width: 220px;
+              background: rgba(255, 255, 255, 0.01);
+              padding: 12px;
+              border-radius: 8px;
+            "
+          >
+            <div style="color: var(--muted); font-size: 13px">Machines</div>
+            <div style="font-weight: 700; margin-top: 6px" id="infoMachines">
+              CO2 Laser, Vision Cutters
             </div>
+          </div>
+          <div
+            style="
+              min-width: 160px;
+              background: rgba(255, 255, 255, 0.01);
+              padding: 12px;
+              border-radius: 8px;
+              text-align: center;
+            "
+          >
+            <!-- <div style="color: var(--muted); font-size: 13px">Lead time</div>
+            <div style="font-weight: 700; margin-top: 6px">4–6 weeks</div> -->
+          </div>
         </div>
-        <!-- Services End -->
+      </main>
 
-        <!-- Testimonial Start -->
-        <div class="container-fluid testimonial bg-light py-5">
-            <div class="container py-5">
-                <div class="row g-4 align-items-center">
-                    <div class="col-xl-4 wow fadeInLeft" data-wow-delay="0.1s">
-                        <div class="h-100 rounded">
-                            <h4 class="text-primary">Our Feedbacks </h4>
-                            <h1 class="display-4 mb-4">Clients are Talking</h1>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum atque soluta unde itaque. Consequatur quam odit blanditiis harum veritatis porro.</p>
-                            <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="#">Read All Reviews <i class="fas fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-xl-8">
-                        <div class="testimonial-carousel owl-carousel wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="testimonial-item bg-white rounded p-4 wow fadeInUp" data-wow-delay="0.3s">
-                                <div class="d-flex">
-                                    <div><i class="fas fa-quote-left fa-3x text-dark me-3"></i></div>
-                                    <p class="mt-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam eos impedit eveniet dolorem culpa ullam incidunt vero quo recusandae nemo? Molestiae doloribus iure,
-                                    </p>
-                                </div>
-                                <div class="d-flex justify-content-end">
-                                    <div class="my-auto text-end">
-                                        <h5>Person Name</h5>
-                                        <p class="mb-0">Profession</p>
-                                    </div>
-                                    <div class="bg-white rounded-circle ms-3">
-                                        <img src="img/testimonial-1.jpg" class="rounded-circle p-2" style="width: 80px; height: 80px; border: 1px solid; border-color: var(--bs-primary);" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-item bg-white rounded p-4 wow fadeInUp" data-wow-delay="0.5s">
-                                <div class="d-flex">
-                                    <div><i class="fas fa-quote-left fa-3x text-dark me-3"></i></div>
-                                    <p class="mt-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam eos impedit eveniet dolorem culpa ullam incidunt vero quo recusandae nemo? Molestiae doloribus iure,
-                                    </p>
-                                </div>
-                                <div class="d-flex justify-content-end">
-                                    <div class="my-auto text-end">
-                                        <h5>Person Name</h5>
-                                        <p class="mb-0">Profession</p>
-                                    </div>
-                                    <div class="bg-white rounded-circle ms-3">
-                                        <img src="img/testimonial-2.jpg" class="rounded-circle p-2" style="width: 80px; height: 80px; border: 1px solid; border-color: var(--bs-primary);" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-item bg-white rounded p-4 wow fadeInUp" data-wow-delay="0.7s">
-                                <div class="d-flex">
-                                    <div><i class="fas fa-quote-left fa-3x text-dark me-3"></i></div>
-                                    <p class="mt-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam eos impedit eveniet dolorem culpa ullam incidunt vero quo recusandae nemo? Molestiae doloribus iure,
-                                    </p>
-                                </div>
-                                <div class="d-flex justify-content-end">
-                                    <div class="my-auto text-end">
-                                        <h5>Person Name</h5>
-                                        <p class="mb-0">Profession</p>
-                                    </div>
-                                    <div class="bg-white rounded-circle ms-3">
-                                        <img src="img/testimonial-3.jpg" class="rounded-circle p-2" style="width: 80px; height: 80px; border: 1px solid; border-color: var(--bs-primary);" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <!-- RIGHT: details -->
+      <aside class="panel-right fade-up" id="panelRight">
+        <div class="meta">
+          <div class="badge">Industry</div>
+          <div class="badge">B2B</div>
+          <div style="flex: 1"></div>
+          <div style="color: var(--muted); font-size: 13px">
+            Updated: Oct 2025
+          </div>
+        </div>
+
+        <div class="details">
+          <h3 id="detailTitle">Textile & Garment Industry</h3>
+          <p id="detailDesc" style="color: var(--muted)">
+            Reliable textile machines for knitting, fabric processing,
+            finishing—helping apparel businesses boost quality and output.
+          </p>
+
+          <h5 style="margin-top: 12px">Machines Used</h5>
+          <ul class="machines-list" id="machinesList"></ul>
+
+          <div style="margin-top: 14px; display: flex; gap: 8px">
+            <button class="btn-primary-custom" id="contactSalesBtn">
+              Contact Sales
+            </button>
+            <button class="btn-ghost" id="downloadSpecBtn">
+              Download Spec
+            </button>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+      <div class="container py-5">
+        <div class="row g-5">
+          <div class="col-md-6 col-lg-6 col-xl-3">
+            <div class="footer-item d-flex flex-column">
+              <div class="footer-item">
+                <!-- LOGO -->
+                <img
+                  src="./img/VIZZAC.png"
+                  alt=""
+                  style="width: 110px; height: 90px"
+                />
+                <p class="mb-3">
+                  deliver cutting-edge machinery solutions that empower
+                  entrepreneurs, manufacturers, and industries to maximize
+                  efficiency, productivity, and profitability.
+                </p>
+              </div>
             </div>
-        </div>
-        <!-- Testimonial End -->
-
-
-        <!-- FAQ Start -->
-        <div class="container-fluid faq py-5">
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
-                        <div class="pb-5">
-                            <h4 class="text-primary">FAQs</h4>
-                            <h1 class="display-4">Get the Answers to Common Questions</h1>
-                        </div>
-                       <div class="accordion bg-light rounded p-4" id="accordionExample">
-                            <div class="accordion-item border-0 mb-4">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button text-dark fs-5 fw-bold rounded-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseTOne">
-                                        What Does a Financial Advisor Do?
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body my-2">
-                                        <h5>Dolor sit amet consectetur adipisicing elit.</h5>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad nemo impedit, sapiente quis illo quia nulla atque maxime fuga minima ipsa quae cum consequatur, sit, delectus exercitationem odit officiis maiores! Neque, quidem corrupti modi architecto eos saepe incidunt dignissimos rerum.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item border-0 mb-4">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed text-dark fs-5 fw-bold rounded-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        What industries do you specialize in? 
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body my-2">
-                                        <h5>Dolor sit amet consectetur adipisicing elit.</h5>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad nemo impedit, sapiente quis illo quia nulla atque maxime fuga minima ipsa quae cum consequatur, sit, delectus exercitationem odit officiis maiores! Neque, quidem corrupti modi architecto eos saepe incidunt dignissimos rerum.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item border-0 mb-4">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button collapsed text-dark fs-5 fw-bold rounded-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        Can you guarantee for growth?
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body my-2">
-                                        <h5>Dolor sit amet consectetur adipisicing elit.</h5>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad nemo impedit, sapiente quis illo quia nulla atque maxime fuga minima ipsa quae cum consequatur, sit, delectus exercitationem odit officiis maiores! Neque, quidem corrupti modi architecto eos saepe incidunt dignissimos rerum.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item border-0 mb-0">
-                                <h2 class="accordion-header" id="headingFour">
-                                    <button class="accordion-button collapsed text-dark fs-5 fw-bold rounded-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                        What makes your business plans so special?
-                                    </button>
-                                </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body my-2">
-                                        <h5>Dolor sit amet consectetur adipisicing elit.</h5>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad nemo impedit, sapiente quis illo quia nulla atque maxime fuga minima ipsa quae cum consequatur, sit, delectus exercitationem odit officiis maiores! Neque, quidem corrupti modi architecto eos saepe incidunt dignissimos rerum.</p>
-                                    </div>
-                                </div>
-                            </div>
-                       </div>
-                    </div>
-                    <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
-                        <div class="faq-img RotateMoveRight rounded">
-                            <img src="img/faq-img.jpg" class="img-fluid rounded w-100" alt="Image">
-                            <a class="faq-btn btn btn-primary rounded-pill text-white py-3 px-5" href="#">Read More Q & A <i class="fas fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="col-md-6 col-lg-6 col-xl-3">
+            <div class="footer-item d-flex flex-column">
+              <h4 class="text-white mb-4">Explore</h4>
+              <a href="#"><i class="fas fa-angle-right me-2"></i> Home</a>
+              <a href="./service.html"
+                ><i class="fas fa-angle-right me-2"></i> Services</a
+              >
+              <a href="./about.html"
+                ><i class="fas fa-angle-right me-2"></i> About Us</a
+              >
+              <a href="./product.html"
+                ><i class="fas fa-angle-right me-2"></i> Latest Projects</a
+              >
+              <a href="./testimonial.html"
+                ><i class="fas fa-angle-right me-2"></i> testimonial</a
+              >
+              <a href="#"><i class="fas fa-angle-right me-2"></i> Our Team</a>
+              <a href="#"><i class="fas fa-angle-right me-2"></i> Contact Us</a>
             </div>
-        </div>
-        <!-- FAQ End -->
-
-        <!-- Footer Start -->
-        <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
-            <div class="container py-5">
-                <div class="row g-5">
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <div class="footer-item">
-                                <h4 class="text-white mb-4">Newsletter</h4>
-                                <p class="mb-3">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit.</p>
-                                <div class="position-relative mx-auto rounded-pill">
-                                    <input class="form-control rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Enter your email">
-                                    <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2">SignUp</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="text-white mb-4">Explore</h4>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Home</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Services</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> About Us</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Latest Projects</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> testimonial</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Our Team</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Contact Us</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="text-white mb-4">Contact Info</h4>
-                            <a href=""><i class="fa fa-map-marker-alt me-2"></i> 123 Street, New York, USA</a>
-                            <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
-                            <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
-                            <a href=""><i class="fas fa-phone me-2"></i> +012 345 67890</a>
-                            <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>
-                            <div class="d-flex align-items-center">
-                                <a class="btn btn-light btn-md-square me-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-light btn-md-square me-2" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-light btn-md-square me-2" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn btn-light btn-md-square me-0" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item-post d-flex flex-column">
-                            <h4 class="text-white mb-4">Popular Post</h4>
-                            <div class="d-flex flex-column mb-3">
-                                <p class="text-uppercase text-primary mb-2">Investment</p>
-                                <a href="#" class="text-body">Revisiting Your Investment & Distribution Goals</a>
-                            </div>
-                            <div class="d-flex flex-column mb-3">
-                                <p class="text-uppercase text-primary mb-2">Business</p>
-                                <a href="#" class="text-body">Dimensional Fund Advisors Interview with Director</a>
-                            </div>
-                            <div class="footer-btn text-start">
-                                <a href="#" class="btn btn-light rounded-pill px-4">View All Post <i class="fa fa-arrow-right ms-1"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="col-md-6 col-lg-6 col-xl-3">
+            <div class="footer-item d-flex flex-column">
+              <h4 class="text-white mb-4">Contact Info</h4>
+              <a href=""
+                ><i class="fa fa-map-marker-alt me-2"></i>No.22, K.C.M.
+                Compound, Mangalam Road Karuvampalayam, Tiruppur-641604, Tamil
+                Nadu, India</a
+              >
+              <a href=""
+                ><i class="fas fa-envelope me-2"></i>vizzaclasers@gmail.com</a
+              >
+              <a href=""><i class="fas fa-phone me-2"></i>+91 8048601652</a>
+              <div class="d-flex align-items-center">
+                <a
+                  class="btn btn-light btn-md-square me-2"
+                  href="https://www.facebook.com/share/1EkcxgPmJg/"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a class="btn btn-light btn-md-square me-2"
+                href=www.youtube.com/@vizzaclaser ><i
+                  class="fab fa-youtube"
+                ></i>
+                <a
+                  class="btn btn-light btn-md-square me-2"
+                  href="https://www.instagram.com/vizzac_laser?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a
+                  class="btn btn-light btn-md-square me-0"
+                  href="https://www.linkedin.com/in/purushothaman-v-043504b7/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=in"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+              </div>
             </div>
-        </div>
-        <!-- Footer End -->
+          </div>
+          <div class="col-md-6 col-lg-6 col-xl-3">
+            <div class="footer-item-post d-flex flex-column">
+              <h4 class="text-white mb-4">Popular Post</h4>
 
-        
-        <!-- Copyright Start -->
-        <div class="container-fluid copyright py-4">
-            <div class="container">
-                <div class="row g-4 align-items-center">
-                    <div class="col-md-6 text-center text-md-start mb-md-0">
-                        <span class="text-body"><a href="#" class="border-bottom text-primary"><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right reserved.</span>
-                    </div>
-                    <div class="col-md-6 text-center text-md-end text-body">
-                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
-                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                        Designed By <a class="border-bottom text-primary" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a class="border-bottom text-primary" href="https://themewagon.com">ThemeWagon</a>
-                    </div>
-                </div>
+              <div class="d-flex flex-column mb-3">
+                <p class="text-uppercase text-primary mb-2">Technology</p>
+                <a href="#" class="text-body">
+                  Latest Trends in Laser Cutting & Engraving Solutions
+                </a>
+              </div>
+
+              <div class="d-flex flex-column mb-3">
+                <p class="text-uppercase text-primary mb-2">
+                  Industry Insights
+                </p>
+                <a href="#" class="text-body">
+                  How <strong>Vizzac Laser</strong> Machines Boost Manufacturing
+                  Efficiency
+                </a>
+              </div>
+
+              <div class="footer-btn text-start">
+                <a href="#" class="btn btn-light rounded-pill px-4">
+                  View All Posts <i class="fa fa-arrow-right ms-1"></i>
+                </a>
+              </div>
             </div>
+          </div>
         </div>
-        <!-- Copyright End -->
+      </div>
+    </div>
 
+    <!-- Copyright -->
+    <div class="copyright py-4">
+      <div class="container align-items-center">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="footer-container text-align">
+              <span
+                >Copyright &copy; <span id="current-year">2025</span> Vizzac
+                Laser | Developed By
+                <a
+                  href="https://paletteproduction.com/"
+                  target="_blank"
+                  style="color: #ed212a; text-decoration: none"
+                >
+                  PALETTE PRODUCTION
+                </a></span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+    <!-- Copyright End -->
 
-        
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-lg-square back-to-top"
+      ><i class="fa fa-arrow-up"></i
+    ></a>
+    <!-- GSAP (lightweight usage) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      const projects = [
+        {
+          id: "textile",
+          title: "Textile & Garment",
+          subtitle: "Knitting, fabric processing, finishing",
+          machines: [
+            "CO2 Laser Cutting Machine",
+            "Laser Engraving & Cutting Machine",
+            "Small Camera Vision Laser Cutters",
+            "High Speed Top Camera Laser Cutter",
+            "Laser Marking Machines (Fiber & UV)",
+          ],
+          hero: "img/garmentIndustry.jpeg",
+        },
+        {
+          id: "metal",
+          title: "Metal Processing & Fabrication",
+          subtitle: "Sheet metal cutting, bending, welding",
+          machines: [
+            "Fiber Laser Cutting Machines",
+            "Sheet Metal & Tube Cutting",
+            "Enclosed Sheet Metal Cutting Machine",
+            "Laser Welding Machine",
+            "Laser Cleaning Machine",
+          ],
+          hero: "img/metalIndustry.jpeg",
+        },
+        {
+          id: "construction",
+          title: "Construction & Infrastructure",
+          subtitle: "Fencing, roll forming, wire mesh",
+          machines: [
+            "Chain Link Fencing Machines",
+            "Barbed Wire Machine",
+            "Roll Forming Machines",
+          ],
+          hero: "img/construction.jpeg",
+        },
+        {
+          id: "automotive",
+          title: "Automotive & Engineering",
+          subtitle: "Precision parts & components",
+          machines: [
+            "Fiber Laser Cutting Machines",
+            "Laser Welding Machine",
+            "Roll Forming Machines",
+          ],
+          hero: "img/Automotive & Engineering.jpeg",
+        },
+        {
+          id: "furniture",
+          title: "Furniture & Interiors",
+          subtitle: "Cutting & forming for furniture",
+          machines: [
+            "CO2 Laser Cutting Machines",
+            "Fiber Laser Cutting Machines",
+            "Roll Forming Machines",
+          ],
+          hero: "img/Furniture factory.jpeg",
+        },
+        {
+          id: "general",
+          title: "General Industrial Manufacturing",
+          subtitle: "Custom multipurpose machinery",
+          machines: [
+            "Laser Cutting & Marking Machines",
+            "Chain Link & Barbed Wire Machines",
+            "Roll Forming Machines",
+          ],
+          hero: "img/generalManufaturing.jpeg",
+        },
+      ];
+
+      const thumbGrid = document.getElementById("thumbGrid");
+      projects.forEach((p, idx) => {
+        const el = document.createElement("div");
+        el.className = "thumb fade-up";
+        el.dataset.idx = idx;
+        el.innerHTML = `
+          <img src="${p.hero}" alt="${p.title}" onerror="this.style.opacity=.12; this.style.background='linear-gradient(90deg,#0d6efd,#00c2ff)';" />
+          <div style="font-weight:700; font-size:13px;">${p.title}</div>
+          <div style="color:var(--muted); font-size:12px;">${p.subtitle}</div>
+        `;
+        el.addEventListener("click", () => selectProject(idx));
+        thumbGrid.appendChild(el);
+      });
+
+      function populateMachines(listEl, arr) {
+        listEl.innerHTML = "";
+        arr.forEach((m) => {
+          const li = document.createElement("li");
+          li.textContent = m;
+          listEl.appendChild(li);
+        });
+      }
+
+      function selectProject(i) {
+        const p = projects[i];
+        document.getElementById("mainTitle").textContent =
+          "Our Services — " + p.title;
+        document.getElementById("mainSub").textContent = p.subtitle;
+        document.getElementById("canvasImg").src = p.hero;
+        document.getElementById("infoIndustry").textContent = p.title;
+        document.getElementById("infoMachines").textContent = p.machines
+          .slice(0, 3)
+          .join(", ");
+        document.getElementById("detailTitle").textContent =
+          p.title + " Industry";
+        document.getElementById("detailDesc").textContent =
+          p.subtitle + " — tailored machine solutions for industry needs.";
+        populateMachines(document.getElementById("machinesList"), p.machines);
+
+        // subtle highlight animation
+        gsap.fromTo(
+          "#canvasImg",
+          { scale: 0.98, opacity: 0.95 },
+          { scale: 1, opacity: 1, duration: 0.45, ease: "power2.out" }
+        );
+      }
+
+      // default
+      selectProject(0);
+
+      // search filter
+
+      // keyboard nav
+      let currentIdx = 0;
+      function setCurrent(i) {
+        currentIdx = (i + projects.length) % projects.length;
+        selectProject(currentIdx);
+        const node = document.querySelector(`.thumb[data-idx="${currentIdx}"]`);
+        if (node) node.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight") setCurrent(currentIdx + 1);
+        if (e.key === "ArrowLeft") setCurrent(currentIdx - 1);
+      });
+
+      // CTA hooks
+      document
+        .getElementById("quoteBtn")
+        .addEventListener("click", () =>
+          alert("Open contact / quote modal (hook)")
+        );
+      document
+        .getElementById("contactSalesBtn")
+        .addEventListener("click", () =>
+          alert("Contact Sales - open form (hook)")
+        );
+      document
+        .getElementById("downloadSpecBtn")
+        .addEventListener("click", () => alert("Download PDF spec (hook)"));
+      // Lightweight GSAP entrance for fade-up elements
+      gsap.utils.toArray(".fade-up").forEach((el, i) => {
+        gsap.fromTo(
+          el,
+          { opacity: 0, y: 10 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.7,
+            delay: i * 0.06,
+            ease: "power2.out",
+            scrollTrigger: { trigger: el, start: "top 95%" },
+          }
+        );
+      });
+      // Parallax on scroll for canvas image
+      gsap.to("#canvasImg", {
+        yPercent: -10,
+        ease: "none",
+        scrollTrigger: {
+          trigger: "#canvas",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1,
+        },
+      });
+      // Parallax on scroll for canvas image
+      gsap.to("#canvasImg", {
+        yPercent: -10,
+        ease: "none",
+        scrollTrigger: {
+          trigger: "#canvas",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1,
+        },
+      });
+      const thumbs = document.querySelectorAll(".thumb");
+      thumbs.forEach((thumb) => {
+        thumb.addEventListener("mousemove", (e) => {
+          const rect = thumb.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          gsap.to(thumb, {
+            rotationY: x / 20,
+            rotationX: -y / 20,
+            transformPerspective: 500,
+            ease: "power1.out",
+            duration: 0.3,
+          });
+        });
+        thumb.addEventListener("mouseleave", () => {
+          gsap.to(thumb, {
+            rotationY: 0,
+            rotationX: 0,
+            ease: "power1.out",
+            duration: 0.5,
+          });
+        });
+      });
+    </script>
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -476,10 +956,8 @@
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
-    
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    </body>
-
+  </body>
 </html>

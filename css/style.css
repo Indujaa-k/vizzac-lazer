@@ -276,19 +276,19 @@
 
 .owl-prev,
 .owl-next {
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 20px 20px;
-  border-radius: 40px;
-  background: var(--bs-primary) !important;
-  color: var(--bs-white) !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.5s;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 20px 20px;
+    border-radius: 40px;
+    background:var(--bs-primary) !important;
+    color:var(--bs-white) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
 }
 .owl-prev {
   left: 30px;
@@ -675,6 +675,10 @@
   justify-content: center;
   align-items: center;
   /* background: #000; */
+
+  overflow-x: hidden;
+
+
 }
 
 .cards {
@@ -684,7 +688,7 @@
 }
 
 .card {
-  width: 250px;
+  width: 200px;
   height: 300px;
   position: relative;
   transform-style: preserve-3d;
