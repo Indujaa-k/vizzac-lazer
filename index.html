@@ -48,8 +48,9 @@
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
-      <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
@@ -78,12 +79,11 @@
           <div class="col-lg-8 text-center text-lg-start mb-lg-0">
             <div class="d-flex flex-wrap">
               <a href="#" class="text-muted me-4"
-                ><i class="fas fa-map-marker-alt text-primary me-2"></i>Find A
-                Location</a
+                ><i class="fas fa-map-marker-alt text-primary me-2"></i
+                >Tiruppur</a
               >
               <a href="#" class="text-muted me-4"
-                ><i class="fas fa-phone-alt text-primary me-2"></i>+91
-                8048601652</a
+                ><i class="fas fa-phone-alt text-primary me-2"></i>+91 8048601652</a
               >
               <a href="#" class="text-muted me-0"
                 ><i class="fas fa-envelope text-primary me-2"></i
@@ -972,7 +972,7 @@
     <!-- Project End -->
 
     <!-- Blog Start -->
-    <div class="container-fluid blog pb-5">
+    <!-- <div class="container-fluid blog pb-5">
       <div class="container pb-5">
         <div
           class="text-center mx-auto pb-5 wow fadeInUp"
@@ -1117,7 +1117,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- Blog End -->
 
     <!-- Team Start -->
@@ -1128,10 +1128,8 @@
           data-wow-delay="0.1s"
           style="max-width: 800px"
         >
-          <h4 class="text-primary">Our Team</h4>
-          <h1 class="display-4" >
-            Essential Teams in a Machinery Distribution Company
-          </h1>
+          <h2 class="text-primary">Our Team</h2>
+          <h3>Essential Teams in a Machinery Distribution Company</h3>
         </div>
 
         <!-- Carousel Wrapper -->
@@ -1464,7 +1462,115 @@
     </div>
     <!-- Team End -->
 
-   
+    <style>
+      .team-carousel-wrapper {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .team-carousel {
+        display: flex;
+        gap: 1rem;
+        transition: transform 0.5s ease-in-out;
+        scroll-snap-type: x mandatory;
+        overflow-x: auto;
+      }
+
+      .team-item {
+        flex: 0 0 23%; /* four cards per row on desktop */
+        border: none !important; /* remove any border */
+        box-shadow: none !important; /* remove shadow */
+        background: none !important;
+      }
+
+      .d-flex.align-items-start .text-muted i {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-top: 2px;
+      }
+
+      .d-flex.align-items-start a {
+        display: flex;
+        align-items: center;
+      }
+
+      /* Mobile view */
+      @media (max-width: 768px) {
+        h1.display-4 {
+          font-size: 1.5rem !important; /* smaller size on mobile */
+          line-height: 1.2 !important; /* adjust spacing */
+          text-align: center; /* optional: center align */
+        }
+        h4.text-primary {
+          font-size: 1rem !important;
+        }
+
+        .team-carousel {
+          overflow-x: hidden; /* hide scrollbar */
+        }
+
+        .team-item {
+          flex: 0 0 95% !important;
+          max-width: 95% !important; /* card takes 90% of screen width */
+          margin: 0 auto; /* center the card */
+          border-radius: 0 !important; /* remove rounded corners */
+          box-shadow: none !important;
+          border: none !important;
+          height: 450px !important; /* set uniform height */
+          display: flex;
+          flex-direction: column;
+        }
+        .team-img {
+          flex: 0 0 45%; /* image takes half of the card */
+        }
+
+        .team-img img {
+          height: 100% !important; /* reduced height */
+          width: 100% !important;
+          object-fit: cover !important;
+          border-radius: 0 !important; /* remove image rounding */
+        }
+
+        .team-content {
+          flex: 0 0 auto;
+          padding: 8px !important;
+          border-radius: 0 !important;
+          overflow: visible; /* remove content rounding */
+        }
+
+        .team-content h4 {
+          font-size: 1.2rem !important;
+          margin-bottom: 6px !important;
+        }
+
+        .team-content .d-flex span {
+          font-size: 0.9rem !important;
+        }
+      }
+
+      /* Carousel buttons */
+      .carousel-btn {
+        position: absolute;
+        top: 45%;
+        transform: translateY(-50%);
+        background: #cf0f0f;
+        color: #fff;
+        border: none;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        z-index: 10;
+        cursor: pointer;
+      }
+
+      .left-btn {
+        left: 5px;
+      }
+
+      .right-btn {
+        right: 5px;
+      }
+    </style>
 
     <!-- Testimonial Start -->
     <div class="container-fluid testimonial bg-light py-5">
