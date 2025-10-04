@@ -442,6 +442,16 @@
 /*** Header Carousel End ***/
 
 /*** Single Page Hero Header Start ***/
+.bg-breadcrumb-about {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../img/about-banner.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 60px 0 60px 0;
+}
 .bg-breadcrumb {
   position: relative;
   overflow: hidden;
@@ -531,6 +541,196 @@
   left: 0;
   background: var(--bs-primary);
 }
+
+.vizzac-text {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  display: flex;
+  gap: 8px;
+  position: relative;
+  color: #fff;
+}
+
+.vizzac-text span {
+  display: inline-block;
+  background: linear-gradient(
+    90deg,
+    #ff4e50,
+    #f9d423,
+    #24c6dc,
+    #5433ff,
+    #ff0099
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+/* Reflection */
+.vizzac-text::after {
+  content: "Vizzac Laser";
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  text-align: center;
+  transform: scaleY(-1);
+  opacity: 0.2;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.service-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #3597ba, #246f8a);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.service-btn:hover {
+  background: linear-gradient(135deg, #246f8a, #3597ba);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.service-btn:active {
+  transform: scale(0.95);
+}
+
+.project-img-about {
+  width: 100%;
+  height: 280px; /* adjust as per design */
+  overflow: hidden;
+  border-radius: 8px; /* same as your img rounded */
+}
+.project-img-about-2 {
+  width: 100%;
+  height: 280px; /* adjust as per design */
+  overflow: hidden;
+  border-radius: 8px; /* same as your img rounded */
+}
+
+.project-img-about img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* crops while keeping aspect ratio */
+  border-radius: 8px;
+}
+.project-img-about-2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* crops while keeping aspect ratio */
+  border-radius: 8px;
+}
+
+/* mission and vission */
+
+
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.box {
+  width: 60%;
+  padding: 3rem;
+  margin: 2rem 0;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: #fff;
+  transform: scale(0.9);
+  background: linear-gradient(135deg, #030303, #090909);
+  position: relative;
+}
+
+.mission {
+  background: linear-gradient(135deg, #030303, #090909);
+}
+
+.vision {
+  background: linear-gradient(135deg, #090909, #000000);
+}
+
+
+/* why choose us */
+
+.card-section {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: #000; */
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  perspective: 1000px;
+}
+
+.card {
+  width: 250px;
+  height: 300px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  opacity: 0;
+}
+.card .front {
+  background: url("../img/cardbg.png") no-repeat center/cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  z-index: 2;
+   background-color: #043b43;
+}
+
+.card .front,
+.card .back {
+  padding: 20px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.card .front {
+}
+
+.card .back {
+  background: #102147;
+  color: white;
+  transform: rotateY(180deg);
+}
+
 /*** About End ***/
 
 /*** Service Start ***/

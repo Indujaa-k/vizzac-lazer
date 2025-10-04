@@ -1,74 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Vizzac Laser</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
 
-    <head>
-        <meta charset="utf-8">
-        <title>Vizzac Laser</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+    <!-- Icon Font Stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
 
-        <!-- Icon Font Stylesheet -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
 
-        <!-- Libraries Stylesheet -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
 
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
 
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!--  GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  </head>
 
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-    </head>
+  <body>
+    <!-- Spinner Start -->
+    <div
+      id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div
+        class="spinner-border text-primary"
+        style="width: 3rem; height: 3rem"
+        role="status"
+      >
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <!-- Spinner End -->
 
-    <body>
-
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
+    <!-- Topbar Start -->
+    <div class="container-fluid topbar px-0 d-none d-lg-block">
+      <div class="container px-0">
+        <div class="row gx-0 align-items-center" style="height: 45px">
+          <div class="col-lg-8 text-center text-lg-start mb-lg-0">
+            <div class="d-flex flex-wrap">
+              <a href="#" class="text-muted me-4"
+                ><i class="fas fa-map-marker-alt text-primary me-2"></i>Find A
+                Location</a
+              >
+              <a href="#" class="text-muted me-4"
+                ><i class="fas fa-phone-alt text-primary me-2"></i
+                >+01234567890</a
+              >
+              <a href="#" class="text-muted me-0"
+                ><i class="fas fa-envelope text-primary me-2"></i
+                >Example@gmail.com</a
+              >
             </div>
-        </div>
-        <!-- Spinner End -->
-
-
-        <!-- Topbar Start -->
-        <div class="container-fluid topbar px-0 d-none d-lg-block">
-            <div class="container px-0">
-                <div class="row gx-0 align-items-center" style="height: 45px;">
-                    <div class="col-lg-8 text-center text-lg-start mb-lg-0">
-                        <div class="d-flex flex-wrap">
-                            <a href="#" class="text-muted me-4"><i class="fas fa-map-marker-alt text-primary me-2"></i>Find A Location</a>
-                            <a href="#" class="text-muted me-4"><i class="fas fa-phone-alt text-primary me-2"></i>+01234567890</a>
-                            <a href="#" class="text-muted me-0"><i class="fas fa-envelope text-primary me-2"></i>Example@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 text-center text-lg-end">
-                        <div class="d-flex align-items-center justify-content-end">
-                            <a href="#" class="btn btn-primary btn-square rounded-circle nav-fill me-3"><i class="fab fa-facebook-f text-white"></i></a>
-                            <a href="#" class="btn btn-primary btn-square rounded-circle nav-fill me-3"><i class="fab fa-twitter text-white"></i></a>
-                            <a href="#" class="btn btn-primary btn-square rounded-circle nav-fill me-3"><i class="fab fa-instagram text-white"></i></a>
-                            <a href="#" class="btn btn-primary btn-square rounded-circle nav-fill me-0"><i class="fab fa-linkedin-in text-white"></i></a>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="col-lg-4 text-center text-lg-end">
+            <div class="d-flex align-items-center justify-content-end">
+              <a
+                href="#"
+                class="btn btn-primary btn-square rounded-circle nav-fill me-3"
+                ><i class="fab fa-facebook-f text-white"></i
+              ></a>
+              <a
+                href="#"
+                class="btn btn-primary btn-square rounded-circle nav-fill me-3"
+                ><i class="fab fa-twitter text-white"></i
+              ></a>
+              <a
+                href="#"
+                class="btn btn-primary btn-square rounded-circle nav-fill me-3"
+                ><i class="fab fa-instagram text-white"></i
+              ></a>
+              <a
+                href="#"
+                class="btn btn-primary btn-square rounded-circle nav-fill me-0"
+                ><i class="fab fa-linkedin-in text-white"></i
+              ></a>
             </div>
+          </div>
         </div>
-        <!-- Topbar End -->
+      </div>
+    </div>
+    <!-- Topbar End -->
 
-
-        <!-- Navbar & Hero Start -->
-        <div class="container-fluid sticky-top px-0">
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid sticky-top px-0">
       <div
         class="position-absolute bg-dark"
         style="left: 0; top: 0; width: 100%; height: 100%"
@@ -95,7 +139,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-              <a href="index.html" class="nav-item nav-link ">Home</a>
+              <a href="index.html" class="nav-item nav-link">Home</a>
               <a href="about.html" class="nav-item nav-link active">About</a>
               <a href="service.html" class="nav-item nav-link">Services</a>
               <a href="product.html" class="nav-item nav-link">Products</a>
@@ -122,309 +166,577 @@
         </nav>
       </div>
     </div>
-        <!-- Navbar & Hero End -->
+    <!-- Navbar & Hero End -->
 
-        <!-- Modal Search Start -->
-        <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-fullscreen">
-                <div class="modal-content rounded-0">
-                    <div class="modal-header">
-                        <h4 class="modal-title mb-0" id="exampleModalLabel">Search by keyword</h4>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body d-flex align-items-center">
-                        <div class="input-group w-75 mx-auto d-flex">
-                            <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
-                            <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
-                        </div>
-                    </div>
+    <!-- Header Start -->
+    <div class="container-fluid bg-breadcrumb-about">
+      <div class="bg-breadcrumb-single"></div>
+      <div class="container text-center py-5" style="max-width: 900px">
+        <h4
+          class="text-white display-4 mb-4 wow fadeInDown"
+          data-wow-delay="0.1s"
+        >
+          About Us
+        </h4>
+        <ol
+          class="breadcrumb justify-content-center mb-0 wow fadeInDown"
+          data-wow-delay="0.3s"
+        >
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active text-primary">About</li>
+        </ol>
+      </div>
+    </div>
+    <!-- Header End -->
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        text-align: center;
+        margin: 50px 0;
+      "
+    >
+      <i class="fas fa-quote-left fa-3x text-dark"></i>
+      <h1>Our Journey in Industrial Innovation</h1>
+    </div>
+
+    <!-- About Start -->
+
+    <section
+      id="scroll-section"
+      style="
+        margin-top: 30px;
+        padding: 30px 60px;
+        line-height: 35px;
+        background-image: url(img/bg-2.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        font-size: 18px;
+        color: #aaa; /* lighter initial color */
+      "
+    >
+      Incorporated in the year 2000, at Tiruppur, (Tamil Nadu, India), “Vizzac
+      Laser” are one of the prominent manufacturers and suppliers of a wide
+      range of industrial machines and equipment such as Wood Engraving Machine
+      (CNC Router), Roll Fusing Machine and Paper Cup Forming Machine. These
+      products feature specifications as per their operational requirements and
+      provide a high efficiency and productivity to their industrial processes.
+      We are widely recognized in the industry for providing our clients a range
+      of industrial machines which are designed and fabricated after extensive
+      research of the requirements of clients. Thus, these products are
+      manufactured using the most advanced technology available in the industry
+      to enable optimum functionality and efficiency. Our quality assurance
+      further helps us ensure a high productivity and functionality of these
+      products before these are delivered to clients. Catering to numerous
+      industries such as sculpture, shoes, electronic components, advertisement,
+      gifts, leather textiles and stamps, we are widely acclaimed as one of the
+      leading organizations in this domain.
+    </section>
+
+    <div class="container-fluid" style="background-color: #e5eff3">
+      <div class="container py-4">
+        <div class="row g-4 align-items-center">
+          <!-- LEFT SIDE -->
+          <div class="col-lg-5">
+            <div class="row g-3">
+              <div class="col-12" data-aos="fade-right">
+                <img
+                  src="./img/aboutimg-1.jpeg"
+                  class="img-fluid rounded w-100"
+                  alt="About Image 1"
+                />
+              </div>
+
+              <div class="col-6" data-aos="fade-up">
+                <img
+                  src="./img/about-4-img.png"
+                  class="img-fluid w-100 rounded"
+                  alt="About Image 2"
+                />
+              </div>
+
+              <div class="col-6">
+                <div class="row g-4">
+                  <div class="col-12" data-aos="zoom-in">
+                    <img
+                      src="./img/about-3-img.png"
+                      class="img-fluid rounded w-100"
+                      alt="About Image 3"
+                    />
+                  </div>
+                  <div
+                    class="col-12 p-2 text-center fw-bold"
+                    data-aos="flip-up"
+                  >
+                    <a href="#services" class="service-btn">
+                      View More Product...
+                    </a>
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
-        <!-- Modal Search End -->
+          </div>
 
-        <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
-            <div class="bg-breadcrumb-single"></div>
-            <div class="container text-center py-5" style="max-width: 900px;">
-                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">About Us</h4>
-                <ol class="breadcrumb justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item active text-primary">About</li>
-                </ol>    
+          <!-- RIGHT SIDE -->
+          <div class="col-lg-7">
+            <div class="row g-2 align-items-center">
+              <div class="col-3" data-aos="fade-down">
+                <img
+                  src="./img/logo/LOGOO_page-0001-removebg-preview.png"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="col-9" data-aos="fade-left">
+                <img
+                  src="./img/about-5-img.png"
+                  class="img-fluid rounded"
+                  alt="Mini Logo"
+                />
+              </div>
             </div>
-        </div>
-        <!-- Header End -->
 
-        <!-- About Start -->
-        <div class="container-fluid about bg-light py-5">
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-6 col-xl-5 wow fadeInLeft" data-wow-delay="0.1s">
-                        <div class="about-img">
-                            <img src="img/about-3.png" class="img-fluid w-100 rounded-top bg-white" alt="Image">
-                            <img src="img/about-2.jpg" class="img-fluid w-100 rounded-bottom" alt="Image">
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-xl-7 wow fadeInRight" data-wow-delay="0.3s">
-                        <h4 class="text-primary">About Us</h4>
-                        <h1 class="display-5 mb-4">The most Profitable Investments company in worldwide.</h1>
-                        <p class="text ps-4 mb-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores atque nihil unde quisquam, deleniti illo a. Quam harum laboriosam, laudantium, deleniti perferendis voluptates ex non laborum libero magni, minus illo!
-                        </p>
-                        <div class="row g-4 justify-content-between mb-5">
-                            <div class="col-lg-6 col-xl-5">
-                                <p class="text-dark"><i class="fas fa-check-circle text-primary me-1"></i> Strategy & Consulting</p>
-                                <p class="text-dark mb-0"><i class="fas fa-check-circle text-primary me-1"></i> Business Process</p>
-                            </div>
-                            <div class="col-lg-6 col-xl-7">
-                                <p class="text-dark"><i class="fas fa-check-circle text-primary me-1"></i> Marketing Rules</p>
-                                <p class="text-dark mb-0"><i class="fas fa-check-circle text-primary me-1"></i> Partnerships</p>
-                            </div>
-                        </div>
-                        <div class="row g-4 justify-content-between mb-5">
-                            <div class="col-xl-5"><a href="#" class="btn btn-primary rounded-pill py-3 px-5">Discover More</a></div>
-                            <div class="col-xl-7 mb-5">
-                                <div class="about-customer d-flex position-relative">
-                                    <img src="img/customer-img-1.jpg" class="img-fluid btn-xl-square position-absolute" style="left: 0; top: 0;"  alt="Image">
-                                    <img src="img/customer-img-2.jpg" class="img-fluid btn-xl-square position-absolute" style="left: 45px; top: 0;" alt="Image">
-                                    <img src="img/customer-img-3.jpg" class="img-fluid btn-xl-square position-absolute" style="left: 90px; top: 0;" alt="Image">
-                                    <img src="img/customer-img-1.jpg" class="img-fluid btn-xl-square position-absolute" style="left: 135px; top: 0;" alt="Image">
-                                    <div class="position-absolute text-dark" style="left: 220px; top: 10px;">
-                                        <p class="mb-0">5m+ Trusted</p>
-                                        <p class="mb-0">Global Customers</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row g-4 text-center align-items-center justify-content-center">
-                            <div class="col-sm-4">
-                                <div class="bg-primary rounded p-4">
-                                    <div class="d-flex align-items-center justify-content-center">
-                                        <span class="counter-value fs-1 fw-bold text-dark" data-toggle="counter-up">32</span>
-                                        <h4 class="text-dark fs-1 mb-0" style="font-weight: 600; font-size: 25px;">k+</h4>
-                                    </div>
-                                    <div class="w-100 d-flex align-items-center justify-content-center">
-                                        <p class="text-white mb-0">Project Complete</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="bg-dark rounded p-4">
-                                    <div class="d-flex align-items-center justify-content-center">
-                                        <span class="counter-value fs-1 fw-bold text-white" data-toggle="counter-up">21</span>
-                                        <h4 class="text-white fs-1 mb-0" style="font-weight: 600; font-size: 25px;">+</h4>
-                                    </div>
-                                    <div class="w-100 d-flex align-items-center justify-content-center">
-                                        <p class="mb-0">Years Of Experience</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="bg-primary rounded p-4">
-                                    <div class="d-flex align-items-center justify-content-center">
-                                        <span class="counter-value fs-1 fw-bold text-dark" data-toggle="counter-up">97</span>
-                                        <h4 class="text-dark fs-1 mb-0" style="font-weight: 600; font-size: 25px;">+</h4>
-                                    </div>
-                                    <div class="w-100 d-flex align-items-center justify-content-center">
-                                        <p class="text-white mb-0">Team Members</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="row g-3 mt-2">
+              <div class="col-6 fw-bold text-dark" data-aos="fade-up-right">
+                <p class="mb-0">
+                  To deliver cutting-edge machinery solutions that empower
+                  entrepreneurs, manufacturers, and industries to maximize
+                  efficiency, productivity, and profitability.
+                </p>
+              </div>
+              <div class="col-6" data-aos="fade-up-left">
+                <a href="#services" class="service-btn">
+                  Services We Offer →
+                </a>
+              </div>
             </div>
-        </div>
-        <!-- About End -->
 
-
-        <!-- Team Start -->
-        <div class="container-fluid team py-5">
-            <div class="container py-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
-                    <h4 class="text-primary">Our Team</h4>
-                    <h1 class="display-4">Our Investa Company Dedicated Team Member</h1>
-                </div>
-                <div class="row g-4 justify-content-center">
-                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="team-item rounded">
-                            <div class="team-img">
-                                <img src="img/team-1.jpg" class="img-fluid w-100 rounded-top" alt="Image">
-                                <div class="team-icon">
-                                    <a class="btn btn-primary btn-sm-square text-white rounded-circle mb-3" href=""><i class="fas fa-share-alt"></i></a>
-                                    <div class="team-icon-share">
-                                        <a class="btn btn-primary btn-sm-square text-white rounded-circle mb-3" href=""><i class="fab fa-facebook-f"></i></a>
-                                        <a class="btn btn-primary btn-sm-square text-white rounded-circle mb-3" href=""><i class="fab fa-twitter"></i></a>
-                                        <a class="btn btn-primary btn-sm-square text-white rounded-circle mb-0" href=""><i class="fab fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="team-content bg-dark text-center rounded-bottom p-4">
-                                <div class="team-content-inner rounded-bottom">
-                                    <h4 class="text-white">Mark D. Brock</h4>
-                                    <p class="text-muted mb-0">CEO & Founder</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="team-item rounded">
-                            <div class="team-img">
-                                <img src="img/team-2.jpg" class="img-fluid w-100 rounded-top" alt="Image">
-                                <div class="team-icon">
-                                    <a class="btn btn-primary btn-sm-square text-white rounded-circle mb-3" href=""><i class="fas fa-share-alt"></i></a>
-                                    <div class="team-icon-share">
-                                        <a class="btn btn-primary btn-sm-square text-white rounded-circle mb-3" href=""><i class="fab fa-facebook-f"></i></a>
-                                        <a class="btn btn-primary btn-sm-square text-white rounded-circle mb-3" href=""><i class="fab fa-twitter"></i></a>
-                                        <a class="btn btn-primary btn-sm-square text-white rounded-circle mb-0" href=""><i class="fab fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="team-content bg-dark text-center rounded-bottom p-4">
-                                <div class="team-content-inner rounded-bottom">
-                                    <h4 class="text-white">Mark D. Brock</h4>
-                                    <p class="text-muted mb-0">CEO & Founder</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="team-item rounded">
-                            <div class="team-img">
-                                <img src="img/team-3.jpg" class="img-fluid w-100 rounded-top" alt="Image">
-                                <div class="team-icon">
-                                    <a class="btn btn-primary btn-sm-square text-white rounded-circle mb-3" href=""><i class="fas fa-share-alt"></i></a>
-                                    <div class="team-icon-share">
-                                        <a class="btn btn-primary btn-sm-square text-white rounded-circle mb-3" href=""><i class="fab fa-facebook-f"></i></a>
-                                        <a class="btn btn-primary btn-sm-square text-white rounded-circle mb-3" href=""><i class="fab fa-twitter"></i></a>
-                                        <a class="btn btn-primary btn-sm-square text-white rounded-circle mb-0" href=""><i class="fab fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="team-content bg-dark text-center rounded-bottom p-4">
-                                <div class="team-content-inner rounded-bottom">
-                                    <h4 class="text-white">Mark D. Brock</h4>
-                                    <p class="text-muted mb-0">CEO & Founder</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="team-item rounded">
-                            <div class="team-img">
-                                <img src="img/team-4.jpg" class="img-fluid w-100 rounded-top" alt="Image">
-                                <div class="team-icon">
-                                    <a class="btn btn-primary btn-sm-square text-white rounded-circle mb-3" href=""><i class="fas fa-share-alt"></i></a>
-                                    <div class="team-icon-share">
-                                        <a class="btn btn-primary btn-sm-square text-white rounded-circle mb-3" href=""><i class="fab fa-facebook-f"></i></a>
-                                        <a class="btn btn-primary btn-sm-square text-white rounded-circle mb-3" href=""><i class="fab fa-twitter"></i></a>
-                                        <a class="btn btn-primary btn-sm-square text-white rounded-circle mb-0" href=""><i class="fab fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="team-content bg-dark text-center rounded-bottom p-4">
-                                <div class="team-content-inner rounded-bottom">
-                                    <h4 class="text-white">Mark D. Brock</h4>
-                                    <p class="text-muted mb-0">CEO & Founder</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <!-- Vizzac Laser -->
+            <div class="row mt-3">
+              <div
+                class="col-12 p-4 text-center"
+                style="
+                  min-height: 100px;
+                  background: linear-gradient(
+                    145deg,
+                    #0f2027,
+                    #203a43,
+                    #2c5364
+                  );
+                  border-radius: 20px;
+                  width: fit-content;
+                  text-align: center;
+                "
+                data-aos="zoom-in"
+              >
+                <h1 class="vizzac-text m-0">
+                  <span>V</span><span>i</span><span>z</span><span>z</span
+                  ><span>a</span><span>c</span> <span>L</span><span>a</span
+                  ><span>s</span><span>e</span><span>r</span>
+                </h1>
+              </div>
             </div>
+          </div>
         </div>
-        <!-- Team End -->
+      </div>
+    </div>
+    <!-- Mission and Vission -->
+    <section class="section mt-4 pt-4">
+      <div class="text-center mx-auto">
+        <h2 class="text-primary">Mission and Vision</h2>
+        <h3>Your Partner in Industrial Excellence</h3>
+      </div>
 
-        <!-- Footer Start -->
-        <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
-            <div class="container py-5">
-                <div class="row g-5">
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <div class="footer-item">
-                                <h4 class="text-white mb-4">Newsletter</h4>
-                                <p class="mb-3">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit.</p>
-                                <div class="position-relative mx-auto rounded-pill">
-                                    <input class="form-control rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Enter your email">
-                                    <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2">SignUp</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="text-white mb-4">Explore</h4>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Home</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Services</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> About Us</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Latest Projects</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> testimonial</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Our Team</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Contact Us</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="text-white mb-4">Contact Info</h4>
-                            <a href=""><i class="fa fa-map-marker-alt me-2"></i> 123 Street, New York, USA</a>
-                            <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
-                            <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
-                            <a href=""><i class="fas fa-phone me-2"></i> +012 345 67890</a>
-                            <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>
-                            <div class="d-flex align-items-center">
-                                <a class="btn btn-light btn-md-square me-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-light btn-md-square me-2" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-light btn-md-square me-2" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn btn-light btn-md-square me-0" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item-post d-flex flex-column">
-                            <h4 class="text-white mb-4">Popular Post</h4>
-                            <div class="d-flex flex-column mb-3">
-                                <p class="text-uppercase text-primary mb-2">Investment</p>
-                                <a href="#" class="text-body">Revisiting Your Investment & Distribution Goals</a>
-                            </div>
-                            <div class="d-flex flex-column mb-3">
-                                <p class="text-uppercase text-primary mb-2">Business</p>
-                                <a href="#" class="text-body">Dimensional Fund Advisors Interview with Director</a>
-                            </div>
-                            <div class="footer-btn text-start">
-                                <a href="#" class="btn btn-light rounded-pill px-4">View All Post <i class="fa fa-arrow-right ms-1"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <div class="box mission">
+        <h3 style="color: white">Mission</h3>
+        <p>
+          To deliver cutting-edge machinery solutions that empower
+          entrepreneurs, manufacturers, and industries to maximize efficiency,
+          productivity, and profitability.
+        </p>
+      </div>
+
+      <div class="box vision">
+        <h3 style="color: white">Vision</h3>
+        <p>
+          To be a globally recognized leader in textile and industrial machinery
+          solutions, driving innovation and enabling businesses of all scales to
+          turn their ambitions into success stories.
+        </p>
+      </div>
+    </section>
+    <!-- Delivery -->
+    <div class="container-fluid blog pb-5 mt-5">
+      <div class="container pb-5">
+        <div
+          class="text-center mx-auto pb-5 wow fadeInUp"
+          data-wow-delay="0.1s"
+          style="max-width: 800px"
+        >
+          <h2 class="text-primary">Our Delivery Commitment</h2>
+          <h3>
+           Reliable Pan-India Delivery — Fast, Safe, and Hassle-Free
+          </h3>
+        </div>
+
+        <!-- box 1 -->
+        <div class="row g-4 justify-content-center">
+          <div
+            class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp"
+            data-wow-delay="0.1s"
+          >
+            <div
+              class="blog-item bg-light rounded p-4"
+              style="background-image: url(img/bg.png)"
+            >
+              <div class="mb-4">
+                <h4 class="text-primary mb-2">Nationwide Coverage</h4>
+              </div>
+              <div class="project-img-about">
+                <img
+                  src="img/about-6-img.png"
+                  class="img-fluid w-100 rounded"
+                  alt="Image"
+                />
+              </div>
+              <div class="my-4">
+                Whether you are in metro cities or remote towns, we provide
+                reliable delivery services to all states and union territories
+                in India.Packages are sealed to prevent unauthorized access.
+              </div>
+              <a class="btn btn-primary rounded-pill py-2 px-4" href="#"
+                >View Products</a
+              >
             </div>
-        </div>
-        <!-- Footer End -->
-
-        
-        <!-- Copyright Start -->
-        <div class="container-fluid copyright py-4">
-            <div class="container">
-                <div class="row g-4 align-items-center">
-                    <div class="col-md-6 text-center text-md-start mb-md-0">
-                        <span class="text-body"><a href="#" class="border-bottom text-primary"><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right reserved.</span>
-                    </div>
-                    <div class="col-md-6 text-center text-md-end text-body">
-                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
-                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                        Designed By <a class="border-bottom text-primary" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a class="border-bottom text-primary" href="https://themewagon.com">ThemeWagon</a>
-                    </div>
-                </div>
+          </div>
+          <!-- box-2 -->
+          <div
+            class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp"
+            data-wow-delay="0.3s"
+          >
+            <div
+              class="blog-item bg-light rounded p-4"
+              style="background-image: url(img/bg.png)"
+            >
+              <div class="mb-4">
+                <h4 class="text-primary mb-2">Secure Packaging</h4>
+              </div>
+              <div class="project-img-about-2">
+                <img
+                  src="img/about-7-img.jpg"
+                  class="img-fluid w-100 rounded"
+                  alt="Image"
+                />
+              </div>
+              <div class="my-4">
+                All machines are carefully packaged , industrial-grade materials
+                to prevent any damage during transit and withstand varying
+                weather conditions against rain or humidity.
+              </div>
+              <a class="btn btn-primary rounded-pill py-2 px-4" href="#"
+                >View Products</a
+              >
             </div>
+          </div>
+          <!-- box-3 -->
+          <div
+            class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp"
+            data-wow-delay="0.5s"
+          >
+            <div
+              class="blog-item bg-light rounded p-4"
+              style="background-image: url(img/bg.png)"
+            >
+              <div class="mb-4">
+                <h4 class="text-primary mb-2">Timely Delivery</h4>
+              </div>
+              <div class="project-img-about">
+                <img
+                  src="img/about-8-img.png"
+                  class="img-fluid w-100 rounded"
+                  alt="Image"
+                />
+              </div>
+              <div class="my-4">
+                Our logistics partners ensure prompt and efficient delivery,
+                keeping you informed at every stage.All deliveries are handled
+                with care, following strict safety protocols to protect both the
+                product.
+              </div>
+              <a class="btn btn-primary rounded-pill py-2 px-4" href="#"
+                >View Products</a
+              >
+            </div>
+          </div>
         </div>
-        <!-- Copyright End -->
+      </div>
+    </div>
 
+    <section
+      id="vehicle-section"
+      style="height: 100px; position: relative; margin-top: 50px"
+    >
+      <!-- Road -->
+      <div
+        style="
+          position: absolute;
+          bottom: 50px;
+          left: 0;
+          width: 100%;
+          height: 6px;
+          background-color: #555;
+        "
+      ></div>
 
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+      <!-- Vehicle -->
+      <div
+        id="vehicle"
+        style="
+          position: absolute;
+          bottom: 56px;
+          display: flex;
+          align-items: center;
+        "
+      >
+        <!-- Banner / Text Box on top -->
+        <div
+          id="vehicle-banner"
+          style="
+            position: absolute;
+            bottom: 60px; /* place above vehicle body */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ffcc00;
+            color: #222;
+            font-weight: bold;
+            padding: 5px 15px;
+            border-radius: 8px;
+            white-space: nowrap;
+          "
+        >
+          Fastest & Safe Delivery
+        </div>
 
-        
+        <!-- Vehicle Body -->
+        <div
+          style="
+            width: 100px;
+            height: 50px;
+            background-color: #007bff;
+            border-radius: 8px;
+            position: relative;
+          "
+        ></div>
+
+        <!-- Wheels -->
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            bottom: -12px;
+            width: 100%;
+            padding: 0 10px;
+          "
+        >
+          <div
+            style="
+              width: 20px;
+              height: 20px;
+              background-color: black;
+              border-radius: 50%;
+            "
+          ></div>
+          <div
+            style="
+              width: 20px;
+              height: 20px;
+              background-color: black;
+              border-radius: 50%;
+            "
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- why choose us -->
+    <div class="text-center mx-auto">
+      <h2 class="text-primary">Why Choose us</h2>
+      <h3>Precision, innovation, and reliability — delivering excellence</h3>
+    </div>
+    <section class="card-section">
+      <div class="cards">
+        <div class="card">
+          <div class="front">What makes Vizzac Laser experienced?</div>
+          <div class="back">
+            Years of expertise in precision laser cutting, known for reliability
+            and consistent high-quality results.
+          </div>
+        </div>
+        <div class="card">
+          <div class="front">What technology do you use?</div>
+          <div class="back">
+            State-of-the-art laser cutting machines ensure accurate, efficient,
+            and high-quality outcomes for various materials.
+          </div>
+        </div>
+        <div class="card">
+          <div class="front">Can you handle custom projects?</div>
+          <div class="back">
+            Yes, we provide tailored solutions to meet your unique requirements,
+            flexible in design and production.
+          </div>
+        </div>
+        <div class="card">
+          <div class="front">Are your services cost-effective?</div>
+          <div class="back">
+            Absolutely. We offer competitive pricing without compromising on
+            quality.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+      <div class="container py-5">
+        <div class="row g-5">
+          <div class="col-md-6 col-lg-6 col-xl-3">
+            <div class="footer-item d-flex flex-column">
+              <div class="footer-item">
+                <!-- LOGO -->
+                <img
+                  src="./img/VIZZAC.png"
+                  alt=""
+                  style="width: 110px; height: 90px"
+                />
+                <p class="mb-3">
+                  To deliver cutting-edge machinery solutions that empower
+                  entrepreneurs, manufacturers, and industries to maximize
+                  efficiency, productivity, and profitability.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-6 col-xl-3">
+            <div class="footer-item d-flex flex-column">
+              <h4 class="text-white mb-4">Explore</h4>
+              <a href="#"><i class="fas fa-angle-right me-2"></i> Home</a>
+              <a href="./service.html"
+                ><i class="fas fa-angle-right me-2"></i> Services</a
+              >
+              <a href="./about.html"
+                ><i class="fas fa-angle-right me-2"></i> About Us</a
+              >
+              <a href="./product.html"
+                ><i class="fas fa-angle-right me-2"></i> Latest Projects</a
+              >
+              <a href="./testimonial.html"
+                ><i class="fas fa-angle-right me-2"></i> testimonial</a
+              >
+              <a href="#"><i class="fas fa-angle-right me-2"></i> Our Team</a>
+              <a href="#"><i class="fas fa-angle-right me-2"></i> Contact Us</a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-6 col-xl-3">
+            <div class="footer-item d-flex flex-column">
+              <h4 class="text-white mb-4">Contact Info</h4>
+              <a href=""
+                ><i class="fa fa-map-marker-alt me-2"></i>No.22, K.C.M.
+                Compound, Mangalam Road Karuvampalayam, Tiruppur-641604, Tamil
+                Nadu, India</a
+              >
+              <a href=""
+                ><i class="fas fa-envelope me-2"></i>vizzaclasers@gmail.com</a
+              >
+              <a href=""><i class="fas fa-phone me-2"></i>+91 8048601652</a>
+              <div class="d-flex align-items-center">
+                <a
+                  class="btn btn-light btn-md-square me-2"
+                  href="https://www.facebook.com/share/1EkcxgPmJg/"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a class="btn btn-light btn-md-square me-2"
+                href=www.youtube.com/@vizzaclaser ><i
+                  class="fab fa-youtube"
+                ></i>
+                <a
+                  class="btn btn-light btn-md-square me-2"
+                  href="https://www.instagram.com/vizzac_laser?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a
+                  class="btn btn-light btn-md-square me-0"
+                  href="https://www.linkedin.com/in/purushothaman-v-043504b7/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=in"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-6 col-xl-3">
+            <div class="footer-item-post d-flex flex-column">
+              <h4 class="text-white mb-4">Popular Post</h4>
+
+              <div class="d-flex flex-column mb-3">
+                <p class="text-uppercase text-primary mb-2">Technology</p>
+                <a href="#" class="text-body">
+                  Latest Trends in Laser Cutting & Engraving Solutions
+                </a>
+              </div>
+
+              <div class="d-flex flex-column mb-3">
+                <p class="text-uppercase text-primary mb-2">
+                  Industry Insights
+                </p>
+                <a href="#" class="text-body">
+                  How <strong>Vizzac Laser</strong> Machines Boost Manufacturing
+                  Efficiency
+                </a>
+              </div>
+
+              <div class="footer-btn text-start">
+                <a href="#" class="btn btn-light rounded-pill px-4">
+                  View All Posts <i class="fa fa-arrow-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div class="copyright py-4">
+      <div class="container align-items-center">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="footer-container text-align">
+              <span
+                >Copyright &copy; <span id="current-year">2025</span> Vizzac
+                Laser | Developed By
+                <a
+                  href="https://paletteproduction.com/"
+                  target="_blank"
+                  style="color: #ed212a; text-decoration: none"
+                >
+                  PALETTE PRODUCTION
+                </a></span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Copyright End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-lg-square back-to-top"
+      ><i class="fa fa-arrow-up"></i
+    ></a>
+
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -434,10 +746,187 @@
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
-    
 
+    <!--  GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+      window.addEventListener("scroll", () => {
+        const windowHeight = window.innerHeight;
+
+        words.forEach((word) => {
+          const rect = word.getBoundingClientRect();
+          let visible = 1 - Math.min(Math.max(rect.top / windowHeight, 0), 1);
+
+          // make it slower
+          visible = visible * 0.2;
+
+          const colorValue = Math.floor(85 + visible * (0 - 85));
+          word.style.color = `rgb(${colorValue}, ${colorValue}, ${colorValue})`;
+
+          word.style.fontWeight = 400 + Math.round(visible * 300);
+        });
+      });
+    </script>
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-    </body>
+    <script>
+      // GSAP animations
+      gsap.from(".vizzac-text", {
+        duration: 1.5,
+        x: -200, // comes from left
+        opacity: 0,
+        ease: "power4.out",
+        delay: 0.5,
+      });
 
+      // Add glowing shadow animation loop
+      gsap.to(".vizzac-text", {
+        textShadow:
+          "0px 0px 30px rgba(0, 255, 255, 1), 0px 0px 50px rgba(0, 200, 255, 0.8)",
+        duration: 1.5,
+        repeat: -1,
+        yoyo: true,
+      });
+    </script>
+
+    <!-- ✅ AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1200, // animation speed
+        once: true, // animate only once
+      });
+    </script>
+    <script>
+      // Animate each letter from left or right randomly
+      gsap.from(".vizzac-text span", {
+        x: () => (Math.random() > 0.5 ? -100 : 100), // random left or right
+        opacity: 0,
+        duration: 1,
+        ease: "back.out(1.7)",
+        stagger: 0.15,
+      });
+
+      // Neon pulse effect
+      gsap.to(".vizzac-text span", {
+        textShadow:
+          "0px 0px 25px rgba(255,255,255,1), 0px 0px 45px rgba(255,0,200,0.8)",
+        repeat: -1,
+        yoyo: true,
+        duration: 1.5,
+        ease: "sine.inOut",
+      });
+    </script>
+
+    <script>
+      // 1. Split text into words wrapped in spans
+      const section = document.querySelector("#scroll-section");
+      const words = section.innerText.split(" ");
+      section.innerHTML = words
+        .map((word) => `<span class="word">${word}</span>`)
+        .join(" ");
+
+      // 2. Animate with GSAP
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.fromTo(
+        ".word",
+        { color: "#aaa" }, // starting light gray
+        {
+          color: "#222", // darker as it appears
+          stagger: 0.1, // delay between each word
+          scrollTrigger: {
+            trigger: "#scroll-section",
+            start: "top 80%", // when section enters viewport
+            end: "bottom 20%", // until end of section
+            scrub: true, // smooth scroll-based animation
+          },
+        }
+      );
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Move vehicle from left to right
+      gsap.to("#vehicle", {
+        x: "80vw",
+        scrollTrigger: {
+          trigger: "#vehicle-section",
+          start: "top 80%",
+          end: "bottom 20%",
+          scrub: 2, // slower movement
+        },
+      });
+
+      // Optional: banner pops in slightly
+      gsap.from("#vehicle-banner", {
+        y: -20,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: "#vehicle-section",
+          start: "top 90%",
+          end: "top 70%",
+          scrub: true,
+        },
+      });
+    </script>
+    <!-- mission and vission -->
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      document.querySelectorAll(".box").forEach((box) => {
+        gsap.to(box, {
+          scale: 1.05, // zoom effect
+          duration: 1.5,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: box,
+            start: "top 80%",
+            end: "bottom 60%",
+            scrub: true, // smooth zoom while scrolling
+          },
+        });
+      });
+    </script>
+    <!-- cards -->
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      const cards = document.querySelectorAll(".card");
+
+      // Timeline for card sequence
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".card-section",
+          start: "top top",
+          end: "+=2000", // duration of pinned animation
+          scrub: true,
+          pin: true,
+          markers: false,
+        },
+      });
+
+      // Animate cards one by one
+      cards.forEach((card, i) => {
+        tl.to(card, { opacity: 1, y: 0, duration: 0.5 }, i * 0.5);
+      });
+
+      // Flip all together after last card
+      tl.to(cards, {
+        rotateY: 180,
+        duration: 0.3, // faster turn
+        stagger: { each: 0.05, from: "start" },
+        ease: "power4.inOut", // smooth but quick snap
+      });
+
+      // Reverse scroll automatically handled (timeline scrub)
+    </script>
+
+    <script src="js/main.js"></script>
+  </body>
 </html>
