@@ -272,6 +272,126 @@
         opacity: 0;
         transform: translateY(10px);
       }
+      .process-section {
+        background-color: white; /* secondary background */
+        padding: 20px 0;
+        position: relative;
+      }
+
+      .process-section h2 {
+        color: #ed212a; /* primary color */
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .process-section p {
+        color: #222; /* secondary text */
+        margin-bottom: 50px;
+        font-size: 16px;
+      }
+
+      .process-step {
+        text-align: center;
+        background: #fff;
+        padding: 30px 20px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 100%; /* make it stretch to row height */
+      }
+
+      .row.g-4 .col-md-3 {
+        display: flex; /* ensures all children stretch equally */
+      }
+
+      .process-step:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .process-step i {
+        font-size: 50px;
+        color: #fff; /* primary icon color */
+        background: #102147; /* secondary icon background */
+        border-radius: 50%;
+        padding: 50px;
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+      }
+
+      .process-step:hover i {
+        background: var(--bs-primary);
+        color: #102147;
+      }
+
+      .process-step h5 {
+        color: #222; /* secondary text */
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .process-step p {
+        color: #666; /* secondary paragraph text */
+        font-size: 14px;
+      }
+
+      .process-line-wrapper {
+        position: relative;
+        width: 100%;
+        height: 140px;
+        margin-bottom: 60px;
+      }
+
+      .process-line {
+        position: absolute;
+        top: 70%;
+        left: 0;
+        height: 4px;
+        width: 0%;
+        background: #102147;
+        transform: translateY(-50%);
+        z-index: 1;
+      }
+
+      /* Runner icon */
+      .runner {
+        position: absolute;
+        top: 70%;
+        left: 0%;
+        transform: translate(-50%, -130%);
+        z-index: 2;
+        font-size: 36px;
+        color: #102147; /* secondary color */
+        animation: runBounce 0.6s ease-in-out infinite;
+      }
+
+      /* Smooth bounce while moving */
+      @keyframes runBounce {
+        0%,
+        100% {
+          transform: translate(-50%, -130%) translateY(0);
+        }
+        50% {
+          transform: translate(-50%, -130%) translateY(-10px);
+        }
+      }
+
+      /* Step styling */
+      .process-steps {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+      }
+
+      .process-step {
+        flex: 1;
+        text-align: center;
+        font-weight: 600;
+        color: #102147;
+      }
     </style>
   </head>
 
@@ -589,6 +709,58 @@
         </div>
       </aside>
     </div>
+    <!-- OUR PROCESS SECTION -->
+    <!-- OUR PROCESS SECTION -->
+    <section class="process-section">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2>Our Process</h2>
+          <p>From idea to delivery, we ensure precision at every step.</p>
+        </div>
+        <div class="process-line-wrapper">
+          <div class="process-line" id="processLine"></div>
+          <div class="runner" id="runner">
+            <i class="fa-solid fa-person-running"></i>
+          </div>
+        </div>
+        <div class="row g-4 justify-content-center process-steps">
+          <div class="col-md-3">
+            <div class="process-step" data-step="0">
+              <i class="fa-solid fa-pen-ruler"></i>
+              <h5>Design & Consultation</h5>
+              <p>
+                Understanding your idea and technical requirements for a perfect
+                start.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="process-step" data-step="1">
+              <i class="fa-solid fa-bolt-lightning"></i>
+              <!-- updated icon -->
+              <h5>Laser Cutting</h5>
+              <p>High-precision laser cutting for superior quality results.</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="process-step" data-step="2">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <h5>Quality Inspection</h5>
+              <p>
+                Thorough inspection ensures every piece meets our standards.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="process-step" data-step="3">
+              <i class="fa-solid fa-truck-fast"></i>
+              <h5>On-Time Delivery</h5>
+              <p>Products are safely packaged and delivered on schedule.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Footer Start -->
     <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
@@ -947,6 +1119,37 @@
         });
       });
     </script>
+    <!-- Script For The Runner -->
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      const runner = document.getElementById("runner");
+
+      // Animate line growth
+      gsap.to("#processLine", {
+        width: "100%",
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".process-section",
+          start: "top 80%",
+          end: "bottom 20%",
+          scrub: 1,
+        },
+      });
+
+      // Move runner smoothly across the line
+      ScrollTrigger.create({
+        trigger: ".process-section",
+        start: "top 80%",
+        end: "bottom 20%",
+        scrub: 1,
+        onUpdate: (self) => {
+          const progress = self.progress;
+          runner.style.left = `${progress * 100}%`;
+        },
+      });
+    </script>
+
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
