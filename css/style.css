@@ -738,9 +738,9 @@
 /*** About End ***/
 
 /*** Service Start ***/
-.service .service-item {
-  /* box-shadow: 0 0 45px rgba(0, 0, 0, 0.3); */
-}
+/* .service .service-item {
+  box-shadow: 0 0 45px rgba(0, 0, 0, 0.3);
+} */
 
 .service .service-item .service-img {
   position: relative;
