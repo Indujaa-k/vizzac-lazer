@@ -452,12 +452,62 @@
   background-size: cover;
   padding: 60px 0 60px 0;
 }
+.bg-breadcrumb-blog {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../img/bannerblog.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 60px 0 60px 0;
+}      
+.bg-breadcrumb-service {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../img/banner-3.jpeg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 60px 0 60px 0;
+}
+.bg-breadcrumb-product {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../img/banner-4.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 60px 0 60px 0;
+}
+.bg-breadcrumb-team{
+   position: relative;
+  overflow: hidden;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../img/team-banner.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 60px 0 60px 0;
+}
 
 .bg-breadcrumb-about {
   position: relative;
   overflow: hidden;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(../img/about-banner.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 60px 0 60px 0;
+}
+.bg-breadcrumb-testimonial{
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../img/banner-6.png);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -751,7 +801,7 @@
 }
 
 /* why choose us */
-.card-section {
+/* .card-section {
   min-height: 90vh;
   display: flex;
   justify-content: center;
@@ -762,7 +812,7 @@
 
 .cards {
   display: flex;
-  flex-wrap: wrap; /* allow wrapping on small screens */
+  flex-wrap: wrap; 
   gap: 20px;
   justify-content: center;
   perspective: 1000px;
@@ -775,7 +825,7 @@
   transform-style: preserve-3d;
   transform: rotateY(0deg);
   opacity: 0;
-  flex: 1 1 200px; /* flexible sizing */
+  flex: 1 1 200px; 
   max-width: 280px;
 }
 
@@ -806,6 +856,112 @@
   transform: rotateY(180deg);
 }
 
+
+@media (max-width: 768px) {
+  .card {
+    width: 160px;
+    height: 220px;
+    font-size: 0.9rem;
+  }
+
+  .card .front,
+  .card .back {
+    font-size: 1rem;
+    padding: 15px;
+  }
+}
+@media (max-width: 480px) {
+  .card {
+    width: 140px;
+    height: 200px;
+  }
+
+  .card .front,
+  .card .back {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+} */
+
+/*** About End ***/
+
+/*** Service Start ***/
+/* .service .service-item {
+  box-shadow: 0 0 45px rgba(0, 0, 0, 0.3);
+} */
+
+
+
+/* why choose us */
+.why-choose-us{
+  overflow-x: hidden;
+
+}
+.card-section {
+ 
+  overflow-x: hidden;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   /* overflow-x: hidden;✅ Prevent horizontal scroll */
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap; /* ✅ Wrap cards neatly */
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  max-width: 1200px; /* ✅ Prevent cards from overflowing container */
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.card {
+  width: 230px;
+  height: 300px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  opacity: 0;
+  flex: 1 1 200px;
+  max-width: 280px;
+  box-sizing: border-box;
+}
+
+.card .front,
+.card .back {
+  padding: 20px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.card .front {
+  background: url("../img/cardbg.png") no-repeat center/cover, #043b43;
+  color: #fff;
+}
+
+.card .back {
+  background: #102147;
+  color: white;
+  transform: rotateY(180deg);
+}
+
 /* Mobile */
 @media (max-width: 768px) {
   .card {
@@ -821,7 +977,7 @@
   }
 }
 
-/*  Small Phones */
+/* Small Phones */
 @media (max-width: 480px) {
   .card {
     width: 140px;
@@ -835,12 +991,6 @@
   }
 }
 
-/*** About End ***/
-
-/*** Service Start ***/
-/* .service .service-item {
-  box-shadow: 0 0 45px rgba(0, 0, 0, 0.3);
-} */
 
 .service .service-item .service-img {
   position: relative;
@@ -1124,7 +1274,7 @@
 .machines-container-5 {
   position: relative;
   width: 100%;
-  height: 590vh; /*  scroll space for  machines */
+  height: 750vh; /*  scroll space for  machines */
 }
 
 .machine {
@@ -1182,14 +1332,36 @@
 /*** product End ***/
 
 /*** Blog Start ***/
-.blog .blog-item .project-img {
+.blog .blog-item {
+  width: 100%;
+  max-width: 300px; /* Adjust as needed */
+  margin: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.blog .blog-item .project-image {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
   transition: 0.5s;
+  width: 100%;
+  height: 250px; /* ✅ Fixed card height */
 }
 
-.blog .blog-item .project-img .blog-plus-icon {
+.blog .blog-item .project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ✅ Prevents distortion */
+  transition: 0.5s;
+}
+
+.blog .blog-item:hover .project-image img {
+  transform: scale(1.1);
+}
+
+.blog .blog-item .blog-plus-icon {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -1199,22 +1371,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
   background: rgba(68, 210, 246, 0.2);
   transition: 0.5s;
   opacity: 0;
 }
 
-.blog .blog-item:hover .project-img .blog-plus-icon {
+.blog .blog-item:hover .blog-plus-icon {
   opacity: 1;
-}
-
-.blog .blog-item .project-img img {
-  transition: 0.5s;
-}
-
-.blog .blog-item:hover .project-img img {
-  transform: scale(1.3);
 }
 
 /*** Blog End ***/
