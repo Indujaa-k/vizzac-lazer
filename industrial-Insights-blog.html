@@ -2,438 +2,408 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Vizzac Laser</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="" name="keywords" />
-    <meta content="" name="description" />
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vizzac Laser — Precision Machinery</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-
-    <!-- Icon Font Stylesheet -->
     <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
       rel="stylesheet"
     />
-
-    <!-- Libraries Stylesheet -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <link href="lib/animate/animate.min.css" rel="stylesheet" />
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet" />
+    <style>
+      :root {
+        --accent: #0d6efd;
+        --muted: #6c757d;
+        --card-bg: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.9),
+          rgba(250, 250, 250, 0.9)
+        );
+      }
+      body {
+        background: #f6f8fb;
+        color: #222;
+        font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+      }
+      .hero {
+        background: linear-gradient(
+          90deg,
+          rgba(13, 110, 253, 0.08),
+          rgba(13, 110, 253, 0.02)
+        );
+        padding: 4.5rem 0;
+      }
+      .brand-mark {
+        height: 60px;
+        width: 60px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #0d6efd, #6f42c1);
+        color: #fff;
+        font-weight: 700;
+      }
+      .feature-icon {
+        width: 44px;
+        height: 44px;
+        display: inline-grid;
+        place-items: center;
+        border-radius: 10px;
+        background: #fff;
+        box-shadow: 0 6px 18px rgba(13, 110, 253, 0.06);
+      }
+      .product-card {
+        background: var(--card-bg);
+        border-radius: 14px;
+        box-shadow: 0 6px 18px rgba(20, 20, 60, 0.04);
+        border: 1px solid rgba(15, 15, 20, 0.03);
+      }
+      .badge-soft {
+        background: rgba(13, 110, 253, 0.08);
+        color: var(--accent);
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-weight: 600;
+      }
+      .section-title {
+        font-weight: 700;
+      }
+      .muted-small {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+      footer {
+        padding: 2rem 0;
+        color: #6b7280;
+      }
+      @media (min-width: 992px) {
+        .hero {
+          padding: 5.5rem 0;
+        }
+      }
+    </style>
   </head>
-
   <body>
-    <!-- Spinner Start -->
-    <div
-      id="spinner"
-      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
-    >
-      <div
-        class="spinner-border text-primary"
-        style="width: 3rem; height: 3rem"
-        role="status"
-      >
-        <span class="sr-only">Loading...</span>
-      </div>
-    </div>
-    <!-- Spinner End -->
-
-    <!-- Topbar Start -->
-    <div class="container-fluid topbar px-0 d-none d-lg-block">
-      <div class="container px-0">
-        <div class="row gx-0 align-items-center" style="height: 45px">
-          <div class="col-lg-8 text-center text-lg-start mb-lg-0">
-            <div class="d-flex flex-wrap">
-              <a href="#" class="text-muted me-4"
-                ><i class="fas fa-map-marker-alt text-primary me-2"></i
-                >Tiruppur</a
-              >
-              <a href="#" class="text-muted me-4"
-                ><i class="fas fa-phone-alt text-primary me-2"></i>+91
-                8048601652</a
-              >
-              <a href="#" class="text-muted me-0"
-                ><i class="fas fa-envelope text-primary me-2"></i
-                >vizzaclasers@gmail.com</a
-              >
-            </div>
-          </div>
-          <div class="col-lg-4 text-center text-lg-end">
-            <div class="d-flex align-items-center justify-content-end">
-              <a
-                href="https://www.facebook.com/share/1EkcxgPmJg/"
-                target="_blank"
-                class="btn btn-primary btn-square rounded-circle nav-fill me-3"
-                ><i class="fab fa-facebook-f text-white"></i
-              ></a>
-              <a
-                href="https://www.youtube.com/channel/UCD4y_o-G4Av-ELcOL7ay5jQ"
-                target="_blank"
-                class="btn btn-primary btn-square rounded-circle nav-fill me-3"
-                ><i class="fab fa-youtube text-white"></i
-              ></a>
-              <a
-                href="https://www.instagram.com/vizzac_laser/"
-                target="_blank"
-                class="btn btn-primary btn-square rounded-circle nav-fill me-3"
-                ><i class="fab fa-instagram text-white"></i
-              ></a>
-              <a
-                href="https://www.linkedin.com/in/purushothaman-v-043504b7/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=in"
-                target="_blank"
-                class="btn btn-primary btn-square rounded-circle nav-fill me-0"
-                ><i class="fab fa-linkedin-in text-white"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Topbar End -->
-
-    <!-- Navbar & Hero Start -->
-    <div class="container-fluid sticky-top px-0">
-      <div
-        class="position-absolute bg-dark"
-        style="left: 0; top: 0; width: 100%; height: 100%"
-      ></div>
-      <div class="container px-0">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-white px-4">
-          <a href="index.html" class="navbar-brand p-0">
-            <h1 class="text-primary m-0">
-              <img
-                src="img/logo/logo-main-removebg-preview.png"
-                alt="Logo"
-                class="img-fluid d-block mx-auto"
-                style="max-width: 200px; height: auto; object-fit: contain"
-              />
+    <!-- HERO -->
+    <header class="hero">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-6">
+            <h1 class="mt-3">
+              Double Wire Automatic Chain Link Fencing Machine
             </h1>
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarCollapse"
-          >
-            <span class="fa fa-bars"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto py-0">
-              <a href="index.html" class="nav-item nav-link">Home</a>
-              <a href="about.html" class="nav-item nav-link">About</a>
-              <a href="service.html" class="nav-item nav-link">Services</a>
-              <a href="product.html" class="nav-item nav-link">Products</a>
-              <a href="blog.html" class="nav-item nav-link active">Our Blog</a>
-              <a href="team.html" class="nav-item nav-link">Our Team</a>
-              <a href="testimonial.html" class="nav-item nav-link"
-                >Testimonial</a
-              >
-              <a href="contact.html" class="nav-item nav-link">Contact</a>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </div>
-    <!-- Navbar & Hero End -->
+            <p class="lead text-muted">
+              A Double Wire Automatic Chain Link Fencing Machine is an
+              industrial machine used to manufacture chain link fences — the
+              type of fencing commonly seen around playgrounds, factories,
+              gardens, farms, boundaries, and construction sites. This machine
+              automatically weaves two wires together into a zig-zag
+              (diamond-shaped) mesh pattern to form the fencing net.
+            </p>
 
-    <!-- Header Start -->
-    <div class="container-fluid bg-breadcrumb">
-      <div class="bg-breadcrumb-single"></div>
-      <div class="container text-center py-5" style="max-width: 900px">
-        <h4
-          class="text-white display-4 mb-4 wow fadeInDown"
-          data-wow-delay="0.1s"
-        >
-          Our Blogs
-        </h4>
-        <ol
-          class="breadcrumb justify-content-center mb-0 wow fadeInDown"
-          data-wow-delay="0.3s"
-        >
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item"><a href="#">Pages</a></li>
-          <li class="breadcrumb-item active text-primary">Blog</li>
-        </ol>
-      </div>
-    </div>
-
-   <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.7;
-      background-color: #f8f9fa;
-    }
-    .content-section {
-      background: #fff;
-      padding: 50px;
-      margin-bottom: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-    h1, h2, h3, h4 {
-      margin-top: 1.2em;
-      margin-bottom: 0.8em;
-    }
-    .highlight {
-      color: #0d6efd;
-      font-weight: bold;
-    }
-    .product-list li {
-      margin-bottom: 0.5rem;
-    }
-  </style>
-    <!-- Header End -->
-
-    <!-- Blog Start -->
-   
-  <header class="bg-primary text-white py-5 text-center">
-    <div class="container">
-      <h1>Vizzac Laser: Powering India’s Industrial Growth</h1>
-      <p class="lead">Precision machinery that drives productivity and innovation across industries.</p>
-    </div>
-  </header>
-
-  <main class="container my-5">
-    
-    <!-- Introduction -->
-    <section class="content-section">
-      <p>In today’s fast-moving industrial world, success depends on one thing — <span class="highlight">precision with productivity</span>. Whether it’s cutting metals, engraving designs, or printing on fabrics, businesses now rely on high-tech machinery that delivers both speed and accuracy. One company that has built its reputation on this foundation is <strong>Vizzac Laser</strong>, a leading manufacturer and trader of industrial laser and CNC machines based in Tiruppur, Tamil Nadu.</p>
-      <p>For over 15 years, Vizzac Laser has been a trusted name for small, medium, and large enterprises seeking reliable, high-performance machinery. With a 4.5-star rating and a growing customer base, the company continues to make a strong mark in the Indian manufacturing market through its wide range of products and transparent service approach.</p>
-    </section>
-
-    <!-- Company Info -->
-    <section class="content-section">
-      <h2>About Vizzac Laser</h2>
-      <p>Vizzac Laser operates from No. 22, K.C.M. Compound, Mangalam Road, Tiruppur, Tamil Nadu. The company holds GST number <strong>33AODPP1101Q1Z2</strong> and has been active since July 2017. Their team size ranges from 11 to 25 professionals, and their annual turnover lies between ₹1.5 crore and ₹5 crore — clear signs of consistent business growth.</p>
-      <p>Their IndiaMART page reflects credibility and a focus on customer trust, with verified business details, quick contact options, and a 66% response rate, making decision-making simpler and safer for potential buyers.</p>
-    </section>
-
-    <!-- Products -->
-    <section class="content-section">
-      <h2>Diverse Product Portfolio</h2>
-      <p>Vizzac Laser offers a complete lineup of laser, CNC, and printing solutions suitable for multiple industries. Some flagship products include:</p>
-      <ul class="product-list">
-        <li><strong>Fiber Laser Metal Cutting Machine</strong> – ₹23,50,000; 3000×1500 mm working area; cuts up to 20 mm metal sheets with 0.03 mm accuracy.</li>
-        <li><strong>Single Head CO₂ Laser Engraving Machine</strong> – ₹4,40,000; ideal for engraving acrylic, leather, MDF, wood.</li>
-        <li><strong>Fully Automatic Fence Making Machine</strong> – ₹10,50,000; produces high-strength fencing wires at scale.</li>
-        <li><strong>Chain Link Fencing Machine</strong> – ₹9,50,000; efficient chain link fence production.</li>
-        <li><strong>Digital Fabric Printing Machine</strong> – ₹7,50,000; prints 500+ designs per hour for textile and apparel industries.</li>
-      </ul>
-      <p>Other offerings include CNC Routers, Die Making Machines, Wood Carving Machines, Air Plasma Cutting Machines, and Roll Forming Machines, serving local artisans to industrial production units.</p>
-    </section>
-
-    <!-- Industries -->
-    <section class="content-section">
-      <h2>Industries Served</h2>
-      <ul class="product-list">
-        <li>Textiles & Garments – Fabric cutting and digital printing.</li>
-        <li>Advertising & Signage – Precise engraving and design cutting.</li>
-        <li>Leather & Footwear – Decorative and branding engravings.</li>
-        <li>Woodwork & Furniture – Carving and design applications.</li>
-        <li>Electronics & Tools – Cutting, marking, and engraving metal components.</li>
-        <li>Gift, Stamp & Art Industry – Customized marking and branding purposes.</li>
-      </ul>
-    </section>
-
-    <!-- Technology -->
-    <section class="content-section">
-      <h2>Technology & Infrastructure</h2>
-      <p>Vizzac Laser’s facility is equipped to handle bulk orders efficiently without compromising quality. Each machine is engineered for durability, safety, and ease of use. Strong quality control standards ensure that every product meets industrial benchmarks, from mechanical design to electrical integration.</p>
-    </section>
-
-    <!-- Why Choose Us -->
-    <section class="content-section">
-      <h2>Why Choose Vizzac Laser?</h2>
-      <ul class="product-list">
-        <li><strong>Proven Experience:</strong> Over 15 years in the laser and CNC industry.</li>
-        <li><strong>Advanced Technology:</strong> High-speed, low maintenance, user-friendly machines.</li>
-        <li><strong>Custom Solutions:</strong> Machines adapted to client needs.</li>
-        <li><strong>Wide Market Reach:</strong> Clients across India in textiles, engineering, and signage.</li>
-        <li><strong>Transparent Dealings:</strong> GST and HSN details for verified purchases.</li>
-        <li><strong>Customer Support:</strong> Direct call and WhatsApp options for quick communication.</li>
-      </ul>
-    </section>
-
-    <!-- Conclusion -->
-    <section class="content-section">
-      <h2>Conclusion</h2>
-      <p>Vizzac Laser stands out as a trusted name offering technology, reliability, and value. Their IndiaMART presence reflects transparency and service commitment. From metal cutting to fabric printing, they empower businesses across India with tools that bring creativity and efficiency together.</p>
-      <p>If your business needs a dependable partner for laser, CNC, or digital printing machines, <strong>Vizzac Laser</strong> is worth exploring. They don’t just sell machines — they deliver solutions that help industries grow faster and smarter.</p>
-    </section>
-
-  </main>
-    <!-- Blog End -->
-
-    <!-- Footer Start -->
-    <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
-      <div class="container py-5">
-        <div class="row g-5">
-          <div class="col-md-6 col-lg-6 col-xl-3">
-            <div class="footer-item d-flex flex-column">
-              <div class="footer-item">
-                <h4 class="text-white mb-4">Newsletter</h4>
-                <p class="mb-3">
-                  Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem
-                  ipsum dolor sit amet, consectetur adipiscing elit consectetur
-                  adipiscing elit.
-                </p>
-                <div class="position-relative mx-auto rounded-pill">
-                  <input
-                    class="form-control rounded-pill w-100 py-3 ps-4 pe-5"
-                    type="text"
-                    placeholder="Enter your email"
-                  />
-                  <button
-                    type="button"
-                    class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2"
-                  >
-                    SignUp
-                  </button>
+            <div class="row mt-4 g-3">
+              <div class="col-6 col-sm-4">
+                <div class="d-flex align-items-start gap-2">
+                  <div class="feature-icon">
+                    <i class="bi bi-gear-fill fs-5"></i>
+                  </div>
+                  <div>
+                    <div class="fw-semibold">15+ Years</div>
+                    <div class="muted-small">Industry experience</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-sm-4">
+                <div class="d-flex align-items-start gap-2">
+                  <div class="feature-icon">
+                    <i class="bi bi-shield-check fs-5"></i>
+                  </div>
+                  <div>
+                    <div class="fw-semibold">Quality Focus</div>
+                    <div class="muted-small">Strict QC & standards</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-sm-4">
+                <div class="d-flex align-items-start gap-2">
+                  <div class="feature-icon">
+                    <i class="bi bi-people-fill fs-5"></i>
+                  </div>
+                  <div>
+                    <div class="fw-semibold">Transparent</div>
+                    <div class="muted-small">GST & verified listings</div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-lg-6 col-xl-3">
-            <div class="footer-item d-flex flex-column">
-              <h4 class="text-white mb-4">Explore</h4>
-              <a href="#"><i class="fas fa-angle-right me-2"></i> Home</a>
-              <a href="#"><i class="fas fa-angle-right me-2"></i> Services</a>
-              <a href="#"><i class="fas fa-angle-right me-2"></i> About Us</a>
-              <a href="#"
-                ><i class="fas fa-angle-right me-2"></i> Latest Projects</a
+
+          <div class="col-lg-6">
+            <div class="card product-card p-4">
+              <div
+                id="carouselProducts"
+                class="carousel slide"
+                data-bs-ride="carousel"
               >
-              <a href="#"
-                ><i class="fas fa-angle-right me-2"></i> testimonial</a
-              >
-              <a href="#"><i class="fas fa-angle-right me-2"></i> Our Team</a>
-              <a href="#"><i class="fas fa-angle-right me-2"></i> Contact Us</a>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-6 col-xl-3">
-            <div class="footer-item d-flex flex-column">
-              <h4 class="text-white mb-4">Contact Info</h4>
-              <a href=""
-                ><i class="fa fa-map-marker-alt me-2"></i> 123 Street, New York,
-                USA</a
-              >
-              <a href=""
-                ><i class="fas fa-envelope me-2"></i> info@example.com</a
-              >
-              <a href=""
-                ><i class="fas fa-envelope me-2"></i> info@example.com</a
-              >
-              <a href=""><i class="fas fa-phone me-2"></i> +012 345 67890</a>
-              <a href="" class="mb-3"
-                ><i class="fas fa-print me-2"></i> +012 345 67890</a
-              >
-              <div class="d-flex align-items-center">
-                <a class="btn btn-light btn-md-square me-2" href=""
-                  ><i class="fab fa-facebook-f"></i
-                ></a>
-                <a class="btn btn-light btn-md-square me-2" href=""
-                  ><i class="fab fa-twitter"></i
-                ></a>
-                <a class="btn btn-light btn-md-square me-2" href=""
-                  ><i class="fab fa-instagram"></i
-                ></a>
-                <a class="btn btn-light btn-md-square me-0" href=""
-                  ><i class="fab fa-linkedin-in"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-6 col-xl-3">
-            <div class="footer-item-post d-flex flex-column">
-              <h4 class="text-white mb-4">Popular Post</h4>
-              <div class="d-flex flex-column mb-3">
-                <p class="text-uppercase text-primary mb-2">Investment</p>
-                <a href="#" class="text-body"
-                  >Revisiting Your Investment & Distribution Goals</a
-                >
-              </div>
-              <div class="d-flex flex-column mb-3">
-                <p class="text-uppercase text-primary mb-2">Business</p>
-                <a href="#" class="text-body"
-                  >Dimensional Fund Advisors Interview with Director</a
-                >
-              </div>
-              <div class="footer-btn text-start">
-                <a href="#" class="btn btn-light rounded-pill px-4"
-                  >View All Post <i class="fa fa-arrow-right ms-1"></i
-                ></a>
+                
+                  <div class="carousel-item active">
+                    <img
+                      src="./machines/Double Wire Automatic Chain Link Fencing Machine.png"
+                      class="d-block w-100"
+                      alt="Fiber Laser Machine"
+                    />
+                    <div
+                      class="carousel-caption d-none d-md-block text-start"
+                      style="bottom: 0; left: 0; right: 0"
+                    >
+                      <h5>Double Wire Automatic Chain Link Fencing Machine</h5>
+                      
+                    </div>
+                  </div>
+                  
+                 
+                </div>
+                
+               
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- Footer End -->
+    </header>
 
-    <!-- Copyright Start -->
-    <div class="container-fluid copyright py-4">
-      <div class="container">
-        <div class="row g-4 align-items-center">
-          <div class="col-md-6 text-center text-md-start mb-md-0">
-            <span class="text-body"
-              ><a href="#" class="border-bottom text-primary"
-                ><i class="fas fa-copyright text-light me-2"></i>Your Site
-                Name</a
-              >, All right reserved.</span
-            >
-          </div>
-          <div class="col-md-6 text-center text-md-end text-body">
-            <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-            <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
-            <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-            Designed By
-            <a class="border-bottom text-primary" href="https://htmlcodex.com"
-              >HTML Codex</a
-            >
-            Distributed By
-            <a class="border-bottom text-primary" href="https://themewagon.com"
-              >ThemeWagon</a
-            >
+    <!-- FENCING APPLICATIONS ACROSS INDUSTRIES -->
+<section id="industries" class="container my-5">
+  <h3 class="section-title">Fencing Applications Across Industries</h3>
+  <div class="row g-3 mt-3">
+
+    <!-- Construction Industry -->
+    <div class="col-sm-6 col-md-4">
+      <div class="p-3 product-card d-flex gap-3 align-items-center">
+        <i class="bi bi-building fs-2 text-primary"></i>
+        <div>
+          <div class="fw-semibold">Construction Industry</div>
+          <div class="small text-muted">
+            Used for boundary fencing, site protection, and road safety barriers.
           </div>
         </div>
       </div>
     </div>
-    <!-- Copyright End -->
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-primary btn-lg-square back-to-top"
-      ><i class="fa fa-arrow-up"></i
-    ></a>
+    <!-- Agriculture & Farming -->
+    <div class="col-sm-6 col-md-4">
+      <div class="p-3 product-card d-flex gap-3 align-items-center">
+        <i class="bi bi-flower3 fs-2 text-success"></i>
+        <div>
+          <div class="fw-semibold">Agriculture & Farming</div>
+          <div class="small text-muted">
+            Ideal for farm enclosures, animal protection, and crop boundary fencing.
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <!-- Industrial & Factory Premises -->
+    <div class="col-sm-6 col-md-4">
+      <div class="p-3 product-card d-flex gap-3 align-items-center">
+        <i class="bi bi-gear-wide-connected fs-2 text-warning"></i>
+        <div>
+          <div class="fw-semibold">Industrial & Factory Premises</div>
+          <div class="small text-muted">
+            Provides safety fencing around warehouses, workshops, and restricted areas.
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <!-- Sports & Recreation Grounds -->
+    <div class="col-sm-6 col-md-4">
+      <div class="p-3 product-card d-flex gap-3 align-items-center">
+        <i class="bi bi-trophy fs-2 text-danger"></i>
+        <div>
+          <div class="fw-semibold">Sports & Recreation Grounds</div>
+          <div class="small text-muted">
+            Used for fencing cricket, football, and tennis grounds with durable mesh.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Residential & Commercial Properties -->
+    <div class="col-sm-6 col-md-4">
+      <div class="p-3 product-card d-flex gap-3 align-items-center">
+        <i class="bi bi-house-door fs-2 text-info"></i>
+        <div>
+          <div class="fw-semibold">Residential & Commercial Properties</div>
+          <div class="small text-muted">
+            Offers security and aesthetic fencing for homes, gardens, and parking areas.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Defense & Security Zones -->
+    <div class="col-sm-6 col-md-4">
+      <div class="p-3 product-card d-flex gap-3 align-items-center">
+        <i class="bi bi-shield-lock fs-2 text-secondary"></i>
+        <div>
+          <div class="fw-semibold">Defense & Security Zones</div>
+          <div class="small text-muted">
+            Provides strong, double-wire fencing for military, prison, and high-security areas.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- TECHNOLOGY SECTION - LINE CONNECTED STYLE -->
+<section class="technology-line py-5" style="background: #f9f9fc;">
+  <div class="container">
+    <h3 class="section-title text-center mb-5">Technology & Manufacturing Excellence</h3>
+    
+    <p class="text-center text-muted mb-5" style="max-width: 800px; margin:auto;">
+      The Double Wire Automatic Chain Link Fencing Machine combines high-speed automation,
+      precision engineering, and robust design to deliver consistent, durable, and high-quality fencing production.
+    </p>
+
+    <div class="tech-list">
+      <div class="tech-item">
+        <div class="icon"><i class="fas fa-microchip"></i></div>
+        <div class="line"></div>
+        <div class="content">
+          <h5>PLC Automation</h5>
+          <p>Accurate, safe, and easy-to-operate system for consistent output.</p>
+        </div>
+      </div>
+
+      <div class="tech-item">
+        <div class="icon"><i class="fas fa-link"></i></div>
+        <div class="line"></div>
+        <div class="content">
+          <h5>Dual Wire Feeding</h5>
+          <p>High output and stronger mesh structure for durable fencing.</p>
+        </div>
+      </div>
+
+      <div class="tech-item">
+        <div class="icon"><i class="fas fa-cogs"></i></div>
+        <div class="line"></div>
+        <div class="content">
+          <h5>Edge Twisting & Rolling</h5>
+          <p>Automatic cutting, twisting, and rolling for smooth operation.</p>
+        </div>
+      </div>
+
+      <div class="tech-item">
+        <div class="icon"><i class="fas fa-volume-down"></i></div>
+        <div class="line"></div>
+        <div class="content">
+          <h5>Low-Noise Operation</h5>
+          <p>Quiet performance with energy-efficient design.</p>
+        </div>
+      </div>
+
+      <div class="tech-item">
+        <div class="icon"><i class="fas fa-sliders-h"></i></div>
+        <div class="line"></div>
+        <div class="content">
+          <h5>Custom Mesh Options</h5>
+          <p>Flexible mesh size, wire thickness, and coating options available.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.section-title {
+  font-weight: 800;
+  color: #2e256e;
+  font-size: 2.2rem;
+  position: relative;
+}
+.section-title::after {
+  content: '';
+  width: 60px;
+  height: 4px;
+  background: #6f4ef6;
+  display: block;
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+.tech-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: relative;
+}
+
+.tech-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  background: #6f4ef6;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  transition: transform 0.3s, background 0.3s;
+}
+.icon:hover {
+  transform: scale(1.3);
+  background: #352961;
+}
+
+.line {
+  width: 4px;
+  background: #6f4ef6;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.content h5 {
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #2e256e;
+}
+.content p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .tech-item {
+    flex-direction: row;
+  }
+  .line {
+    display: none;
+  }
+}
+</style>
+
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.getElementById("yr").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
