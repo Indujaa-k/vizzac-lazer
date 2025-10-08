@@ -123,97 +123,117 @@
         box-shadow: 0 6px 20px rgba(3, 18, 35, 0.6);
       } */
 
+      /* === GENERAL GRID LAYOUT === */
       .thumb-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 16px;
+        margin-top: 10px;
       }
+
+      /* === THUMBNAILS === */
       .thumb {
-        background: rgba(255, 255, 255, 0.01);
-        padding: 8px;
-        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.02);
+        padding: 10px;
+        border-radius: 10px;
         cursor: pointer;
-        border: 1px solid rgba(255, 255, 255, 0.03);
-        transition: transform 0.18s ease, box-shadow 0.18s ease;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
         display: flex;
         flex-direction: column;
         gap: 8px;
+        text-align: center;
       }
+
       .thumb:hover {
         transform: translateY(-6px);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
       }
+
       .thumb img {
         width: 100%;
-        height: 84px;
+        height: 180px;
         object-fit: cover;
-        border-radius: 6px;
+        border-radius: 8px;
         display: block;
       }
 
-      /* Main canvas */
+      /* Adjust text sizes inside thumbs */
+      .thumb div {
+        line-height: 1.2;
+      }
+
+      /* === MAIN HERO SECTION === */
       .hero {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 14px;
-        margin-bottom: 12px;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-bottom: 16px;
       }
+
       .hero h1 {
         margin: 0;
-        font-size: 20px;
-        color: #fff;
+        font-size: 22px;
+        color: #102147;
       }
+
       .hero p {
         margin: 4px 0 0;
         color: var(--muted);
-        font-size: 13px;
+        font-size: 14px;
       }
 
+      /* === CANVAS AREA === */
       .canvas {
         background: linear-gradient(
           180deg,
-          rgba(255, 255, 255, 0.01),
-          rgba(255, 255, 255, 0.015)
+          rgba(255, 255, 255, 0.02),
+          rgba(255, 255, 255, 0.03)
         );
-        border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.02);
-        height: 302px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        height: 380px; /* desktop default */
         display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
         overflow: hidden;
       }
+
       .canvas .preview-img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
-        border-radius: 8px;
-        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* fills the area neatly */
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
       }
 
+      /* === INFO ROW === */
       .info-row {
         display: flex;
         gap: 12px;
         flex-wrap: wrap;
-        margin-top: 12px;
+        margin-top: 16px;
       }
 
-      /* Right detail panel */
+      /* === RIGHT DETAIL PANEL === */
       .meta {
         display: flex;
         gap: 10px;
         align-items: center;
-        margin-bottom: 12px;
+        margin-bottom: 14px;
       }
+
       .badge {
-        padding: 8px 10px;
-        background: rgba(255, 255, 255, 0.02);
+        padding: 8px 12px;
+        background: rgba(255, 255, 255, 0.05);
         border-radius: 8px;
         color: var(--muted);
         font-size: 13px;
       }
+
       .machines-list {
         list-style: none;
         padding: 0;
@@ -221,12 +241,132 @@
         display: grid;
         gap: 8px;
       }
+
       .machines-list li {
-        padding: 8px;
-        background: rgba(255, 255, 255, 0.01);
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.03);
         border-radius: 8px;
         color: #47484a;
-        font-size: 13px;
+        font-size: 14px;
+      }
+
+      /* === RESPONSIVE FIXES (Improved spacing) === */
+      /* --- Desktop thumbnail grid fix --- */
+      @media (min-width: 1100px) {
+        .thumb-grid {
+          grid-template-columns: repeat(2, 1fr); /* two cards per row */
+          gap: 14px; /* balanced spacing */
+        }
+
+        .thumb img {
+          height: 150px; /* slightly smaller to fit nicely */
+        }
+      }
+
+      @media (max-width: 1100px) {
+        .stitch-app {
+          grid-template-columns: 1fr;
+          padding: 10px; /* reduced */
+          gap: 10px; /* tighter gap */
+          margin: 0 auto; /* remove extra top/bottom spacing */
+        }
+
+        .panel-left,
+        .panel-main,
+        .panel-right {
+          min-height: auto;
+          padding: 10px; /* reduced padding */
+          margin: 0; /* no unwanted gaps */
+        }
+
+        .panel-left {
+          order: 1;
+        }
+        .panel-main {
+          order: 2;
+        }
+        .panel-right {
+          order: 3;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .canvas {
+          height: 280px; /* slightly shorter */
+        }
+
+        .thumb img {
+          height: 150px;
+        }
+
+        .hero {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px; /* smaller spacing */
+          margin-bottom: 10px;
+        }
+
+        .stitch-app {
+          gap: 8px;
+          padding: 8px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .canvas {
+          height: 240px;
+        }
+
+        .thumb-grid {
+          grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+          gap: 10px;
+        }
+
+        .thumb img {
+          height: 130px;
+        }
+
+        .panel-left,
+        .panel-main,
+        .panel-right {
+          padding: 8px;
+          margin: 0;
+        }
+
+        .hero {
+          gap: 8px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .stitch-app {
+          gap: 6px; /* minimal gap */
+          padding: 6px;
+        }
+
+        .canvas {
+          height: 200px;
+        }
+
+        .thumb img {
+          height: 110px;
+        }
+
+        .panel-left,
+        .panel-main,
+        .panel-right {
+          padding: 6px;
+          margin: 0;
+        }
+
+        .hero h1 {
+          font-size: 18px;
+        }
+
+        .thumb-grid {
+          grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+          gap: 8px;
+        }
       }
 
       /* Buttons */
@@ -317,7 +457,11 @@
         color: #fff; /* primary icon color */
         background: #102147; /* secondary icon background */
         border-radius: 50%;
-        padding: 50px;
+        width: 120px; /* set fixed width */
+        height: 120px; /* set fixed height */
+        display: flex; /* to center icon */
+        align-items: center;
+        justify-content: center;
         margin-bottom: 20px;
         transition: all 0.3s ease;
       }
@@ -391,6 +535,7 @@
         text-align: center;
         font-weight: 600;
         color: #102147;
+        align-items: center;
       }
     </style>
   </head>
@@ -499,8 +644,10 @@
               >
               <a href="product.html" class="nav-item nav-link">Products</a>
               <a href="blog.html" class="nav-item nav-link">Our Blog</a>
-             <a href="team.html" class="nav-item nav-link">Our Team</a>
-              <a href="testimonial.html" class="nav-item nav-link">Testimonial</a>
+              <a href="team.html" class="nav-item nav-link">Our Team</a>
+              <a href="testimonial.html" class="nav-item nav-link"
+                >Testimonial</a
+              >
               <a href="contact.html" class="nav-item nav-link">Contact</a>
             </div>
           </div>
