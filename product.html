@@ -14,6 +14,12 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+    <!-- aos animation -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
     <!-- Icon Font Stylesheet -->
     <link
@@ -33,6 +39,18 @@
     <link href="lib/animate/animate.min.css" rel="stylesheet" />
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+
+    <!-- Animate.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
@@ -64,38 +82,42 @@
           <div class="col-lg-8 text-center text-lg-start mb-lg-0">
             <div class="d-flex flex-wrap">
               <a href="#" class="text-muted me-4"
-                ><i class="fas fa-map-marker-alt text-primary me-2"></i>Find A
-                Location</a
+                ><i class="fas fa-map-marker-alt text-primary me-2"></i
+                >Tiruppur</a
               >
               <a href="#" class="text-muted me-4"
-                ><i class="fas fa-phone-alt text-primary me-2"></i
-                >+01234567890</a
+                ><i class="fas fa-phone-alt text-primary me-2"></i>+91
+                8048601652</a
               >
               <a href="#" class="text-muted me-0"
                 ><i class="fas fa-envelope text-primary me-2"></i
-                >Example@gmail.com</a
+                >vizzaclasers@gmail.com</a
               >
             </div>
           </div>
           <div class="col-lg-4 text-center text-lg-end">
             <div class="d-flex align-items-center justify-content-end">
               <a
-                href="#"
+                href="https://www.facebook.com/share/1EkcxgPmJg/"
+                target="_blank"
                 class="btn btn-primary btn-square rounded-circle nav-fill me-3"
                 ><i class="fab fa-facebook-f text-white"></i
               ></a>
               <a
-                href="#"
+                href="https://www.youtube.com/channel/UCD4y_o-G4Av-ELcOL7ay5jQ"
+                target="_blank"
                 class="btn btn-primary btn-square rounded-circle nav-fill me-3"
-                ><i class="fab fa-twitter text-white"></i
+                ><i class="fab fa-youtube text-white"></i
               ></a>
               <a
-                href="#"
+                href="https://www.instagram.com/vizzac_laser/"
+                target="_blank"
                 class="btn btn-primary btn-square rounded-circle nav-fill me-3"
                 ><i class="fab fa-instagram text-white"></i
               ></a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/purushothaman-v-043504b7/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=in"
+                target="_blank"
                 class="btn btn-primary btn-square rounded-circle nav-fill me-0"
                 ><i class="fab fa-linkedin-in text-white"></i
               ></a>
@@ -141,22 +163,8 @@
                 >Products</a
               >
               <a href="blog.html" class="nav-item nav-link">Our Blog</a>
-              <div class="nav-item dropdown">
-                <a
-                  href="#"
-                  class="nav-link dropdown-toggle"
-                  data-bs-toggle="dropdown"
-                  >Pages</a
-                >
-                <div class="dropdown-menu m-0">
-                  <a href="team.html" class="dropdown-item">Our Team</a>
-                  <a href="testimonial.html" class="dropdown-item"
-                    >Testimonial</a
-                  >
-                  <a href="faqs.html" class="dropdown-item">FAQs</a>
-                  <a href="404.html" class="dropdown-item">404 Page</a>
-                </div>
-              </div>
+             <a href="team.html" class="nav-item nav-link">Our Team</a>
+              <a href="testimonial.html" class="nav-item nav-link">Testimonial</a>
               <a href="contact.html" class="nav-item nav-link">Contact</a>
             </div>
           </div>
@@ -164,46 +172,6 @@
       </div>
     </div>
     <!-- Navbar & Hero End -->
-
-    <!-- Modal Search Start -->
-    <div
-      class="modal fade"
-      id="searchModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content rounded-0">
-          <div class="modal-header">
-            <h4 class="modal-title mb-0" id="exampleModalLabel">
-              Search by keyword
-            </h4>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body d-flex align-items-center">
-            <div class="input-group w-75 mx-auto d-flex">
-              <input
-                type="search"
-                class="form-control p-3"
-                placeholder="keywords"
-                aria-describedby="search-icon-1"
-              />
-              <span id="search-icon-1" class="input-group-text p-3"
-                ><i class="fa fa-search"></i
-              ></span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Modal Search End -->
-
     <!-- Header Start -->
     <div class="container-fluid bg-breadcrumb">
       <div class="bg-breadcrumb-single"></div>
@@ -226,304 +194,804 @@
     </div>
     <!-- Header End -->
 
-    <!-- Project Start -->
-    <div class="container-fluid project pt-5">
-      <div class="container pt-5">
-        <div
-          class="text-center mx-auto pb-5 wow fadeInUp"
-          data-wow-delay="0.1s"
-          style="max-width: 800px"
-        >
-          <h4 class="text-primary">Our Projects</h4>
-          <h1 class="display-4">Explore Our Latest Projects</h1>
+    <!-- Total Machine Cards -->
+    <div class="text-center mx-auto wow fadeInUp mt-4" data-wow-delay="0.1s">
+      <h2 class="text-primary">Our Products</h2>
+      <h3>Powerful Machines, Reliable Performance</h3>
+    </div>
+    <div class="machine-banner">
+      <div class="machine-row">
+        <div class="machine-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="title">CO2 LASER CUTTING MACHINE</div>
+          <div class="desc">
+            A CO2 Laser Cutting Machine uses a high-powered CO2 laser to cut,
+            engrave, or fetch materials with high precision.
+          </div>
+          <button>View Now!!</button>
         </div>
 
-       <section id="best-sellers" class="best-sellers py-5">
-  <div class="container">
-    <div class="row g-4"> <!-- Bootstrap grid with gap -->
-      
-      <!-- Product 1 -->
-      <div class="col-md-3 col-sm-6">
-        <div class="product-item image-zoom-effect link-effect">
-          <div class="image-holder">
-            <a href="index.html">
-              <img
-                src="./img/images/product(high camera).jpg"
-                alt="categories"
-                class="product-image img-fluid"
-                style="width: 100%; height: 300px; object-fit: cover;"
-              />
-            </a>
-            <a href="index.html" class="btn-icon btn-wishlist">
-              <svg width="24" height="24" viewBox="0 0 24 24">
-                <use xlink:href="#heart"></use>
-              </svg>
-            </a>
-            <div class="product-content text-center">
-              <h5 class="text-uppercase fs-5 mt-3">
-                <a href="index.html">Dark florish onepiece</a>
-              </h5>
-              <a href="index.html" class="text-decoration-none" data-after="Add to cart">
-                <span>$95.00</span>
-              </a>
-            </div>
+        <div class="machine-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="title">LASER MARKING MACHINE</div>
+          <div class="desc">
+            A Laser Marking Machine uses a focused laser to permanently mark
+            materials with high precision.
           </div>
+          <button>View Now!!</button>
+        </div>
+
+        <div class="machine-card" data-aos="fade-up" data-aos-delay="600">
+          <div class="title">FIBER LASER CUTTING MACHINE</div>
+          <div class="desc">
+            A Fiber Laser Cutting Machine uses a high-powered fiber laser to cut
+            metals quickly and precisely.
+          </div>
+          <button>View Now!!</button>
+        </div>
+
+        <div class="machine-card" data-aos="fade-up" data-aos-delay="800">
+          <div class="title">CHAIN LINK FENCING MACHINE</div>
+          <div class="desc">
+            A Chain Link Fencing Machine automatically produces strong, uniform
+            chain link for industrial fences.
+          </div>
+          <button>View Now!!</button>
+        </div>
+
+        <div class="machine-card" data-aos="fade-up" data-aos-delay="1000">
+          <div class="title">BARBED WIRE MACHINE</div>
+          <div class="desc">
+            A Barbed Wire Machine is designed to produce barbed wire for fencing
+            in agriculture, industrial, and security applications.
+          </div>
+          <button>View Now!!</button>
+        </div>
+
+        <div class="machine-card" data-aos="fade-up" data-aos-delay="1200">
+          <div class="title">ROLL FORMING</div>
+          <div class="desc">
+            A Roll Forming Machine used to continuously bend a long strip of
+            metal into a desired cross-sectional profile.
+          </div>
+          <button>View Now!!</button>
+        </div>
+      </div>
+    </div>
+    <!-- Total Machine Cards end -->
+
+    <!-- banner-1 -->
+    <div class="banner">
+      <div class="poster-container">
+        <div class="left-section">
+          <h2 class="sub-title">Explore the Range</h2>
+          <ul class="machine-list">
+            <li>
+              <span class="bullet-point"></span>
+              <p>Laser Engraving and Cutting Machine (Normal)</p>
+            </li>
+            <li>
+              <span class="bullet-point"></span>
+              <p>Small Camera Vision Laser Cutting Machine</p>
+            </li>
+            <li>
+              <span class="bullet-point"></span>
+              <p>High Speed Top Camera Laser Cutting Machine</p>
+            </li>
+            <li>
+              <span class="bullet-point"></span>
+              <p>Flying Laser Cutting Machine</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="right-section">
+          <h1 class="main-title">CO2 LASER</h1>
+          <h1 class="main-title second-line">CUTTING MACHINE</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="machines-container">
+      <!-- Machine 1.1 -->
+      <div class="machine">
+        <div class="machine-content">
+          <h3>Laser Engraving and Cutting Machine (Normal)</h3>
+          <p>
+            A laser engraving and cutting machine uses a focused laser beam to
+            cut, engrave, or mark materials. "Normal" refers to standard CO₂ or
+            fiber laser machines.
+          </p>
+          <ul>
+            <li>
+              CO₂ laser suitable for wood, acrylic, leather, paper, plastics.
+            </li>
+            <li>Some machines use fiber lasers for metals.</li>
+            <li>Power usually ranges from 40W to 100W.</li>
+          </ul>
+        </div>
+        <div class="machine-img">
+          <img
+            src="machines/Laser Engraving and Cutting Machine (Normal).png"
+            alt="Laser Engraving and Cutting Machine"
+          />
         </div>
       </div>
 
-      <!-- Product 2 -->
-      <div class="col-md-3 col-sm-6">
-        <div class="product-item image-zoom-effect link-effect">
-          <div class="image-holder">
-            <a href="index.html">
-              <img
-                src="images/product-item-3.jpg"
-                alt="product"
-                class="product-image img-fluid"
-                style="width: 100%; height: 300px; object-fit: cover;"
-              />
-            </a>
-            <a href="index.html" class="btn-icon btn-wishlist">
-              <svg width="24" height="24" viewBox="0 0 24 24">
-                <use xlink:href="#heart"></use>
-              </svg>
-            </a>
-            <div class="product-content text-center">
-              <h5 class="text-uppercase fs-5 mt-3">
-                <a href="index.html">Baggy Shirt</a>
-              </h5>
-              <a href="index.html" class="text-decoration-none" data-after="Add to cart">
-                <span>$55.00</span>
-              </a>
-            </div>
-          </div>
+      <!-- Machine 1.2 -->
+      <div class="machine">
+        <div class="machine-content">
+          <h3>Small Camera Vision Laser Cutting Machine</h3>
+          <p>
+            Integrates a high-resolution camera with a CO₂ laser cutter for
+            precise, automatic contour cutting.
+          </p>
+          <ul>
+            <li>Efficient cutting of printed or embroidered fabrics.</li>
+            <li>Precise cutting of logos and designs for signs.</li>
+            <li>Laser power: 40W–150W for small/medium models.</li>
+          </ul>
+        </div>
+        <div class="machine-img">
+          <img
+            src="machines/Small Camera Vision Laser Cutting Machine.png"
+            alt="Small Camera Vision Laser Cutting Machine"
+          />
         </div>
       </div>
 
-      <!-- Product 3 -->
-      <div class="col-md-3 col-sm-6">
-        <div class="product-item image-zoom-effect link-effect">
-          <div class="image-holder">
-            <a href="index.html">
-              <img
-                src="images/product-item-5.jpg"
-                alt="categories"
-                class="product-image img-fluid"
-                style="width: 100%; height: 300px; object-fit: cover;"
-              />
-            </a>
-            <a href="index.html" class="btn-icon btn-wishlist">
-              <svg width="24" height="24" viewBox="0 0 24 24">
-                <use xlink:href="#heart"></use>
-              </svg>
-            </a>
-            <div class="product-content text-center">
-              <h5 class="text-uppercase fs-5 mt-3">
-                <a href="index.html">Cotton off-white shirt</a>
-              </h5>
-              <a href="index.html" class="text-decoration-none" data-after="Add to cart">
-                <span>$65.00</span>
-              </a>
-            </div>
-          </div>
+      <!-- Machine 1.3 -->
+      <div class="machine">
+        <div class="machine-content">
+          <h3>High Speed Top Camera Laser Cutting Machine</h3>
+          <p>
+            Combines advanced camera systems with high-speed laser technology
+            for precise and efficient cutting of intricate patterns.
+          </p>
+          <ul>
+            <li>Efficient cutting for garments, banners, textiles.</li>
+            <li>Precise cutting of logos and designs.</li>
+            <li>Power ranges from 60W to 300W.</li>
+          </ul>
+        </div>
+        <div class="machine-img">
+          <img
+            src="machines/High Speed Top Camera Laser Cutting Machine.png"
+            alt="High Speed Top Camera Laser Cutting Machine"
+          />
         </div>
       </div>
 
-      <!-- Product 4 -->
-      <div class="col-md-3 col-sm-6">
-        <div class="product-item image-zoom-effect link-effect">
-          <div class="image-holder">
-            <a href="index.html">
-              <img
-                src="images/product-item-6.jpg"
-                alt="categories"
-                class="product-image img-fluid"
-                style="width: 100%; height: 300px; object-fit: cover;"
-              />
-            </a>
-            <a href="index.html" class="btn-icon btn-wishlist">
-              <svg width="24" height="24" viewBox="0 0 24 24">
-                <use xlink:href="#heart"></use>
-              </svg>
-            </a>
-            <div class="product-content text-center">
-              <h5 class="text-uppercase fs-5 mt-3">
-                <a href="index.html">Handmade crop sweater</a>
-              </h5>
-              <a href="index.html" class="text-decoration-none" data-after="Add to cart">
-                <span>$50.00</span>
-              </a>
-            </div>
-          </div>
+      <!-- Machine 1.4 -->
+      <div class="machine">
+        <div class="machine-content">
+          <h3>Flying Laser Cutting Machine</h3>
+          <p>
+            High-speed laser system designed for continuous material processing.
+            Moves laser head across material at high speeds.
+          </p>
+          <ul>
+            <li>Laser moves rapidly without stopping.</li>
+            <li>
+              High-resolution cameras detect patterns for contour cutting.
+            </li>
+            <li>Power usually ranges from 60W to 200W.</li>
+          </ul>
+        </div>
+        <div class="machine-img">
+          <img
+            src="machines/Flying Laser Cutting Machine.png"
+            alt="Flying Laser Cutting Machine"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- banner-2 -->
+    <div class="banner">
+      <div class="poster-container">
+        <div class="left-section">
+          <h2 class="sub-title">Explore the Range</h2>
+          <ul class="machine-list">
+            <li>
+              <span class="bullet-point"></span>
+              <p>Fiber Laser Marking Machine</p>
+            </li>
+            <li>
+              <span class="bullet-point"></span>
+              <p>UV Laser Marking Machine.</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="right-section">
+          <h1 class="main-title">LASER</h1>
+          <h1 class="main-title second-line">MARKING MACHINE</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="machines-container-2">
+      <!-- Machine 2.1 -->
+      <div class="machine">
+        <div class="machine-content">
+          <h3>Fiber Laser Marking Machine</h3>
+          <p>
+            A fiber laser marking machine uses a high-power fiber laser to
+            permanently mark or engrave metals and some plastics with high
+            precision. Ideal for serial numbers, logos, and detailed designs.
+          </p>
+          <ul>
+            <li>
+              Marks metals like stainless steel, aluminum, copper, and brass.
+            </li>
+            <li>Can also mark plastics and coated materials.</li>
+            <li>
+              Laser power typically ranges from 10W to 50W for standard models.
+            </li>
+          </ul>
+        </div>
+        <div class="machine-img">
+          <img
+            src="machines/Fiber Laser Marking Machine.png"
+            alt="Laser Engraving and Cutting Machine"
+          />
         </div>
       </div>
 
-    </div> <!-- row end -->
-  </div>
-</section>
+      <!-- Machine 2.2 -->
+      <div class="machine">
+        <div class="machine-content">
+          <h3>UV Laser Marking Machine</h3>
+          <p>
+            A UV laser marking machine uses ultraviolet laser light to create
+            precise, high-contrast marks on materials that are sensitive to
+            heat. It is ideal for plastics, glass, and delicate materials
+          </p>
+          <ul>
+            <li>
+              Marks plastics, glass, ceramics, and thin materials without heat
+              damage.
+            </li>
+            <li>
+              High precision for detailed graphics, QR codes, and serial
+              numbers.
+            </li>
+            <li>
+              Laser power typically ranges from 3W to 20W for standard models.
+            </li>
+          </ul>
+        </div>
+        <div class="machine-img">
+          <img
+            src="machines/UV Laser Marking Machine.png"
+            alt="Small Camera Vision Laser Cutting Machine"
+          />
+        </div>
+      </div>
+    </div>
 
+    <!-- banner-3 -->
+    <div class="banner">
+      <div class="poster-container">
+        <div class="left-section">
+          <h2 class="sub-title">Explore the Range</h2>
+          <ul class="machine-list">
+            <li>
+              <span class="bullet-point"></span>
+              <p>Sheet Metal Cutting Machine</p>
+            </li>
+            <li>
+              <span class="bullet-point"></span>
+              <p>Sheet Metal & Tube Cutting Machine</p>
+            </li>
+            <li>
+              <span class="bullet-point"></span>
+              <p>Enclosed Metal Sheet Cutting Machine</p>
+            </li>
+            <li>
+              <span class="bullet-point"></span>
+              <p>Laser Welding Machine</p>
+            </li>
+            <li>
+              <span class="bullet-point"></span>
+              <p>Laser Cleaning Machine</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="right-section">
+          <h1 class="main-title">FIBER LASER</h1>
+          <h1 class="main-title second-line">CUTTING MACHINE</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="machines-container-3">
+      <!-- Machine 3.1 -->
+      <div class="machine">
+        <div class="machine-content">
+          <h3>Sheet Metal Cutting Machine</h3>
+          <p>
+            A sheet metal cutting machine is designed to cut various types of
+            metal sheets with exceptional precision and speed. It ensures
+            smooth, burr-free edges and supports complex cutting patterns for
+            industrial applications.
+          </p>
+          <ul>
+            <li>
+              Ideal for cutting stainless steel, mild steel, aluminum, and brass
+              sheets.
+            </li>
+            <li>High cutting accuracy with minimal material waste.</li>
+            <li>Available in various power configurations from 1kW to 12kW.</li>
+          </ul>
+        </div>
+        <div class="machine-img">
+          <img
+            src="machines/Sheet Metal Cutting Machine.jpeg"
+            alt="Sheet Metal Cutting Machine"
+          />
+        </div>
+      </div>
+
+      <!-- Machine 3.2 -->
+      <div class="machine">
+        <div class="machine-content">
+          <h3>Sheet Metal & Tube Cutting Machine</h3>
+          <p>
+            The Sheet Metal & Tube Cutting Machine is engineered for
+            dual-purpose operations, allowing precision cutting of both flat
+            metal sheets and round or square tubes. It offers unmatched
+            flexibility and accuracy for industrial fabrication.
+          </p>
+          <ul>
+            <li>
+              Efficiently cuts sheet metals like stainless steel, carbon steel,
+              and aluminum, as well as metal tubes of various shapes.
+            </li>
+            <li>
+              High-speed laser technology ensures smooth, burr-free edges and
+              consistent results.
+            </li>
+            <li>
+              Power options typically range from 1kW to 6kW, suitable for
+              multiple industrial applications.
+            </li>
+          </ul>
+        </div>
+        <div class="machine-img">
+          <img
+            src="machines/Sheet Metal & Tube Cutting Machine.png"
+            alt="Sheet Metal & Tube Cutting Machine"
+          />
+        </div>
+      </div>
+
+      <!-- Machine 3.3 -->
+      <div class="machine">
+        <div class="machine-content">
+          <h3>Enclosed Metal Sheet Cutting Machine.</h3>
+          <p>
+            The Enclosed Metal Sheet Cutting Machine is built with a fully
+            covered design to ensure safe, clean, and efficient cutting
+            operations. It provides high precision and protection against laser
+            radiation and dust.
+          </p>
+          <ul>
+            <li>
+              Fully enclosed design ensures operator safety and maintains a
+              clean working environment.
+            </li>
+            <li>
+              Ideal for cutting stainless steel, carbon steel, aluminum, and
+              other metal sheets.
+            </li>
+            <li>
+              High-performance laser power options ranging from 1kW to 12kW for
+              industrial-grade cutting.
+            </li>
+          </ul>
+        </div>
+        <div class="machine-img">
+          <img
+            src="machines/Enclosed Metal Sheet Cutting Machine.png"
+            alt="Enclosed Metal Sheet Cutting Machine."
+          />
+        </div>
+      </div>
+
+      <!-- Machine 3.4 -->
+      <div class="machine">
+        <div class="machine-content">
+          <h3>Laser Welding Machine</h3>
+          <p>
+            The Laser Welding Machine delivers precise, high-strength welds with
+            minimal distortion. It’s ideal for industries requiring accuracy,
+            speed, and seamless metal joining.
+          </p>
+          <ul>
+            <li>
+              Suitable for stainless steel, carbon steel, aluminum, and other
+              metals.
+            </li>
+            <li>Offers deep penetration welding with smooth, clean seams.</li>
+            <li>
+              Available in various laser power ranges from 1kW to 3kW for
+              different applications.
+            </li>
+          </ul>
+        </div>
+        <div class="machine-img">
+          <img
+            src="machines/Laser Welding Machine.png"
+            alt="Laser Welding Machine"
+          />
+        </div>
+      </div>
+
+      <!-- machine 3.5 -->
+      <div class="machine">
+        <div class="machine-content-3">
+          <h3 style="color: #fff">Laser Cleaning Machine</h3>
+          <p>
+            The Laser Cleaning Machine provides an eco-friendly and efficient
+            solution for removing rust, paint, oil, and contaminants from metal
+            surfaces without damaging the base material.
+          </p>
+          <ul>
+            <li>
+              Non-contact cleaning method — no chemicals or abrasives required.
+            </li>
+            <li>
+              Ideal for rust removal, surface preparation, and paint stripping.
+            </li>
+            <li>
+              Available in laser power options from 100W to 2000W for various
+              industrial uses.
+            </li>
+          </ul>
+        </div>
+        <div class="machine-img">
+          <img
+            src="machines/Laser Cleaning Machine.png"
+            alt="Laser Cleaning Machine"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- banner-4 -->
+    <div class="banner">
+      <div class="poster-container">
+        <div class="left-section">
+          <h2 class="sub-title">Explore the Range</h2>
+          <ul class="machine-list">
+            <li>
+              <span class="bullet-point"></span>
+              <p>Fully Automatic Single Wire Chain Link Fencing Machine</p>
+            </li>
+            <li>
+              <span class="bullet-point"></span>
+              <p>Semi – Automatic Single Wire Chain Link Fencing Machine</p>
+            </li>
+            <li>
+              <span class="bullet-point"></span>
+              <p>Enclosed Metal Sheet Cutting Machine</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="right-section">
+          <h1 class="main-title">CHAIN LINK</h1>
+          <h1 class="main-title second-line">FENCING MACHINE</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="machines-container-4">
+      <!-- Machine 3.1 -->
+      <div class="machine">
+        <div class="machine-content">
+          <h3>Fully Automatic Single Wire Chain Link Fencing Machine</h3>
+          <p>
+            The Fully Automatic Single Wire Chain Link Fencing Machine is
+            designed for high-speed and precise production of chain link fences.
+            It offers automatic wire feeding, weaving, and cutting, reducing
+            manual labor and increasing efficiency.
+          </p>
+          <ul>
+            <li>
+              Fully automatic operation with single wire system for smooth
+              performance.
+            </li>
+            <li>Semi – Automatic Single Wire Chain Link Fencing Machine</li>
+            <li>Double Wire Automatic Chain Link Fencing Machine</li>
+          </ul>
+        </div>
+        <div class="machine-img">
+          <img
+            src="machines/Fully Automatic Single Wire Chain Link Fencing Machine.jpeg"
+            alt="Fully Automatic Single Wire Chain Link Fencing Machine"
+          />
+        </div>
+      </div>
+
+      <!-- Machine 3.2 -->
+      <div class="machine">
+        <div class="machine-content">
+          <h3>Semi – Automatic Single Wire Chain Link Fencing Machine</h3>
+          <p>
+            The Semi-Automatic Single Wire Chain Link Fencing Machine is built
+            for reliable and efficient fence production with minimal manual
+            operation. It offers precise wire weaving and cutting, making it
+            ideal for medium-scale manufacturing.
+          </p>
+          <ul>
+            <li>
+              Semi-automatic control with manual assistance for wire setup and
+              adjustment.
+            </li>
+            <li>
+              Suitable for producing fences of various mesh sizes and wire
+              gauges.
+            </li>
+            <li>
+              Durable construction ensures long life and consistent performance
+              with low maintenance.
+            </li>
+          </ul>
+        </div>
+        <div class="machine-img">
+          <img
+            src="machines/Semi – Automatic Single Wire Chain Link Fencing Machine.png"
+            alt="Semi – Automatic Single Wire Chain Link Fencing Machine"
+          />
+        </div>
+      </div>
+
+      <!-- Machine 3.3 -->
+      <div class="machine">
+        <div class="machine-content">
+          <h3>Double Wire Automatic Chain Link Fencing Machine</h3>
+          <p>
+            The Double Wire Automatic Chain Link Fencing Machine is engineered
+            for high-volume production with dual wire feeding technology. It
+            ensures faster output, uniform mesh weaving, and excellent
+            durability for heavy-duty applications.
+          </p>
+          <ul>
+            <li>
+              Dual wire system doubles the production speed and enhances mesh
+              stability.
+            </li>
+            <li>
+              Fully automatic operation with automatic wire feeding, cutting,
+              and rolling.
+            </li>
+            <li>
+              Suitable for producing fencing for industrial, agricultural, and
+              security purposes.
+            </li>
+          </ul>
+        </div>
+        <div class="machine-img">
+          <img
+            src="machines/Double Wire Automatic Chain Link Fencing Machine.png"
+            alt="Double Wire Automatic Chain Link Fencing Machine"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- banner-4 -->
+    <div class="banner">
+      <div class="poster-container">
+        <div class="left-section">
+          <h2 class="sub-title">Explore the Range</h2>
+          <ul class="machine-list">
+            <li>
+              <span class="bullet-point"></span>
+              <p>Standard Profile Roofing Machine With Tile & Without Tile</p>
+            </li>
+            <li>
+              <span class="bullet-point"></span>
+              <p>Bamboo Tile Profile Machine</p>
+            </li>
+            <li>
+              <span class="bullet-point"></span>
+              <p>Corrugation Profile Machine</p>
+            </li>
+            <li>
+              <span class="bullet-point"></span>
+              <p>Automatic Decoiler</p>
+            </li>
+            <li>
+              <span class="bullet-point"></span>
+              <p>Crimpring Machine</p>
+            </li>
+            <li>
+              <span class="bullet-point"></span>
+              <p>Bending Machine</p>
+            </li>
+            <li>
+              <span class="bullet-point"></span>
+              <p>Shearing Machine and Slitting Machine</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="right-section">
+          <h1 class="main-title">ROLL FORMING</h1>
+          <h1 class="main-title second-line">MACHINE</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="machines-container-5">
+      <!-- Standard Profile Roofing Machine With Tile & Without Tile -->
+      <div class="machine">
+        <div class="machine-content">
+          <h3>Standard Profile Roofing Machine (With Tile & Without Tile)</h3>
+          <p>
+            Produces high-quality metal roofing sheets in both plain and tile
+            patterns. Efficient for large-scale roofing projects, offering
+            durability, precision, and aesthetic appeal.
+          </p>
+          <ul>
+            <li>Produces both plain and tile pattern roofing sheets.</li>
+            <li>High durability and precision for long-lasting performance.</li>
+            <li>
+              Suitable for residential, commercial, and industrial roofing
+              projects.
+            </li>
+          </ul>
+        </div>
+        <div class="machine-img">
+          <img
+            src="machines/Standard Profile Roofing Machine With Tile & Without Tile.png"
+            alt="Standard Profile Roofing Machine"
+          />
+        </div>
+      </div>
+
+      <!-- Bamboo Tile Profile Machine -->
+      <div class="machine">
+        <div class="machine-content">
+          <h3>Bamboo Tile Profile Machine</h3>
+          <p>
+            Designed to create roofing sheets with a bamboo-style texture for
+            decorative roofing. Ideal for resorts, villas, and architectural
+            projects that require an elegant, natural look.
+          </p>
+          <ul>
+            <li>Produces bamboo-style textured roofing sheets.</li>
+            <li>Used for decorative and aesthetic roofing applications.</li>
+            <li>Enhances the visual appeal of buildings and structures.</li>
+          </ul>
+        </div>
+        <div class="machine-img">
+          <img
+            src="machines/Bamboo Tile Profile Machine.png"
+            alt="Bamboo Tile Profile Machine"
+          />
+        </div>
+      </div>
+
+      <!-- Corrugation Profile Machine -->
+      <div class="machine">
+        <div class="machine-content">
+          <h3>Corrugation Profile Machine</h3>
+          <p>
+            Used to produce corrugated sheets for industrial and residential
+            roofing applications. Ensures uniform wave patterns, high structural
+            strength, and weather resistance.
+          </p>
+          <ul>
+            <li>
+              Produces corrugated roofing sheets with uniform wave patterns.
+            </li>
+            <li>High strength and weather-resistant for long-term use.</li>
+            <li>
+              Suitable for industrial, commercial, and residential projects.
+            </li>
+          </ul>
+        </div>
+        <div class="machine-img">
+          <img
+            src="machines/Corrugation Profile Machine.png"
+            alt="Corrugation Profile Machine"
+          />
+        </div>
+      </div>
+
+      <!-- Automatic Decoiler -->
+      <div class="machine">
+        <div class="machine-content">
+          <h3>Automatic Decoiler</h3>
+          <p>
+            A motorized system that automatically feeds metal coils into roll
+            forming machines. Maintains constant tension and alignment,
+            improving production speed and efficiency.
+          </p>
+          <ul>
+            <li>Automatically feeds metal coils into machines.</li>
+            <li>Maintains tension and alignment for consistent output.</li>
+            <li>Enhances production speed and reduces manual labor.</li>
+          </ul>
+        </div>
+        <div class="machine-img">
+          <img src="machines/Automatic Decoiler.png" alt="Automatic Decoiler" />
+        </div>
+      </div>
+
+      <!-- Crimping Machine -->
+      <div class="machine">
+        <div class="machine-content">
+          <h3>Crimping Machine</h3>
+          <p>
+            Used for adding precise curves or crimps to metal sheets, making
+            them suitable for curved or arched roofing designs. Enhances sheet
+            flexibility and aesthetic appeal.
+          </p>
+          <ul>
+            <li>Creates precise crimps or curves in metal sheets.</li>
+            <li>Suitable for curved or decorative roofing designs.</li>
+            <li>Improves flexibility and visual appeal of sheets.</li>
+          </ul>
+        </div>
+        <div class="machine-img">
+          <img src="machines/Crimpring Machine.png" alt="Crimping Machine" />
+        </div>
+      </div>
+
+      <!-- Bending Machine -->
+      <div class="machine">
+        <div class="machine-content">
+          <h3>Bending Machine</h3>
+          <p>
+            A hydraulic or mechanical machine that bends metal sheets or rods
+            into desired angles. Widely used in fabrication workshops for
+            precise metal shaping and forming.
+          </p>
+          <ul>
+            <li>Bends metal sheets or rods accurately into required angles.</li>
+            <li>Used in fabrication workshops and construction projects.</li>
+            <li>Ensures precise shaping with minimal errors.</li>
+          </ul>
+        </div>
+        <div class="machine-img">
+          <img src="machines/Bending Machine.png" alt="Bending Machine" />
+        </div>
+      </div>
+
+      <!-- Shearing Machine and Slitting Machine -->
+      <div class="machine">
+        <div class="machine-content">
+          <h3>Shearing Machine and Slitting Machine</h3>
+          <p>
+            The Shearing Machine cuts metal sheets cleanly into required sizes,
+            while the Slitting Machine slices wide coils into multiple narrower
+            strips for further processing or forming.
+          </p>
+          <ul>
+            <li>Shearing Machine: Cuts metal sheets accurately and cleanly.</li>
+            <li>
+              Slitting Machine: Slices wide coils into narrower strips for
+              forming.
+            </li>
+            <li>
+              Used for industrial and fabrication processes requiring precise
+              cuts.
+            </li>
+          </ul>
+        </div>
+        <div class="machine-img">
+          <img
+            src="machines/Shearing Machine and Slitting Machine.png"
+            alt="Shearing and Slitting Machine"
+          />
+        </div>
       </div>
     </div>
     <!-- Project End -->
-
-    <!-- FAQ Start -->
-    <div class="container-fluid faq pb-5">
-      <div class="container pb-5">
-        <div class="row g-5 align-items-center">
-          <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
-            <div class="pb-5">
-              <h4 class="text-primary">FAQs</h4>
-              <h1 class="display-4">Get the Answers to Common Questions</h1>
-            </div>
-            <div class="accordion bg-light rounded p-4" id="accordionExample">
-              <div class="accordion-item border-0 mb-4">
-                <h2 class="accordion-header" id="headingOne">
-                  <button
-                    class="accordion-button text-dark fs-5 fw-bold rounded-top"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseOne"
-                    aria-expanded="true"
-                    aria-controls="collapseTOne"
-                  >
-                    What Does a Financial Advisor Do?
-                  </button>
-                </h2>
-                <div
-                  id="collapseOne"
-                  class="accordion-collapse collapse show"
-                  aria-labelledby="headingOne"
-                  data-bs-parent="#accordionExample"
-                >
-                  <div class="accordion-body my-2">
-                    <h5>Dolor sit amet consectetur adipisicing elit.</h5>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Ad nemo impedit, sapiente quis illo quia nulla atque
-                      maxime fuga minima ipsa quae cum consequatur, sit,
-                      delectus exercitationem odit officiis maiores! Neque,
-                      quidem corrupti modi architecto eos saepe incidunt
-                      dignissimos rerum.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item border-0 mb-4">
-                <h2 class="accordion-header" id="headingTwo">
-                  <button
-                    class="accordion-button collapsed text-dark fs-5 fw-bold rounded-top"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseTwo"
-                    aria-expanded="false"
-                    aria-controls="collapseTwo"
-                  >
-                    What industries do you specialize in?
-                  </button>
-                </h2>
-                <div
-                  id="collapseTwo"
-                  class="accordion-collapse collapse"
-                  aria-labelledby="headingTwo"
-                  data-bs-parent="#accordionExample"
-                >
-                  <div class="accordion-body my-2">
-                    <h5>Dolor sit amet consectetur adipisicing elit.</h5>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Ad nemo impedit, sapiente quis illo quia nulla atque
-                      maxime fuga minima ipsa quae cum consequatur, sit,
-                      delectus exercitationem odit officiis maiores! Neque,
-                      quidem corrupti modi architecto eos saepe incidunt
-                      dignissimos rerum.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item border-0 mb-4">
-                <h2 class="accordion-header" id="headingThree">
-                  <button
-                    class="accordion-button collapsed text-dark fs-5 fw-bold rounded-top"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseThree"
-                    aria-expanded="false"
-                    aria-controls="collapseThree"
-                  >
-                    Can you guarantee for growth?
-                  </button>
-                </h2>
-                <div
-                  id="collapseThree"
-                  class="accordion-collapse collapse"
-                  aria-labelledby="headingThree"
-                  data-bs-parent="#accordionExample"
-                >
-                  <div class="accordion-body my-2">
-                    <h5>Dolor sit amet consectetur adipisicing elit.</h5>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Ad nemo impedit, sapiente quis illo quia nulla atque
-                      maxime fuga minima ipsa quae cum consequatur, sit,
-                      delectus exercitationem odit officiis maiores! Neque,
-                      quidem corrupti modi architecto eos saepe incidunt
-                      dignissimos rerum.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item border-0 mb-0">
-                <h2 class="accordion-header" id="headingFour">
-                  <button
-                    class="accordion-button collapsed text-dark fs-5 fw-bold rounded-top"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseFour"
-                    aria-expanded="false"
-                    aria-controls="collapseFour"
-                  >
-                    What makes your business plans so special?
-                  </button>
-                </h2>
-                <div
-                  id="collapseFour"
-                  class="accordion-collapse collapse"
-                  aria-labelledby="headingFour"
-                  data-bs-parent="#accordionExample"
-                >
-                  <div class="accordion-body my-2">
-                    <h5>Dolor sit amet consectetur adipisicing elit.</h5>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Ad nemo impedit, sapiente quis illo quia nulla atque
-                      maxime fuga minima ipsa quae cum consequatur, sit,
-                      delectus exercitationem odit officiis maiores! Neque,
-                      quidem corrupti modi architecto eos saepe incidunt
-                      dignissimos rerum.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
-            <div class="faq-img RotateMoveRight rounded">
-              <img
-                src="img/faq-img.jpg"
-                class="img-fluid rounded w-100"
-                alt="Image"
-              />
-              <a
-                class="faq-btn btn btn-primary rounded-pill text-white py-3 px-5"
-                href="#"
-                >Read More Q & A <i class="fas fa-arrow-right ms-2"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- FAQ End -->
 
     <!-- Footer Start -->
     <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
@@ -532,25 +1000,17 @@
           <div class="col-md-6 col-lg-6 col-xl-3">
             <div class="footer-item d-flex flex-column">
               <div class="footer-item">
-                <h4 class="text-white mb-4">Newsletter</h4>
+                <!-- LOGO -->
+                <img
+                  src="./img/VIZZAC.png"
+                  alt=""
+                  style="width: 110px; height: 90px"
+                />
                 <p class="mb-3">
-                  Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem
-                  ipsum dolor sit amet, consectetur adipiscing elit consectetur
-                  adipiscing elit.
+                  To deliver cutting-edge machinery solutions that empower
+                  entrepreneurs, manufacturers, and industries to maximize
+                  efficiency, productivity, and profitability.
                 </p>
-                <div class="position-relative mx-auto rounded-pill">
-                  <input
-                    class="form-control rounded-pill w-100 py-3 ps-4 pe-5"
-                    type="text"
-                    placeholder="Enter your email"
-                  />
-                  <button
-                    type="button"
-                    class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2"
-                  >
-                    SignUp
-                  </button>
-                </div>
               </div>
             </div>
           </div>
@@ -558,12 +1018,16 @@
             <div class="footer-item d-flex flex-column">
               <h4 class="text-white mb-4">Explore</h4>
               <a href="#"><i class="fas fa-angle-right me-2"></i> Home</a>
-              <a href="#"><i class="fas fa-angle-right me-2"></i> Services</a>
-              <a href="#"><i class="fas fa-angle-right me-2"></i> About Us</a>
-              <a href="#"
+              <a href="./service.html"
+                ><i class="fas fa-angle-right me-2"></i> Services</a
+              >
+              <a href="./about.html"
+                ><i class="fas fa-angle-right me-2"></i> About Us</a
+              >
+              <a href="./product.html"
                 ><i class="fas fa-angle-right me-2"></i> Latest Projects</a
               >
-              <a href="#"
+              <a href="./testimonial.html"
                 ><i class="fas fa-angle-right me-2"></i> testimonial</a
               >
               <a href="#"><i class="fas fa-angle-right me-2"></i> Our Team</a>
@@ -574,30 +1038,32 @@
             <div class="footer-item d-flex flex-column">
               <h4 class="text-white mb-4">Contact Info</h4>
               <a href=""
-                ><i class="fa fa-map-marker-alt me-2"></i> 123 Street, New York,
-                USA</a
+                ><i class="fa fa-map-marker-alt me-2"></i>No.22, K.C.M.
+                Compound, Mangalam Road Karuvampalayam, Tiruppur-641604, Tamil
+                Nadu, India</a
               >
               <a href=""
-                ><i class="fas fa-envelope me-2"></i> info@example.com</a
+                ><i class="fas fa-envelope me-2"></i>vizzaclasers@gmail.com</a
               >
-              <a href=""
-                ><i class="fas fa-envelope me-2"></i> info@example.com</a
-              >
-              <a href=""><i class="fas fa-phone me-2"></i> +012 345 67890</a>
-              <a href="" class="mb-3"
-                ><i class="fas fa-print me-2"></i> +012 345 67890</a
-              >
+              <a href=""><i class="fas fa-phone me-2"></i>+91 8048601652</a>
               <div class="d-flex align-items-center">
-                <a class="btn btn-light btn-md-square me-2" href=""
+                <a
+                  class="btn btn-light btn-md-square me-2"
+                  href="https://www.facebook.com/share/1EkcxgPmJg/"
                   ><i class="fab fa-facebook-f"></i
                 ></a>
-                <a class="btn btn-light btn-md-square me-2" href=""
-                  ><i class="fab fa-twitter"></i
-                ></a>
-                <a class="btn btn-light btn-md-square me-2" href=""
+                <a class="btn btn-light btn-md-square me-2"
+                href=www.youtube.com/@vizzaclaser ><i
+                  class="fab fa-youtube"
+                ></i>
+                <a
+                  class="btn btn-light btn-md-square me-2"
+                  href="https://www.instagram.com/vizzac_laser?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                   ><i class="fab fa-instagram"></i
                 ></a>
-                <a class="btn btn-light btn-md-square me-0" href=""
+                <a
+                  class="btn btn-light btn-md-square me-0"
+                  href="https://www.linkedin.com/in/purushothaman-v-043504b7/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=in"
                   ><i class="fab fa-linkedin-in"></i
                 ></a>
               </div>
@@ -606,22 +1072,28 @@
           <div class="col-md-6 col-lg-6 col-xl-3">
             <div class="footer-item-post d-flex flex-column">
               <h4 class="text-white mb-4">Popular Post</h4>
+
               <div class="d-flex flex-column mb-3">
-                <p class="text-uppercase text-primary mb-2">Investment</p>
-                <a href="#" class="text-body"
-                  >Revisiting Your Investment & Distribution Goals</a
-                >
+                <p class="text-uppercase text-primary mb-2">Technology</p>
+                <a href="#" class="text-body">
+                  Latest Trends in Laser Cutting & Engraving Solutions
+                </a>
               </div>
+
               <div class="d-flex flex-column mb-3">
-                <p class="text-uppercase text-primary mb-2">Business</p>
-                <a href="#" class="text-body"
-                  >Dimensional Fund Advisors Interview with Director</a
-                >
+                <p class="text-uppercase text-primary mb-2">
+                  Industry Insights
+                </p>
+                <a href="#" class="text-body">
+                  How <strong>Vizzac Laser</strong> Machines Boost Manufacturing
+                  Efficiency
+                </a>
               </div>
+
               <div class="footer-btn text-start">
-                <a href="#" class="btn btn-light rounded-pill px-4"
-                  >View All Post <i class="fa fa-arrow-right ms-1"></i
-                ></a>
+                <a href="#" class="btn btn-light rounded-pill px-4">
+                  View All Posts <i class="fa fa-arrow-right ms-1"></i>
+                </a>
               </div>
             </div>
           </div>
@@ -631,29 +1103,23 @@
     <!-- Footer End -->
 
     <!-- Copyright Start -->
-    <div class="container-fluid copyright py-4">
-      <div class="container">
-        <div class="row g-4 align-items-center">
-          <div class="col-md-6 text-center text-md-start mb-md-0">
-            <span class="text-body"
-              ><a href="#" class="border-bottom text-primary"
-                ><i class="fas fa-copyright text-light me-2"></i>Your Site
-                Name</a
-              >, All right reserved.</span
-            >
-          </div>
-          <div class="col-md-6 text-center text-md-end text-body">
-            <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-            <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
-            <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-            Designed By
-            <a class="border-bottom text-primary" href="https://htmlcodex.com"
-              >HTML Codex</a
-            >
-            Distributed By
-            <a class="border-bottom text-primary" href="https://themewagon.com"
-              >ThemeWagon</a
-            >
+    <div class="copyright py-4">
+      <div class="container align-items-center">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="footer-container text-align">
+              <span
+                >Copyright &copy; <span id="current-year">2025</span> Vizzac
+                Laser | Developed By
+                <a
+                  href="https://paletteproduction.com/"
+                  target="_blank"
+                  style="color: #ed212a; text-decoration: none"
+                >
+                  PALETTE PRODUCTION
+                </a></span
+              >
+            </div>
           </div>
         </div>
       </div>
@@ -677,5 +1143,14 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <!-- aos animation -->
+
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+    </script>
   </body>
 </html>
