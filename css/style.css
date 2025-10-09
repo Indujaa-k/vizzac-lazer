@@ -466,7 +466,7 @@
   position: relative;
   overflow: hidden;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(../img/banner-3.jpeg);
+    url(../img/images/bannerservice.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -476,7 +476,7 @@
   position: relative;
   overflow: hidden;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(../img/banner-4.png);
+    url(../img/images/bannerproduct.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -508,6 +508,16 @@
   overflow: hidden;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(../img/banner-6.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 60px 0 60px 0;
+}
+.bg-breadcrumb-contact{
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../img/images/bannercontactt.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;

@@ -705,7 +705,13 @@
             </p>
           </div>
           <div>
-            <button class="btn-primary-custom" id="quoteBtn">Get Quote</button>
+            <a
+              href="contact.html"
+              class="btn-primary-custom"
+              id="contactSalesBtn"
+            >
+              Get Quote
+            </a>
           </div>
         </div>
 
@@ -785,17 +791,12 @@
           <ul class="machines-list" id="machinesList"></ul>
 
           <div style="margin-top: 14px; display: flex; gap: 8px">
-            <button class="btn-primary-custom" id="contactSalesBtn">
-              Contact Sales
-            </button>
-            <button class="btn-ghost" id="downloadSpecBtn">
-              Download Spec
-            </button>
+            <a href="contact.html" class="btn-primary-custom"> Contact Us </a>
           </div>
         </div>
       </aside>
     </div>
-    <!-- OUR PROCESS SECTION -->
+
     <!-- OUR PROCESS SECTION -->
     <section class="process-section">
       <div class="container">
@@ -872,7 +873,9 @@
           <div class="col-md-6 col-lg-6 col-xl-3">
             <div class="footer-item d-flex flex-column">
               <h4 class="text-white mb-4">Explore</h4>
-              <a href="#"><i class="fas fa-angle-right me-2"></i> Home</a>
+              <a href="index.html"
+                ><i class="fas fa-angle-right me-2"></i> Home</a
+              >
               <a href="./service.html"
                 ><i class="fas fa-angle-right me-2"></i> Services</a
               >
@@ -880,13 +883,17 @@
                 ><i class="fas fa-angle-right me-2"></i> About Us</a
               >
               <a href="./product.html"
-                ><i class="fas fa-angle-right me-2"></i> Latest Projects</a
+                ><i class="fas fa-angle-right me-2"></i>product</a
               >
               <a href="./testimonial.html"
                 ><i class="fas fa-angle-right me-2"></i> testimonial</a
               >
-              <a href="#"><i class="fas fa-angle-right me-2"></i> Our Team</a>
-              <a href="#"><i class="fas fa-angle-right me-2"></i> Contact Us</a>
+              <a href="team.html"
+                ><i class="fas fa-angle-right me-2"></i> Our Team</a
+              >
+              <a href="contact.html"
+                ><i class="fas fa-angle-right me-2"></i> Contact Us</a
+              >
             </div>
           </div>
           <div class="col-md-6 col-lg-6 col-xl-3">
@@ -946,7 +953,7 @@
               </div>
 
               <div class="footer-btn text-start">
-                <a href="#" class="btn btn-light rounded-pill px-4">
+                <a href="https://www.instagram.com/vizzac_laser?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="btn btn-light rounded-pill px-4" class="btn btn-light rounded-pill px-4">
                   View All Posts <i class="fa fa-arrow-right ms-1"></i>
                 </a>
               </div>
@@ -1131,19 +1138,7 @@
       });
 
       // CTA hooks
-      document
-        .getElementById("quoteBtn")
-        .addEventListener("click", () =>
-          alert("Open contact / quote modal (hook)")
-        );
-      document
-        .getElementById("contactSalesBtn")
-        .addEventListener("click", () =>
-          alert("Contact Sales - open form (hook)")
-        );
-      document
-        .getElementById("downloadSpecBtn")
-        .addEventListener("click", () => alert("Download PDF spec (hook)"));
+
       // Lightweight GSAP entrance for fade-up elements
       gsap.utils.toArray(".fade-up").forEach((el, i) => {
         gsap.fromTo(
