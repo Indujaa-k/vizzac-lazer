@@ -13,7 +13,10 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
-    />
+    /> <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          />
 
     <!-- Icon Font Stylesheet -->
     <link
@@ -1140,8 +1143,7 @@
 
         <!-- Carousel Wrapper -->
         <div class="team-carousel-wrapper position-relative">
-          <!-- Left Button -->
-          <!-- <button class="carousel-btn left-btn">&lt;</button> -->
+         
 
           <!-- Team Row -->
           <div class="team-carousel d-flex overflow-hidden">
@@ -1442,12 +1444,6 @@
             </div>
           </div>
 
-          <!-- Controls -->
-          <!-- Make sure to include Font Awesome in your <head> -->
-          <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-          />
           <!-- Previous -->
           <button class="carousel-btn left-btn">
             <i class="fas fa-chevron-left"></i>
@@ -1463,116 +1459,182 @@
 
     <!-- Team End -->
 
-    <style>
-      .team-carousel-wrapper {
-        position: relative;
-        overflow: hidden;
-      }
+   
+  <!-- Gallery -->
+<section id="photos" class="section photos py-5">
+  <div class="container">
+    <div
+          class="text-center mx-auto pb-5 wow fadeInUp"
+          data-wow-delay="0.1s"
+          style="max-width: 800px"
+        >
+          <h2 class="text-primary">Our Gallery</h2>
+          <h3>Product images, technical detail shots and real-world applications</h3>
+        </div>
 
-      .team-carousel {
-        display: flex;
-        gap: 1rem;
-        transition: transform 0.5s ease-in-out;
-        scroll-snap-type: x mandatory;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-        padding-bottom: 1rem;
-      }
+    <ul class="grid">
 
-      .team-item {
-        flex: 0 0 calc(25% - 1rem); /* 4 cards on desktop */ /* four cards per row on desktop */
-        border: none !important; /* remove any border */
-        box-shadow: none !important; /* remove shadow */
-        background: none !important;
-        height: 510px; /* 🔹 fixed equal height for all cards */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-      .team-item-inner {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        background: none;
-        border: none;
-        box-shadow: none;
-      }
+      <!-- Left Large Image -->
+      <li class="grid-item grid-item-sm-6">
+        <img
+          src="./img/images/3.jpg"
+          alt="Big CCD Laser Cutting Machine"
+          class="img-responsive center-block"
+        />
+      </li>
 
-      .team-img img {
-        width: 100%;
-        height: 250px;
-        object-fit: cover;
-        border-radius: 10px;
-      }
+      <!-- Right Column Images -->
+      <li class="grid-item grid-item-sm-3">
+        <img
+          src="./img/images/4.jpg"
+          alt="Double Wire Machine"
+          class="img-responsive center-block"
+        />
+      </li>
 
-      .team-content {
-        padding: 15px;
-        text-align: left;
-        flex: 1;
-      }
-      .d-flex.align-items-start .text-muted i {
-        font-size: 1rem;
-        line-height: 1.5;
-        margin-top: 2px;
-      }
+      <li class="grid-item grid-item-sm-3">
+        <img
+          src="./img/images/9.jpg"
+          alt="CNC Router"
+          class="img-responsive center-block"
+        />
+      </li>
 
-      .d-flex.align-items-start a {
-        display: flex;
-        align-items: center;
-      }
+      <li class="grid-item grid-item-sm-3">
+        <img
+          src="./img/images/6.jpg"
+          alt="CNC Die Making"
+          class="img-responsive center-block"
+        />
+      </li>
 
-      /* Tablet view - 2 cards per row */
-      @media (max-width: 991px) {
-        .team-item {
-          flex: 0 0 calc(50% - 1rem);
-          height: 500px;
-        }
-        .team-content {
-          padding: 20px !important;
-        }
+      <li class="grid-item grid-item-sm-3">
+        <img
+          src="./img/images/7.jpg"
+          alt="CNC Die Making"
+          class="img-responsive center-block"
+        />
+      </li>
 
-        .team-content h4 {
-          font-size: 1.5rem !important;
-        }
+      <li class="grid-item grid-item-sm-3">
+        <img
+          src="./img/images/8.jpg"
+          alt="CNC Die Making"
+          class="img-responsive center-block"
+        />
+      </li>
 
-        .team-content .d-flex span {
-          font-size: 1.1rem !important;
-        }
-      }
+      <li class="grid-item grid-item-sm-3">
+        <img
+          src="./img/images/gallery-1.jpg"
+          alt="CNC Die Making"
+          class="img-responsive center-block"
+        />
+      </li>
 
-      @media (max-width: 576px) {
-        .team-item {
-          flex: 0 0 95% !important;
-          max-width: 95% !important;
-          margin: 0 auto;
-          height: 430px !important;
-          display: flex;
-          flex-direction: column;
-        }
+      <li class="grid-item grid-item-sm-3">
+        <img
+          src="./img/images/10.jpg"
+          alt="CNC Die Making"
+          class="img-responsive center-block"
+        />
+      </li>
+  <li class="grid-item grid-item-sm-3">
+        <img
+          src="./img/images/11.jpg"
+          alt="CNC Die Making"
+          class="img-responsive center-block"
+        />
+      </li>
+    </ul>
+  </div>
+</section>
 
-        .team-img img {
-          height: 250px !important;
-          width: 100% !important;
-          object-fit: cover !important;
-        }
+<style>
+/* --- Base Grid Layout --- */
+.grid {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.grid::after {
+  content: "";
+  display: block;
+  clear: both;
+}
 
-        .team-content {
-          padding: 10px !important;
-        }
+.grid-item {
+  float: left;
+  overflow: hidden;
+  padding: 5px;
+  margin: 0;
+  width: 100%;
+}
 
-        .team-content h4 {
-          font-size: 1.5rem !important;
-          margin-bottom: 10px !important;
-        }
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  transition: all 0.4s ease;
+}
 
-        .team-content .d-flex span {
-          font-size: 1.1rem !important;
-          line-height: 1.4rem !important;
-          display: block; /* 🔹 ensures sentences wrap properly */
-          word-wrap: break-word;
-        }
-      }
-    </style>
+/* Hover zoom effect */
+.grid-item img:hover {
+  transform: scale(1.04);
+  filter: brightness(85%);
+}
+
+/* --- Responsive Sizes --- */
+@media (min-width: 768px) {
+  .grid-item-sm-6 {
+    width: 50%;
+  }
+  .grid-item-sm-3 {
+    width: 25%;
+  }
+}
+
+/* --- Equal Height Alignment --- */
+.grid-item-sm-6 img {
+  height: 500px;
+}
+
+.grid-item-sm-3 img {
+  height: 250px;
+}
+
+/* --- Section Title Styling --- */
+.section-title {
+  color: #2c2c54;
+  font-weight: 800;
+  font-size: 2rem;
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: #2c2c54;
+  bottom: -8px;
+  border-radius: 3px;
+}
+
+/* Mobile Optimization */
+@media (max-width: 767px) {
+  .grid-item img {
+    height: auto;
+  }
+}
+</style>
+
+
 
     <!-- Testimonial Start -->
     <div class="container-fluid testimonial bg-light py-5">
