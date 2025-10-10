@@ -337,6 +337,17 @@
           gap: 8px;
         }
       }
+      /* Tablet: 3 cards per row */
+      @media (min-width: 768px) and (max-width: 992px) {
+        .thumb-grid {
+          grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+          gap: 12px; /* adjust gap if needed */
+        }
+
+        .thumb img {
+          height: 140px; /* adjust thumbnail height for 3 columns */
+        }
+      }
 
       @media (max-width: 576px) {
         .stitch-app {
@@ -637,12 +648,48 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-              <a href="index.html" class="nav-item nav-link">Home</a>
+              <a href="index.html" class="nav-item nav-link ">Home</a>
               <a href="about.html" class="nav-item nav-link">About</a>
-              <a href="service.html" class="nav-item nav-link active"
-                >Services</a
-              >
-              <a href="product.html" class="nav-item nav-link">Products</a>
+              <a href="service.html" class="nav-item nav-link active">Services</a>
+              <li class="nav-item dropdown">
+                <a
+                  href="product.html"
+                  class="nav-link dropdown-toggle"
+                  id="productsDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Products
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+                  <li>
+                    <a class="dropdown-item" href="product.html#product1"
+                      >CO2 LASER CUTTING MACHINE</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="product.html#product2"
+                      >LASER MARKING MACHINE</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="product.html#product3"
+                      >FIBER LASER CUTTING MACHINE</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="product.html#product4"
+                      >CHAIN LINK FENCING MACHINE</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="product.html#product5"
+                      >ROLL FORMING</a
+                    >
+                  </li>
+                </ul>
+              </li>
               <a href="blog.html" class="nav-item nav-link">Our Blog</a>
               <a href="team.html" class="nav-item nav-link">Our Team</a>
               <a href="testimonial.html" class="nav-item nav-link"
@@ -953,7 +1000,11 @@
               </div>
 
               <div class="footer-btn text-start">
-                <a href="https://www.instagram.com/vizzac_laser?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="btn btn-light rounded-pill px-4" class="btn btn-light rounded-pill px-4">
+                <a
+                  href="https://www.instagram.com/vizzac_laser?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                  class="btn btn-light rounded-pill px-4"
+                  class="btn btn-light rounded-pill px-4"
+                >
                   View All Posts <i class="fa fa-arrow-right ms-1"></i>
                 </a>
               </div>
@@ -1078,11 +1129,16 @@
         el.className = "thumb fade-up";
         el.dataset.idx = idx;
         el.innerHTML = `
-          <img src="${p.hero}" alt="${p.title}" onerror="this.style.opacity=.12; this.style.background='linear-gradient(90deg,#0d6efd,#00c2ff)';" />
-          <div style="font-weight:700; font-size:13px;">${p.title}</div>
-          <div style="color:var(--muted); font-size:12px;">${p.subtitle}</div>
-        `;
-        el.addEventListener("click", () => selectProject(idx));
+      <img src="${p.hero}" alt="${p.title}" 
+        onerror="this.style.opacity=.12; this.style.background='linear-gradient(90deg,#0d6efd,#00c2ff)';" />
+      <div style="font-weight:700; font-size:13px;">${p.title}</div>
+      <div style="color:var(--muted); font-size:12px;">${p.subtitle}</div>
+    `;
+        el.addEventListener("click", () => {
+          clearInterval(autoSlide);
+          setCurrentContent(idx);
+          startAutoSlide();
+        });
         thumbGrid.appendChild(el);
       });
 
@@ -1097,49 +1153,71 @@
 
       function selectProject(i) {
         const p = projects[i];
-        document.getElementById("mainTitle").textContent =
-          "Our Services — " + p.title;
-        document.getElementById("mainSub").textContent = p.subtitle;
-        document.getElementById("canvasImg").src = p.hero;
-        document.getElementById("infoIndustry").textContent = p.title;
-        document.getElementById("infoMachines").textContent = p.machines
-          .slice(0, 3)
-          .join(", ");
-        document.getElementById("detailTitle").textContent =
-          p.title + " Industry";
-        document.getElementById("detailDesc").textContent =
-          p.subtitle + " — tailored machine solutions for industry needs.";
-        populateMachines(document.getElementById("machinesList"), p.machines);
+        const canvasImg = document.getElementById("canvasImg");
 
-        // subtle highlight animation
-        gsap.fromTo(
-          "#canvasImg",
-          { scale: 0.98, opacity: 0.95 },
-          { scale: 1, opacity: 1, duration: 0.45, ease: "power2.out" }
-        );
+        // Smooth fade-out, update content, fade-in
+        gsap.to(canvasImg, {
+          opacity: 0,
+          scale: 0.95,
+          duration: 0.4,
+          ease: "power2.inOut",
+          onComplete: () => {
+            canvasImg.src = p.hero;
+            document.getElementById("mainTitle").textContent =
+              "Our Services — " + p.title;
+            document.getElementById("mainSub").textContent = p.subtitle;
+            document.getElementById("infoIndustry").textContent = p.title;
+            document.getElementById("infoMachines").textContent = p.machines
+              .slice(0, 3)
+              .join(", ");
+            document.getElementById("detailTitle").textContent =
+              p.title + " Industry";
+            document.getElementById("detailDesc").textContent =
+              p.subtitle + " — tailored machine solutions for industry needs.";
+            populateMachines(
+              document.getElementById("machinesList"),
+              p.machines
+            );
+
+            gsap.fromTo(
+              canvasImg,
+              { opacity: 0, scale: 1.05 },
+              { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out" }
+            );
+          },
+        });
       }
 
-      // default
-      selectProject(0);
-
-      // search filter
-
-      // keyboard nav
       let currentIdx = 0;
-      function setCurrent(i) {
+      selectProject(currentIdx);
+
+      // Update only main/right content (thumb grid stays fixed)
+      function setCurrentContent(i) {
         currentIdx = (i + projects.length) % projects.length;
         selectProject(currentIdx);
-        const node = document.querySelector(`.thumb[data-idx="${currentIdx}"]`);
-        if (node) node.scrollIntoView({ behavior: "smooth", block: "center" });
       }
+
+      // Keyboard navigation
       document.addEventListener("keydown", (e) => {
-        if (e.key === "ArrowRight") setCurrent(currentIdx + 1);
-        if (e.key === "ArrowLeft") setCurrent(currentIdx - 1);
+        if (e.key === "ArrowRight") setCurrentContent(currentIdx + 1);
+        if (e.key === "ArrowLeft") setCurrentContent(currentIdx - 1);
       });
 
-      // CTA hooks
+      // Auto-slide every 4 seconds
+      let autoSlide;
+      function startAutoSlide() {
+        autoSlide = setInterval(() => {
+          setCurrentContent(currentIdx + 1);
+        }, 4000);
+      }
+      startAutoSlide();
 
-      // Lightweight GSAP entrance for fade-up elements
+      // Pause auto-slide on hover over main panel
+      const mainPanel = document.getElementById("panelMain");
+      mainPanel.addEventListener("mouseenter", () => clearInterval(autoSlide));
+      mainPanel.addEventListener("mouseleave", () => startAutoSlide());
+
+      // Fade-up animation
       gsap.utils.toArray(".fade-up").forEach((el, i) => {
         gsap.fromTo(
           el,
@@ -1154,7 +1232,8 @@
           }
         );
       });
-      // Parallax on scroll for canvas image
+
+      // Parallax scroll for canvas image
       gsap.to("#canvasImg", {
         yPercent: -10,
         ease: "none",
@@ -1165,17 +1244,8 @@
           scrub: 1,
         },
       });
-      // Parallax on scroll for canvas image
-      gsap.to("#canvasImg", {
-        yPercent: -10,
-        ease: "none",
-        scrollTrigger: {
-          trigger: "#canvas",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 1,
-        },
-      });
+
+      // 3D hover tilt for thumbnails
       const thumbs = document.querySelectorAll(".thumb");
       thumbs.forEach((thumb) => {
         thumb.addEventListener("mousemove", (e) => {
@@ -1200,6 +1270,7 @@
         });
       });
     </script>
+
     <!-- Script For The Runner -->
     <script>
       gsap.registerPlugin(ScrollTrigger);
@@ -1243,5 +1314,66 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <!-- Go to Top Button -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const backToTop = document.querySelector(".back-to-top");
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > window.innerHeight / 2) {
+            // Show button after scrolling halfway down viewport
+            backToTop.classList.add("show");
+          } else {
+            // Hide button at top
+            backToTop.classList.remove("show");
+          }
+        });
+
+        // Smooth scroll to top
+        backToTop.addEventListener("click", (e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      });
+    </script>
+    <!-- product dropdown for header -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const dropdownLink = document.getElementById("productsDropdown");
+
+        dropdownLink.addEventListener("click", function (e) {
+          const isMobile = window.innerWidth < 992; // Bootstrap breakpoint
+          const dropdownMenu = this.nextElementSibling;
+
+          if (isMobile) {
+            // Detect where user clicked
+            const clickX = e.offsetX;
+            const linkWidth = this.offsetWidth;
+            const arrowZone = 40; // tap area for arrow (px)
+            const clickedArrow = clickX > linkWidth - arrowZone;
+
+            if (clickedArrow) {
+              // Open/close dropdown only
+              e.preventDefault();
+              e.stopPropagation();
+              const bsDropdown = bootstrap.Dropdown.getOrCreateInstance(this);
+              bsDropdown.toggle();
+
+              // Optional: Smooth dropdown animation (works with your CSS)
+              dropdownMenu.style.transition = "all 0.3s ease";
+            } else {
+              // Go to product.html if text is clicked
+              window.location.href = this.getAttribute("href");
+            }
+          } else {
+            // Desktop behavior
+            if (!dropdownMenu.classList.contains("show")) {
+              e.preventDefault();
+              window.location.href = this.getAttribute("href");
+            }
+          }
+        });
+      });
+    </script>
   </body>
 </html>
