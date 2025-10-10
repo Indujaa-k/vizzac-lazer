@@ -138,11 +138,49 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-              <a href="index.html" class="nav-item nav-link">Home</a>
+              <a href="index.html" class="nav-item nav-link active">Home</a>
               <a href="about.html" class="nav-item nav-link">About</a>
               <a href="service.html" class="nav-item nav-link">Services</a>
-              <a href="product.html" class="nav-item nav-link">Products</a>
-              <a href="blog.html" class="nav-item nav-link active">Our Blog</a>
+              <li class="nav-item dropdown">
+                <a
+                  href="product.html"
+                  class="nav-link dropdown-toggle"
+                  id="productsDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Products
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+                  <li>
+                    <a class="dropdown-item" href="product.html#product1"
+                      >CO2 LASER CUTTING MACHINE</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="product.html#product2"
+                      >LASER MARKING MACHINE</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="product.html#product3"
+                      >FIBER LASER CUTTING MACHINE</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="product.html#product4"
+                      >CHAIN LINK FENCING MACHINE</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="product.html#product5"
+                      >ROLL FORMING</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <a href="blog.html" class="nav-item nav-link">Our Blog</a>
               <a href="team.html" class="nav-item nav-link">Our Team</a>
               <a href="testimonial.html" class="nav-item nav-link"
                 >Testimonial</a
@@ -170,380 +208,383 @@
     <!-- Header End -->
 
     <!-- DOUBLE WIRE MACHINE SECTION -->
-<section class="hero-machine py-5">
-  <div class="container">
-    <div class="row g-4 align-items-center">
-      
-      <!-- Left Side Text -->
-      <div class="col-lg-6">
-        <h1 class="mt-3">
-          Double Wire Automatic Chain Link Fencing Machine
-        </h1>
-        <p>
-          Designed for large-scale fencing projects, this machine produces
-          strong, uniform chain link fences quickly and efficiently. Ideal for
-          farms, highways, construction sites, and industrial perimeters.
+    <section class="hero-machine py-5">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <!-- Left Side Text -->
+          <div class="col-lg-6">
+            <h1 class="mt-3">
+              Double Wire Automatic Chain Link Fencing Machine
+            </h1>
+            <p>
+              Designed for large-scale fencing projects, this machine produces
+              strong, uniform chain link fences quickly and efficiently. Ideal
+              for farms, highways, construction sites, and industrial
+              perimeters.
+            </p>
+
+            <div class="row mt-4 g-3">
+              <div class="col-12 col-md-6">
+                <div class="feature-box p-4 text-center border rounded">
+                  <div class="feature-icon mb-3 text-primary">
+                    <i class="bi bi-gear-wide-connected fs-3"></i>
+                  </div>
+                  <h6 class="fw-bold">Automatic Double Weaving</h6>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <div class="feature-box p-4 text-center border rounded">
+                  <div class="feature-icon mb-3 text-success">
+                    <i class="bi bi-speedometer2 fs-3"></i>
+                  </div>
+                  <h6 class="fw-bold">High Production Speed</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Side Image -->
+          <div class="col-lg-6">
+            <div class="machine-image border border-3 rounded p-2">
+              <img
+                src="./machines/Double Wire Automatic Chain Link Fencing Machine.png"
+                class="img-fluid inner-border rounded"
+                alt="Double Wire Fencing Machine"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CSS -->
+    <style>
+      .hero-machine h1 {
+        font-size: 2.6rem;
+        color: #1d1d1d;
+        font-weight: 800;
+      }
+
+      .hero-machine p {
+        font-size: 1.05rem;
+        color: #555;
+      }
+
+      .feature-box {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background-color: #fff;
+      }
+
+      .feature-box:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+      }
+
+      .machine-image {
+        border-color: #007bff; /* outer border */
+      }
+
+      .machine-image .inner-border {
+        border: 5px solid #fff; /* inner border */
+      }
+
+      @media (max-width: 768px) {
+        .hero-machine h1 {
+          font-size: 2rem;
+          text-align: center;
+        }
+
+        .hero-machine p {
+          text-align: center;
+        }
+
+        .feature-box {
+          margin-bottom: 1rem;
+        }
+
+        .machine-image {
+          margin-top: 1.5rem;
+        }
+      }
+    </style>
+    <!-- FENCING APPLICATIONS ACROSS INDUSTRIES -->
+    <section id="industries" class="container my-5">
+      <h3 style="font-weight: 800; text-align: center">
+        Fencing Applications Across Industries
+      </h3>
+
+      <div class="row g-3 mt-3">
+        <!-- Construction Industry -->
+        <div class="col-sm-6 col-md-4">
+          <div class="p-3 product-card d-flex gap-3 align-items-center">
+            <i class="bi bi-building fs-2 text-primary"></i>
+            <div>
+              <div class="fw-semibold">Construction Industry</div>
+              <div class="small text-muted">
+                Used for boundary fencing, site protection, and road safety
+                barriers.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Agriculture & Farming -->
+        <div class="col-sm-6 col-md-4">
+          <div class="p-3 product-card d-flex gap-3 align-items-center">
+            <i class="bi bi-flower3 fs-2 text-success"></i>
+            <div>
+              <div class="fw-semibold">Agriculture & Farming</div>
+              <div class="small text-muted">
+                Ideal for farm enclosures, animal protection, and crop boundary
+                fencing.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Industrial & Factory Premises -->
+        <div class="col-sm-6 col-md-4">
+          <div class="p-3 product-card d-flex gap-3 align-items-center">
+            <i class="bi bi-gear-wide-connected fs-2 text-warning"></i>
+            <div>
+              <div class="fw-semibold">Industrial & Factory Premises</div>
+              <div class="small text-muted">
+                Provides safety fencing around warehouses and restricted areas.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sports & Recreation Grounds -->
+        <div class="col-sm-6 col-md-4">
+          <div class="p-3 product-card d-flex gap-3 align-items-center">
+            <i class="bi bi-trophy fs-2 text-danger"></i>
+            <div>
+              <div class="fw-semibold">Sports & Recreation Grounds</div>
+              <div class="small text-muted">
+                Used for fencing cricket, football, and tennis grounds with
+                durable mesh.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Residential & Commercial Properties -->
+        <div class="col-sm-6 col-md-4">
+          <div class="p-3 product-card d-flex gap-3 align-items-center">
+            <i class="bi bi-house-door fs-2 text-info"></i>
+            <div>
+              <div class="fw-semibold">Residential & Commercial</div>
+              <div class="small text-muted">
+                Offers security and aesthetic fencing for homes, gardens, and
+                parking areas.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Defense & Security Zones -->
+        <div class="col-sm-6 col-md-4">
+          <div class="p-3 product-card d-flex gap-3 align-items-center">
+            <i class="bi bi-shield-lock fs-2 text-secondary"></i>
+            <div>
+              <div class="fw-semibold">Defense & Security Zones</div>
+              <div class="small text-muted">
+                Provides strong, double-wire fencing for military high-security
+                areas.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      /* Section Title */
+      .section-title {
+        font-weight: 800;
+        color: #2e256e;
+        font-size: 2.3rem;
+        text-align: center;
+        position: relative;
+        margin-bottom: 2rem;
+      }
+      .section-title::after {
+        width: 80px;
+        height: 4px;
+        background: #6f4ef6;
+        display: block;
+        margin: 10px auto 0;
+        border-radius: 2px;
+      }
+
+      /* Product Card Style */
+      .product-card {
+        background: #ffffff;
+        border-radius: 16px;
+        transition: all 0.4s ease;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        cursor: pointer;
+        border: 1px solid #e9e9e9;
+      }
+
+      .product-card:hover {
+        transform: translateY(-8px);
+        border-color: #6f4ef6;
+        box-shadow: 0 6px 20px rgba(111, 78, 246, 0.15);
+        background: linear-gradient(145deg, #ffffff, #f8f7ff);
+      }
+
+      /* Icon Styling */
+      .product-card i {
+        background: #f3f1ff;
+        color: #6f4ef6;
+        padding: 12px;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+      }
+
+      .product-card:hover i {
+        background: #6f4ef6;
+        color: #fff;
+        transform: scale(1.2);
+      }
+
+      /* Text Styling */
+      .product-card .fw-semibold {
+        color: #2e256e;
+        font-size: 1.05rem;
+        margin-bottom: 4px;
+      }
+
+      .product-card .small.text-muted {
+        color: #6c6c6c !important;
+        line-height: 1.4;
+      }
+
+      /* Layout Adjustments */
+      #industries {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        background: #f9f9fc;
+        border-radius: 20px;
+      }
+
+      @media (max-width: 768px) {
+        .section-title {
+          font-size: 1.8rem;
+        }
+        .product-card {
+          padding: 1.2rem;
+        }
+        .product-card i {
+          font-size: 1.5rem;
+          padding: 10px;
+        }
+      }
+    </style>
+
+    <!-- TECHNOLOGY SECTION -->
+    <section class="technology-section py-5" style="background: #f9f9fc">
+      <div class="container">
+        <h3 style="font-weight: 800; text-align: center">
+          Technology and Manufacturing Excellence
+        </h3>
+        <p style="max-width: 800px; padding: 30px">
+          Our Double Wire Automatic Chain Link Fencing Machine combines advanced
+          automation, robust mechanical design, and precision engineering to
+          deliver high-speed, efficient, and durable fencing production for
+          multiple industries.
         </p>
 
-       
-        <div class="row mt-4 g-3">
-          <div class="col-12 col-md-6">
-            <div class="feature-box p-4 text-center border rounded">
-              <div class="feature-icon mb-3 text-primary">
-                <i class="bi bi-gear-wide-connected fs-3"></i>
-              </div>
-              <h6 class="fw-bold">Automatic Double Weaving</h6>
+        <div class="row g-4">
+          <!-- Feature 1 -->
+          <div class="col-md-6 d-flex align-items-start">
+            <div class="tech-icon"><i class="fas fa-microchip"></i></div>
+            <div class="ms-3">
+              <h5>PLC-based Automation</h5>
+              <p>Accurate and safe operation with modern control systems.</p>
             </div>
           </div>
 
-          <div class="col-12 col-md-6">
-            <div class="feature-box p-4 text-center border rounded">
-              <div class="feature-icon mb-3 text-success">
-                <i class="bi bi-speedometer2 fs-3"></i>
-              </div>
-              <h6 class="fw-bold">High Production Speed</h6>
+          <!-- Feature 2 -->
+          <div class="col-md-6 d-flex align-items-start">
+            <div class="tech-icon"><i class="fas fa-link"></i></div>
+            <div class="ms-3">
+              <h5>Dual Wire Feeding</h5>
+              <p>High output and stronger mesh structure for durability.</p>
+            </div>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="col-md-6 d-flex align-items-start">
+            <div class="tech-icon"><i class="fas fa-cogs"></i></div>
+            <div class="ms-3">
+              <h5>Edge Twisting & Rolling</h5>
+              <p>
+                Automatic cutting, twisting, and rolling for smooth operation.
+              </p>
+            </div>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="col-md-6 d-flex align-items-start">
+            <div class="tech-icon"><i class="fas fa-volume-down"></i></div>
+            <div class="ms-3">
+              <h5>Low-Noise Operation</h5>
+              <p>Quiet performance with energy-efficient design.</p>
+            </div>
+          </div>
+
+          <!-- Feature 5 -->
+          <div class="col-md-6 d-flex align-items-start">
+            <div class="tech-icon"><i class="fas fa-sliders-h"></i></div>
+            <div class="ms-3">
+              <h5>Custom Mesh Options</h5>
+              <p>
+                Flexible mesh size, wire thickness, and coating options
+                available.
+              </p>
             </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Right Side Image -->
-      <div class="col-lg-6">
-        <div class="machine-image border border-3 rounded p-2">
-          <img
-            src="./machines/Double Wire Automatic Chain Link Fencing Machine.png"
-            class="img-fluid inner-border rounded"
-            alt="Double Wire Fencing Machine"
-          />
-        </div>
-      </div>
+    <!-- STYLE -->
+    <style>
+      .tech-icon {
+        width: 50px;
+        height: 50px;
+        background: #6f4ef6;
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        transition: transform 0.3s, background 0.3s;
+        flex-shrink: 0;
+      }
+      .tech-icon:hover {
+        transform: scale(1.3);
+        background: #352961;
+      }
 
-    </div>
-  </div>
-</section>
-
-<!-- CSS -->
-<style>
-  .hero-machine h1 {
-    font-size: 2.6rem;
-    color: #1d1d1d;
-    font-weight: 800;
-  }
-
-  .hero-machine p {
-    font-size: 1.05rem;
-    color: #555;
-  }
-
-  .feature-box {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: #fff;
-  }
-
-  .feature-box:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
-  }
-
-  .machine-image {
-    border-color: #007bff; /* outer border */
-  }
-
-  .machine-image .inner-border {
-    border: 5px solid #fff; /* inner border */
-  }
-
-  @media (max-width: 768px) {
-    .hero-machine h1 {
-      font-size: 2rem;
-      text-align: center;
-    }
-
-    .hero-machine p {
-      text-align: center;
-    }
-
-    .feature-box {
-      margin-bottom: 1rem;
-    }
-
-    .machine-image {
-      margin-top: 1.5rem;
-    }
-  }
-</style>
-<!-- FENCING APPLICATIONS ACROSS INDUSTRIES -->
-<section id="industries" class="container my-5">
-  <h3 style="font-weight: 800; text-align: center;">
-  Fencing Applications Across Industries
-</h3>
-
-  <div class="row g-3 mt-3">
-
-    <!-- Construction Industry -->
-    <div class="col-sm-6 col-md-4">
-      <div class="p-3 product-card d-flex gap-3 align-items-center">
-        <i class="bi bi-building fs-2 text-primary"></i>
-        <div>
-          <div class="fw-semibold">Construction Industry</div>
-          <div class="small text-muted">
-            Used for boundary fencing, site protection, and road safety barriers.
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Agriculture & Farming -->
-    <div class="col-sm-6 col-md-4">
-      <div class="p-3 product-card d-flex gap-3 align-items-center">
-        <i class="bi bi-flower3 fs-2 text-success"></i>
-        <div>
-          <div class="fw-semibold">Agriculture & Farming</div>
-          <div class="small text-muted">
-            Ideal for farm enclosures, animal protection, and crop boundary fencing.
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Industrial & Factory Premises -->
-    <div class="col-sm-6 col-md-4">
-      <div class="p-3 product-card d-flex gap-3 align-items-center">
-        <i class="bi bi-gear-wide-connected fs-2 text-warning"></i>
-        <div>
-          <div class="fw-semibold">Industrial & Factory Premises</div>
-          <div class="small text-muted">
-            Provides safety fencing around warehouses and restricted areas.
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Sports & Recreation Grounds -->
-    <div class="col-sm-6 col-md-4">
-      <div class="p-3 product-card d-flex gap-3 align-items-center">
-        <i class="bi bi-trophy fs-2 text-danger"></i>
-        <div>
-          <div class="fw-semibold">Sports & Recreation Grounds</div>
-          <div class="small text-muted">
-            Used for fencing cricket, football, and tennis grounds with durable mesh.
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Residential & Commercial Properties -->
-    <div class="col-sm-6 col-md-4">
-      <div class="p-3 product-card d-flex gap-3 align-items-center">
-        <i class="bi bi-house-door fs-2 text-info"></i>
-        <div>
-          <div class="fw-semibold">Residential & Commercial</div>
-          <div class="small text-muted">
-            Offers security and aesthetic fencing for homes, gardens, and parking areas.
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Defense & Security Zones -->
-    <div class="col-sm-6 col-md-4">
-      <div class="p-3 product-card d-flex gap-3 align-items-center">
-        <i class="bi bi-shield-lock fs-2 text-secondary"></i>
-        <div>
-          <div class="fw-semibold">Defense & Security Zones</div>
-          <div class="small text-muted">
-            Provides strong, double-wire fencing for military high-security areas.
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<style>
-/* Section Title */
-.section-title {
-  font-weight: 800;
-  color: #2e256e;
-  font-size: 2.3rem;
-  text-align: center;
-  position: relative;
-  margin-bottom: 2rem;
-}
-.section-title::after {
-
-  width: 80px;
-  height: 4px;
-  background: #6f4ef6;
-  display: block;
-  margin: 10px auto 0;
-  border-radius: 2px;
-}
-
-/* Product Card Style */
-.product-card {
-  background: #ffffff;
-  border-radius: 16px;
-  transition: all 0.4s ease;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  cursor: pointer;
-  border: 1px solid #e9e9e9;
-}
-
-.product-card:hover {
-  transform: translateY(-8px);
-  border-color: #6f4ef6;
-  box-shadow: 0 6px 20px rgba(111, 78, 246, 0.15);
-  background: linear-gradient(145deg, #ffffff, #f8f7ff);
-}
-
-/* Icon Styling */
-.product-card i {
-  background: #f3f1ff;
-  color: #6f4ef6;
-  padding: 12px;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-}
-
-.product-card:hover i {
-  background: #6f4ef6;
-  color: #fff;
-  transform: scale(1.2);
-}
-
-/* Text Styling */
-.product-card .fw-semibold {
-  color: #2e256e;
-  font-size: 1.05rem;
-  margin-bottom: 4px;
-}
-
-.product-card .small.text-muted {
-  color: #6c6c6c !important;
-  line-height: 1.4;
-}
-
-/* Layout Adjustments */
-#industries {
-  padding-top: 60px;
-  padding-bottom: 60px;
-  background: #f9f9fc;
-  border-radius: 20px;
-}
-
-@media (max-width: 768px) {
-  .section-title {
-    font-size: 1.8rem;
-  }
-  .product-card {
-    padding: 1.2rem;
-  }
-  .product-card i {
-    font-size: 1.5rem;
-    padding: 10px;
-  }
-}
-</style>
-
-<!-- TECHNOLOGY SECTION -->
-<section class="technology-section py-5" style="background: #f9f9fc;">
-  <div class="container">
-    <h3  style="font-weight: 800;text-align: center;">Technology  and Manufacturing Excellence</h3>
-    <p  style="max-width: 800px; padding:30px">
-      Our Double Wire Automatic Chain Link Fencing Machine combines advanced automation,
-      robust mechanical design, and precision engineering to deliver high-speed, efficient,
-      and durable fencing production for multiple industries.
-    </p>
-
-    <div class="row g-4">
-      <!-- Feature 1 -->
-      <div class="col-md-6 d-flex align-items-start">
-        <div class="tech-icon"><i class="fas fa-microchip"></i></div>
-        <div class="ms-3">
-          <h5>PLC-based Automation</h5>
-          <p >Accurate and safe operation with modern control systems.</p>
-        </div>
-      </div>
-
-      <!-- Feature 2 -->
-      <div class="col-md-6 d-flex align-items-start">
-        <div class="tech-icon"><i class="fas fa-link"></i></div>
-        <div class="ms-3">
-          <h5>Dual Wire Feeding</h5>
-          <p >High output and stronger mesh structure for durability.</p>
-        </div>
-      </div>
-
-      <!-- Feature 3 -->
-      <div class="col-md-6 d-flex align-items-start">
-        <div class="tech-icon"><i class="fas fa-cogs"></i></div>
-        <div class="ms-3">
-          <h5>Edge Twisting & Rolling</h5>
-          <p >Automatic cutting, twisting, and rolling for smooth operation.</p>
-        </div>
-      </div>
-
-      <!-- Feature 4 -->
-      <div class="col-md-6 d-flex align-items-start">
-        <div class="tech-icon"><i class="fas fa-volume-down"></i></div>
-        <div class="ms-3">
-          <h5>Low-Noise Operation</h5>
-          <p >Quiet performance with energy-efficient design.</p>
-        </div>
-      </div>
-
-      <!-- Feature 5 -->
-      <div class="col-md-6 d-flex align-items-start">
-        <div class="tech-icon"><i class="fas fa-sliders-h"></i></div>
-        <div class="ms-3">
-          <h5>Custom Mesh Options</h5>
-          <p >Flexible mesh size, wire thickness, and coating options available.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- STYLE -->
-<style>
-
-
-.tech-icon {
-  width: 50px;
-  height: 50px;
-  background: #6f4ef6;
-  color: #fff;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2rem;
-  transition: transform 0.3s, background 0.3s;
-  flex-shrink: 0;
-}
-.tech-icon:hover {
-  transform: scale(1.3);
-  background: #352961;
-}
-
-h5 {
-  font-weight: 700;
-  margin-bottom: 0.25rem;
-}
-p {
-  font-size: 0.95rem;
-}
-@media (max-width: 768px) {
-  .tech-icon {
-    margin-bottom: 8px;
-  }
-}
-</style>
-
-
+      h5 {
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+      }
+      p {
+        font-size: 0.95rem;
+      }
+      @media (max-width: 768px) {
+        .tech-icon {
+          margin-bottom: 8px;
+        }
+      }
+    </style>
 
     <!-- Footer Start -->
     <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
@@ -569,7 +610,9 @@ p {
           <div class="col-md-6 col-lg-6 col-xl-3">
             <div class="footer-item d-flex flex-column">
               <h4 class="text-white mb-4">Explore</h4>
-              <a href="index.html"><i class="fas fa-angle-right me-2"></i> Home</a>
+              <a href="index.html"
+                ><i class="fas fa-angle-right me-2"></i> Home</a
+              >
               <a href="service.html"
                 ><i class="fas fa-angle-right me-2"></i> Services</a
               >
@@ -582,8 +625,12 @@ p {
               <a href="testimonial.html"
                 ><i class="fas fa-angle-right me-2"></i> testimonial</a
               >
-              <a href="team.html"><i class="fas fa-angle-right me-2"></i> Our Team</a>
-              <a href="contact.html"><i class="fas fa-angle-right me-2"></i> Contact Us</a>
+              <a href="team.html"
+                ><i class="fas fa-angle-right me-2"></i> Our Team</a
+              >
+              <a href="contact.html"
+                ><i class="fas fa-angle-right me-2"></i> Contact Us</a
+              >
             </div>
           </div>
           <div class="col-md-6 col-lg-6 col-xl-3">
@@ -643,7 +690,11 @@ p {
               </div>
 
               <div class="footer-btn text-start">
-                <a href="https://www.instagram.com/vizzac_laser?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="btn btn-light rounded-pill px-4" class="btn btn-light rounded-pill px-4">
+                <a
+                  href="https://www.instagram.com/vizzac_laser?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                  class="btn btn-light rounded-pill px-4"
+                  class="btn btn-light rounded-pill px-4"
+                >
                   View All Posts <i class="fa fa-arrow-right ms-1"></i>
                 </a>
               </div>
@@ -678,10 +729,28 @@ p {
     </div>
     <!-- Copyright End -->
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-primary btn-lg-square back-to-top"
-      ><i class="fa fa-arrow-up"></i
-    ></a>
+    <!-- Go to Top Button -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const backToTop = document.querySelector(".back-to-top");
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > window.innerHeight / 2) {
+            // Show button after scrolling halfway down viewport
+            backToTop.classList.add("show");
+          } else {
+            // Hide button at top
+            backToTop.classList.remove("show");
+          }
+        });
+
+        // Smooth scroll to top
+        backToTop.addEventListener("click", (e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      });
+    </script>
 
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -693,6 +762,45 @@ p {
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
 
+    <!-- product dropdown for header -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const dropdownLink = document.getElementById("productsDropdown");
+
+        dropdownLink.addEventListener("click", function (e) {
+          const isMobile = window.innerWidth < 992; // Bootstrap breakpoint
+          const dropdownMenu = this.nextElementSibling;
+
+          if (isMobile) {
+            // Detect where user clicked
+            const clickX = e.offsetX;
+            const linkWidth = this.offsetWidth;
+            const arrowZone = 40; // tap area for arrow (px)
+            const clickedArrow = clickX > linkWidth - arrowZone;
+
+            if (clickedArrow) {
+              // Open/close dropdown only
+              e.preventDefault();
+              e.stopPropagation();
+              const bsDropdown = bootstrap.Dropdown.getOrCreateInstance(this);
+              bsDropdown.toggle();
+
+              // Optional: Smooth dropdown animation (works with your CSS)
+              dropdownMenu.style.transition = "all 0.3s ease";
+            } else {
+              // Go to product.html if text is clicked
+              window.location.href = this.getAttribute("href");
+            }
+          } else {
+            // Desktop behavior
+            if (!dropdownMenu.classList.contains("show")) {
+              e.preventDefault();
+              window.location.href = this.getAttribute("href");
+            }
+          }
+        });
+      });
+    </script>
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
   </body>

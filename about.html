@@ -143,10 +143,48 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-              <a href="index.html" class="nav-item nav-link">Home</a>
-              <a href="about.html" class="nav-item nav-link active">About</a>
+              <a href="index.html" class="nav-item nav-link active">Home</a>
+              <a href="about.html" class="nav-item nav-link">About</a>
               <a href="service.html" class="nav-item nav-link">Services</a>
-              <a href="product.html" class="nav-item nav-link">Products</a>
+              <li class="nav-item dropdown">
+                <a
+                  href="product.html"
+                  class="nav-link dropdown-toggle"
+                  id="productsDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Products
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+                  <li>
+                    <a class="dropdown-item" href="product.html#product1"
+                      >CO2 LASER CUTTING MACHINE</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="product.html#product2"
+                      >LASER MARKING MACHINE</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="product.html#product3"
+                      >FIBER LASER CUTTING MACHINE</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="product.html#product4"
+                      >CHAIN LINK FENCING MACHINE</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="product.html#product5"
+                      >ROLL FORMING</a
+                    >
+                  </li>
+                </ul>
+              </li>
               <a href="blog.html" class="nav-item nav-link">Our Blog</a>
               <a href="team.html" class="nav-item nav-link">Our Team</a>
               <a href="testimonial.html" class="nav-item nav-link"
@@ -417,7 +455,9 @@
                 reliable delivery services to all states and union territories
                 in India.Packages are sealed to prevent unauthorized access.
               </div>
-              <a class="btn btn-primary rounded-pill py-2 px-4" href="product.html"
+              <a
+                class="btn btn-primary rounded-pill py-2 px-4"
+                href="product.html"
                 >View Products</a
               >
             </div>
@@ -446,7 +486,9 @@
                 to prevent any damage during transit and withstand varying
                 weather conditions against rain or humidity.
               </div>
-              <a class="btn btn-primary rounded-pill py-2 px-4" href="product.html"
+              <a
+                class="btn btn-primary rounded-pill py-2 px-4"
+                href="product.html"
                 >View Products</a
               >
             </div>
@@ -476,7 +518,9 @@
                 with care, following strict safety protocols to protect both the
                 product.
               </div>
-              <a class="btn btn-primary rounded-pill py-2 px-4" href="product.html"
+              <a
+                class="btn btn-primary rounded-pill py-2 px-4"
+                href="product.html"
                 >View Products</a
               >
             </div>
@@ -636,7 +680,9 @@
           <div class="col-md-6 col-lg-6 col-xl-3">
             <div class="footer-item d-flex flex-column">
               <h4 class="text-white mb-4">Explore</h4>
-              <a href="index.html"><i class="fas fa-angle-right me-2"></i> Home</a>
+              <a href="index.html"
+                ><i class="fas fa-angle-right me-2"></i> Home</a
+              >
               <a href="service.html"
                 ><i class="fas fa-angle-right me-2"></i> Services</a
               >
@@ -649,8 +695,12 @@
               <a href="testimonial.html"
                 ><i class="fas fa-angle-right me-2"></i> testimonial</a
               >
-              <a href="team.html"><i class="fas fa-angle-right me-2"></i> Our Team</a>
-              <a href="contact.html"><i class="fas fa-angle-right me-2"></i> Contact Us</a>
+              <a href="team.html"
+                ><i class="fas fa-angle-right me-2"></i> Our Team</a
+              >
+              <a href="contact.html"
+                ><i class="fas fa-angle-right me-2"></i> Contact Us</a
+              >
             </div>
           </div>
           <div class="col-md-6 col-lg-6 col-xl-3">
@@ -710,7 +760,11 @@
               </div>
 
               <div class="footer-btn text-start">
-                <a href="https://www.instagram.com/vizzac_laser?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="btn btn-light rounded-pill px-4" class="btn btn-light rounded-pill px-4">
+                <a
+                  href="https://www.instagram.com/vizzac_laser?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                  class="btn btn-light rounded-pill px-4"
+                  class="btn btn-light rounded-pill px-4"
+                >
                   View All Posts <i class="fa fa-arrow-right ms-1"></i>
                 </a>
               </div>
@@ -745,10 +799,28 @@
     </div>
     <!-- Copyright End -->
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-primary btn-lg-square back-to-top"
-      ><i class="fa fa-arrow-up"></i
-    ></a>
+    <!-- Go to Top Button -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const backToTop = document.querySelector(".back-to-top");
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > window.innerHeight / 2) {
+            // Show button after scrolling halfway down viewport
+            backToTop.classList.add("show");
+          } else {
+            // Hide button at top
+            backToTop.classList.remove("show");
+          }
+        });
+
+        // Smooth scroll to top
+        backToTop.addEventListener("click", (e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      });
+    </script>
 
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -926,32 +998,68 @@
 
       const cards = document.querySelectorAll(".card");
 
-      // Timeline for card sequence
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: ".card-section",
           start: "top top",
-          end: "+=2000", // duration of pinned animation
-          scrub: true,
+          end: "+=800", // reduced scroll length (was 2000)
+          scrub: 1, // smoother and quicker response
           pin: true,
           markers: false,
         },
       });
 
-      // Animate cards one by one
+      // Cards appear faster
       cards.forEach((card, i) => {
-        tl.to(card, { opacity: 1, y: 0, duration: 0.5 }, i * 0.5);
+        tl.to(card, { opacity: 1, y: 0, duration: 0.25 }, i * 0.2);
       });
 
-      // Flip all together after last card
+      // Flip faster
       tl.to(cards, {
         rotateY: 180,
-        duration: 0.3, // faster turn
+        duration: 0.5, // slightly faster flip
         stagger: { each: 0.05, from: "start" },
-        ease: "power4.inOut", // smooth but quick snap
+        ease: "power2.inOut",
       });
+    </script>
+    <!-- product dropdown for header -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const dropdownLink = document.getElementById("productsDropdown");
 
-      // Reverse scroll automatically handled (timeline scrub)
+        dropdownLink.addEventListener("click", function (e) {
+          const isMobile = window.innerWidth < 992; // Bootstrap breakpoint
+          const dropdownMenu = this.nextElementSibling;
+
+          if (isMobile) {
+            // Detect where user clicked
+            const clickX = e.offsetX;
+            const linkWidth = this.offsetWidth;
+            const arrowZone = 40; // tap area for arrow (px)
+            const clickedArrow = clickX > linkWidth - arrowZone;
+
+            if (clickedArrow) {
+              // Open/close dropdown only
+              e.preventDefault();
+              e.stopPropagation();
+              const bsDropdown = bootstrap.Dropdown.getOrCreateInstance(this);
+              bsDropdown.toggle();
+
+              // Optional: Smooth dropdown animation (works with your CSS)
+              dropdownMenu.style.transition = "all 0.3s ease";
+            } else {
+              // Go to product.html if text is clicked
+              window.location.href = this.getAttribute("href");
+            }
+          } else {
+            // Desktop behavior
+            if (!dropdownMenu.classList.contains("show")) {
+              e.preventDefault();
+              window.location.href = this.getAttribute("href");
+            }
+          }
+        });
+      });
     </script>
 
     <script src="js/main.js"></script>

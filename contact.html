@@ -130,18 +130,54 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-              <a href="index.html" class="nav-item nav-link">Home</a>
+              <a href="index.html" class="nav-item nav-link active">Home</a>
               <a href="about.html" class="nav-item nav-link">About</a>
               <a href="service.html" class="nav-item nav-link">Services</a>
-              <a href="product.html" class="nav-item nav-link">Products</a>
+              <li class="nav-item dropdown">
+                <a
+                  href="product.html"
+                  class="nav-link dropdown-toggle"
+                  id="productsDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Products
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+                  <li>
+                    <a class="dropdown-item" href="product.html#product1"
+                      >CO2 LASER CUTTING MACHINE</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="product.html#product2"
+                      >LASER MARKING MACHINE</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="product.html#product3"
+                      >FIBER LASER CUTTING MACHINE</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="product.html#product4"
+                      >CHAIN LINK FENCING MACHINE</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="product.html#product5"
+                      >ROLL FORMING</a
+                    >
+                  </li>
+                </ul>
+              </li>
               <a href="blog.html" class="nav-item nav-link">Our Blog</a>
               <a href="team.html" class="nav-item nav-link">Our Team</a>
               <a href="testimonial.html" class="nav-item nav-link"
                 >Testimonial</a
               >
-              <a href="contact.html" class="nav-item nav-link active"
-                >Contact</a
-              >
+              <a href="contact.html" class="nav-item nav-link">Contact</a>
             </div>
           </div>
         </nav>
@@ -198,7 +234,6 @@
         >
           Contact Us
         </h4>
-        
       </div>
     </div>
     <!-- Header End -->
@@ -483,7 +518,11 @@
               </div>
 
               <div class="footer-btn text-start">
-                <a href="https://www.instagram.com/vizzac_laser?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="btn btn-light rounded-pill px-4" class="btn btn-light rounded-pill px-4">
+                <a
+                  href="https://www.instagram.com/vizzac_laser?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                  class="btn btn-light rounded-pill px-4"
+                  class="btn btn-light rounded-pill px-4"
+                >
                   View All Posts <i class="fa fa-arrow-right ms-1"></i>
                 </a>
               </div>
@@ -518,10 +557,28 @@
     </div>
     <!-- Copyright End -->
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-primary btn-lg-square back-to-top"
-      ><i class="fa fa-arrow-up"></i
-    ></a>
+    <!-- Go to Top Button -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const backToTop = document.querySelector(".back-to-top");
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > window.innerHeight / 2) {
+            // Show button after scrolling halfway down viewport
+            backToTop.classList.add("show");
+          } else {
+            // Hide button at top
+            backToTop.classList.remove("show");
+          }
+        });
+
+        // Smooth scroll to top
+        backToTop.addEventListener("click", (e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      });
+    </script>
 
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -563,6 +620,46 @@
               );
             },
           });
+        });
+      });
+    </script>
+
+    <!-- product dropdown for header -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const dropdownLink = document.getElementById("productsDropdown");
+
+        dropdownLink.addEventListener("click", function (e) {
+          const isMobile = window.innerWidth < 992; // Bootstrap breakpoint
+          const dropdownMenu = this.nextElementSibling;
+
+          if (isMobile) {
+            // Detect where user clicked
+            const clickX = e.offsetX;
+            const linkWidth = this.offsetWidth;
+            const arrowZone = 40; // tap area for arrow (px)
+            const clickedArrow = clickX > linkWidth - arrowZone;
+
+            if (clickedArrow) {
+              // Open/close dropdown only
+              e.preventDefault();
+              e.stopPropagation();
+              const bsDropdown = bootstrap.Dropdown.getOrCreateInstance(this);
+              bsDropdown.toggle();
+
+              // Optional: Smooth dropdown animation (works with your CSS)
+              dropdownMenu.style.transition = "all 0.3s ease";
+            } else {
+              // Go to product.html if text is clicked
+              window.location.href = this.getAttribute("href");
+            }
+          } else {
+            // Desktop behavior
+            if (!dropdownMenu.classList.contains("show")) {
+              e.preventDefault();
+              window.location.href = this.getAttribute("href");
+            }
+          }
         });
       });
     </script>

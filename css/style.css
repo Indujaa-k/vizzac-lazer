@@ -461,7 +461,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding: 60px 0 60px 0;
-}      
+}
 .bg-breadcrumb-service {
   position: relative;
   overflow: hidden;
@@ -482,8 +482,8 @@
   background-size: cover;
   padding: 60px 0 60px 0;
 }
-.bg-breadcrumb-team{
-   position: relative;
+.bg-breadcrumb-team {
+  position: relative;
   overflow: hidden;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(../img/team-banner.jpg);
@@ -503,7 +503,7 @@
   background-size: cover;
   padding: 60px 0 60px 0;
 }
-.bg-breadcrumb-testimonial{
+.bg-breadcrumb-testimonial {
   position: relative;
   overflow: hidden;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -513,7 +513,7 @@
   background-size: cover;
   padding: 60px 0 60px 0;
 }
-.bg-breadcrumb-contact{
+.bg-breadcrumb-contact {
   position: relative;
   overflow: hidden;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -900,21 +900,17 @@
   box-shadow: 0 0 45px rgba(0, 0, 0, 0.3);
 } */
 
-
-
 /* why choose us */
-.why-choose-us{
+.why-choose-us {
   overflow-x: hidden;
-
 }
 .card-section {
- 
   overflow-x: hidden;
   min-height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
-   /* overflow-x: hidden;✅ Prevent horizontal scroll */
+  /* overflow-x: hidden;✅ Prevent horizontal scroll */
   padding: 20px;
   width: 100%;
   box-sizing: border-box;
@@ -1001,7 +997,6 @@
   }
 }
 
-
 .service .service-item .service-img {
   position: relative;
   overflow: hidden;
@@ -1084,16 +1079,15 @@
 /*** Service End ***/
 
 /*** product Start ***/
-
 .machine-banner {
-  /* background-color: #d0ebff; */
-  padding: 60px 20px;
+  padding: 60px 120px;
 }
 
 .machine-row {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: stretch;
   gap: 30px;
 }
 
@@ -1101,23 +1095,29 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   text-align: center;
   padding: 20px;
   border-radius: 20px;
   background-color: #ffffffcc; /* fallback color */
   background-image: repeating-linear-gradient(
     45deg,
-    /* angle of stripes */ rgba(16, 33, 71, 0.05),
-    /* stripe color */ rgba(16, 33, 71, 0.05) 10px,
+    rgba(16, 33, 71, 0.05),
+    rgba(16, 33, 71, 0.05) 10px,
     transparent 10px,
     transparent 20px
   );
-
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  gap: 10px;
-  width: 250px;
+  gap: 15px;
+  width: 100%;
+  max-width: 280px;
   transition: transform 0.3s, box-shadow 0.3s;
+  min-height: 250px; /* ensures even card height */
+}
+
+.machine-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .machine-card i {
@@ -1143,123 +1143,106 @@
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
-  transition: transform 0.2s;
   color: white;
+  transition: transform 0.2s, background-color 0.3s;
 }
 
 .machine-card button:hover {
   transform: scale(1.05);
+  background-color: #1b2f63;
 }
 
+/* 📱 Mobile (1 per row) */
+@media (max-width: 767px) {
+  .machine-banner {
+    padding: 60px 50px;
+  }
+  .machine-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+/* 💻 Tablet (2 per row) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .machine-banner {
+    padding: 60px 90px;
+  }
+  .machine-card {
+    flex: 1 1 calc(50% - 40px);
+    max-width: calc(50% - 40px);
+  }
+}
+
+/* 🖥️ Desktop (3 per row — gives 3 up, 3 down) */
+@media (min-width: 1024px) {
+  .machine-card {
+    flex: 1 1 calc(33.33% - 40px);
+    max-width: calc(33.33% - 40px);
+  }
+}
+
+/* banner */
 .banner {
   display: flex;
-  justify-content: center;
+  margin: 0 auto;
+  gap: 15px;
   align-items: center;
-  min-height: 100vh;
-}
-.poster-container {
-  display: flex;
-  width: 900px;
-  height: 500px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(145deg, #fff 0%, #f7f7f7 100%);
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-/* 3. LEFT SECTION STYLING (LIST)       */
-
-.left-section {
-  flex: 1; /* Takes up 50% width */
-  padding: 40px;
-  background-color: #fcfcfc;
-  border-right: 2px dashed #eee;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.sub-title {
-  color: #007bff;
-  font-size: 1.8em;
-  font-family: var(--font-heading);
-  margin-bottom: 30px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.machine-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.machine-list li {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 25px;
-}
-
-.bullet-point {
-  width: 10px;
-  height: 10px;
-  min-width: 10px;
-  background-color: #00bcd4;
-  border-radius: 50%;
-  margin-top: 6px;
-  margin-right: 15px;
-}
-
-.machine-list p {
-  font-size: 1.1em;
-  font-weight: 600;
-  color: var(--text-dark);
-  margin: 0;
-  line-height: 1.4;
-}
-
-/* 4. RIGHT SECTION STYLING (TITLE)     */
-
-.right-section {
-  flex: 1; /* Takes up 50% width */
-  background: #007bff;
-  color: var(--text-light);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  position: relative;
+  width: fit-content;
   text-align: center;
+  padding: 20px 40px;
+  margin-bottom: 20px;
+  background-color: #007bff;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Main Title Styling */
 .main-title {
-  font-family: var(--font-heading);
-  font-size: 4em;
+  font-size: 2.5em;
   font-weight: 700;
-  line-height: 0.9;
   margin: 0;
   text-transform: uppercase;
-  letter-spacing: 5px;
+  color: white;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+/* Second Line Styling */
 .second-line {
-  font-size: 3.5em;
-  color: #00bcd4;
-  margin-bottom: 30px;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+  font-size: 2.5em;
+  color: #02e2ff;
 }
 
-.graphic-placeholder {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  opacity: 0.15;
-  font-size: 120px;
-  color: var(--text-light);
-  transform: rotate(-15deg);
+/* ====== Responsive ====== */
+@media (max-width: 992px) {
+  .main-title {
+    font-size: 2em;
+    letter-spacing: 3px;
+  }
+
+  .second-line {
+    font-size: 2em;
+  }
+
+  .banner {
+    padding: 15px 30px;
+  }
 }
 
+@media (max-width: 576px) {
+  .main-title,
+  .second-line {
+    font-size: 1.5em;
+    letter-spacing: 2px;
+  }
+
+  .banner {
+    padding: 10px 20px;
+  }
+}
+
+/* products cards */
 .machines-container {
   position: relative;
   width: 100%;
@@ -1309,7 +1292,9 @@
   gap: 20px;
   flex: 1;
 }
-
+.machines-container-4 {
+  height: 260vh;
+}
 .machine-content h3 {
   margin: 0;
   color: #fff;
@@ -1330,13 +1315,43 @@
   .machine {
     flex-direction: column;
     align-items: center;
-    text-align: center;
   }
 
   .machine-img img {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
+    width: 700px;
+    height: 500px;
+    object-fit: contain;
+  }
+
+  .machines-container {
+    height: 300vh;
+  }
+
+  .machines-container-3 {
+    height: 400vh;
+  }
+  .machines-container-5 {
+    height: 530vh; /*  scroll space for  machines */
+  }
+}
+
+@media (max-width: 576px) {
+  .machine-img img {
+    width: 300px;
+    height: 400px;
+    object-fit: contain;
+  }
+  .machines-container {
+    height: 420vh;
+  }
+  .machines-container-3 {
+    height: 520vh;
+  }
+  .machines-container-4 {
+    height: 420vh;
+  }
+  .machines-container-5 {
+    height: 720vh;
   }
 }
 /*** product End ***/
