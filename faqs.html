@@ -141,7 +141,45 @@
               <a href="index.html" class="nav-item nav-link">Home</a>
               <a href="about.html" class="nav-item nav-link">About</a>
               <a href="service.html" class="nav-item nav-link">Services</a>
-              <a href="product.html" class="nav-item nav-link">Products</a>
+             <li class="nav-item dropdown">
+                <a
+                  href="#"
+                  class="nav-link dropdown-toggle active"
+                  id="productsDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Products
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+                  <li>
+                    <a class="dropdown-item" href="#product1"
+                      >CO2 LASER CUTTING MACHINE</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#product2"
+                      >LASER MARKING MACHINE</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#product3"
+                      >FIBER LASER CUTTING MACHINE</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#product4"
+                      >CHAIN LINK FENCING MACHINE</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#product5"
+                      >ROLL FORMING</a
+                    >
+                  </li>
+                </ul>
+              </li>
               <a href="blog.html" class="nav-item nav-link">Our Blog</a>
               <div class="nav-item dropdown">
                 <a
@@ -522,10 +560,28 @@
     </div>
     <!-- Copyright End -->
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-primary btn-lg-square back-to-top"
-      ><i class="fa fa-arrow-up"></i
-    ></a>
+    <!-- Go to Top Button -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const backToTop = document.querySelector(".back-to-top");
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > window.innerHeight / 2) {
+            // Show button after scrolling halfway down viewport
+            backToTop.classList.add("show");
+          } else {
+            // Hide button at top
+            backToTop.classList.remove("show");
+          }
+        });
+
+        // Smooth scroll to top
+        backToTop.addEventListener("click", (e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      });
+    </script>
 
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
