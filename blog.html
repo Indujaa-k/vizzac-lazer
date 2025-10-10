@@ -138,10 +138,49 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-              <a href="index.html" class="nav-item nav-link">Home</a>
+              <a href="index.html" class="nav-item nav-link 
+              ">Home</a>
               <a href="about.html" class="nav-item nav-link">About</a>
               <a href="service.html" class="nav-item nav-link">Services</a>
-              <a href="product.html" class="nav-item nav-link">Products</a>
+              <li class="nav-item dropdown">
+                <a
+                  href="product.html"
+                  class="nav-link dropdown-toggle"
+                  id="productsDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Products
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+                  <li>
+                    <a class="dropdown-item" href="product.html#product1"
+                      >CO2 LASER CUTTING MACHINE</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="product.html#product2"
+                      >LASER MARKING MACHINE</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="product.html#product3"
+                      >FIBER LASER CUTTING MACHINE</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="product.html#product4"
+                      >CHAIN LINK FENCING MACHINE</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="product.html#product5"
+                      >ROLL FORMING</a
+                    >
+                  </li>
+                </ul>
+              </li>
               <a href="blog.html" class="nav-item nav-link active">Our Blog</a>
               <a href="team.html" class="nav-item nav-link">Our Team</a>
               <a href="testimonial.html" class="nav-item nav-link"
@@ -152,6 +191,7 @@
           </div>
         </nav>
       </div>
+          
     </div>
     <!-- Navbar & Hero End -->
 
@@ -165,12 +205,10 @@
         >
           Our Blogs
         </h4>
-       
       </div>
     </div>
     <!-- Header End -->
 
-    <!-- Blog Start -->
     <div class="container-fluid blog py-5">
       <div class="container py-5">
         <div
@@ -184,9 +222,12 @@
             Machinery
           </h3>
         </div>
+
+        <!-- ✅ All blogs in a single row -->
         <div class="row g-4 justify-content-center">
+          <!-- Blog 1 -->
           <div
-            class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp"
+            class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
             data-wow-delay="0.1s"
           >
             <div
@@ -201,7 +242,6 @@
               <div class="project-image">
                 <img
                   src="./machines/Double Wire Automatic Chain Link Fencing Machine.png"
-              
                   alt="Image"
                 />
                 <div class="blog-plus-icon">
@@ -209,15 +249,145 @@
                     href="./machines/Double Wire Automatic Chain Link Fencing Machine.png"
                     data-lightbox="blog-1"
                     class="btn btn-primary btn-md-square rounded-pill"
-                    ><i class="fas fa-plus fa-1x"></i
-                  ></a>
+                  >
+                    <i class="fas fa-plus fa-1x"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="my-4">
+                <a href="#" class="h6">
+                  The Double Wire Automatic Chain Link Fencing Machine is
+                  engineered for high-volume production with dual wire feeding
+                  technology.
+                </a>
+              </div>
+              <a
+                class="btn btn-primary rounded-pill py-2 px-4"
+                href="industrial-Insights-blog.html"
+                >Explore More</a
+              >
+            </div>
+          </div>
+
+          <!-- Blog 2 -->
+          <div
+            class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.2s"
+          >
+            <div
+              class="blog-item bg-light rounded p-4"
+              style="background-image: url(img/bg.png)"
+            >
+              <div class="mb-4">
+                <h5 class="text-primary mb-2">
+                  Semi – Automatic Single Wire Chain Link Fencing Machine
+                </h5>
+              </div>
+              <div class="project-image">
+                <img
+                  src="./machines/Semi – Automatic Single Wire Chain Link Fencing Machine.png"
+                  alt="Image"
+                />
+                <div class="blog-plus-icon">
+                  <a
+                    href="./machines/Semi – Automatic Single Wire Chain Link Fencing Machine.png"
+                    data-lightbox="blog-2"
+                    class="btn btn-primary btn-md-square rounded-pill"
+                  >
+                    <i class="fas fa-plus fa-1x"></i>
+                  </a>
                 </div>
               </div>
               <div class="my-4">
                 <a href="#" class="h6"
-                  >The Double Wire Automatic Chain Link Fencing Machine is
-                  engineered for high-volume production with dual wire feeding
-                  technology.</a
+                  >The Semi–Automatic Single Wire Chain Link Fencing Machine is
+                  designed for manufacturing chain link fences using a steel
+                  wire.
+                </a>
+              </div>
+              <a
+                class="btn btn-primary rounded-pill py-2 px-4"
+                href="industrial-Insights-blog.html"
+                >Explore More</a
+              >
+            </div>
+          </div>
+
+          <!-- Blog 3 -->
+          <div
+            class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.3s"
+          >
+            <div
+              class="blog-item bg-light rounded p-4"
+              style="background-image: url(img/bg.png)"
+            >
+              <div class="mb-4">
+                <h5 class="text-primary mb-2">
+                  Fully Automatic Single Wire Chain Link Fencing Machine
+                </h5>
+              </div>
+              <div class="project-image">
+                <img
+                  src="./machines/Fully Automatic Single Wire Chain Link Fencing Machine.jpeg"
+                  alt="Image"
+                />
+                <div class="blog-plus-icon">
+                  <a
+                    href="./machines/Fully Automatic Single Wire Chain Link Fencing Machine.jpeg"
+                    data-lightbox="blog-3"
+                    class="btn btn-primary btn-md-square rounded-pill"
+                  >
+                    <i class="fas fa-plus fa-1x"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="my-4">
+                <a href="#" class="h6"
+                  >The Fully Automatic Single Wire Chain Link Fencing Machine is
+                  a high-efficiency system that completely automates</a
+                >
+              </div>
+              <a
+                class="btn btn-primary rounded-pill py-2 px-4"
+                href="industrial-Insights-blog.html"
+                >Explore More</a
+              >
+            </div>
+          </div>
+
+          <!-- Blog 4 -->
+          <div
+            class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.4s"
+          >
+            <div
+              class="blog-item bg-light rounded p-4"
+              style="background-image: url(img/bg.png)"
+            >
+              <div class="mb-4">
+                <h5 class="text-primary mb-2">Bamboo Tile Profile Machine</h5>
+              </div>
+              <div class="project-image">
+                <img
+                  src="./machines/Bamboo Tile Profile Machine.png"
+                  alt="Image"
+                />
+                <div class="blog-plus-icon">
+                  <a
+                    href="./machines/Bamboo Tile Profile Machine.png"
+                    data-lightbox="blog-4"
+                    class="btn btn-primary btn-md-square rounded-pill"
+                  >
+                    <i class="fas fa-plus fa-1x"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="my-4">
+                <a href="#" class="h6"
+                  >The Bamboo Tile Profile Machine is a specialized roll-forming
+                  system designed to produce bamboo-patterned roofing sheets
+                  made from materials</a
                 >
               </div>
               <a
@@ -257,7 +427,9 @@
           <div class="col-md-6 col-lg-6 col-xl-3">
             <div class="footer-item d-flex flex-column">
               <h4 class="text-white mb-4">Explore</h4>
-              <a href="index.html"><i class="fas fa-angle-right me-2"></i> Home</a>
+              <a href="index.html"
+                ><i class="fas fa-angle-right me-2"></i> Home</a
+              >
               <a href="service.html"
                 ><i class="fas fa-angle-right me-2"></i> Services</a
               >
@@ -270,8 +442,12 @@
               <a href="testimonial.html"
                 ><i class="fas fa-angle-right me-2"></i> testimonial</a
               >
-              <a href="team.html"><i class="fas fa-angle-right me-2"></i> Our Team</a>
-              <a href="contact.html"><i class="fas fa-angle-right me-2"></i> Contact Us</a>
+              <a href="team.html"
+                ><i class="fas fa-angle-right me-2"></i> Our Team</a
+              >
+              <a href="contact.html"
+                ><i class="fas fa-angle-right me-2"></i> Contact Us</a
+              >
             </div>
           </div>
           <div class="col-md-6 col-lg-6 col-xl-3">
@@ -331,7 +507,11 @@
               </div>
 
               <div class="footer-btn text-start">
-                <a href="https://www.instagram.com/vizzac_laser?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="btn btn-light rounded-pill px-4" class="btn btn-light rounded-pill px-4">
+                <a
+                  href="https://www.instagram.com/vizzac_laser?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                  class="btn btn-light rounded-pill px-4"
+                  class="btn btn-light rounded-pill px-4"
+                >
                   View All Posts <i class="fa fa-arrow-right ms-1"></i>
                 </a>
               </div>
@@ -379,6 +559,67 @@
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <!-- product dropdown for header -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const dropdownLink = document.getElementById("productsDropdown");
+
+        dropdownLink.addEventListener("click", function (e) {
+          const isMobile = window.innerWidth < 992; // Bootstrap breakpoint
+          const dropdownMenu = this.nextElementSibling;
+
+          if (isMobile) {
+            // Detect where user clicked
+            const clickX = e.offsetX;
+            const linkWidth = this.offsetWidth;
+            const arrowZone = 40; // tap area for arrow (px)
+            const clickedArrow = clickX > linkWidth - arrowZone;
+
+            if (clickedArrow) {
+              // Open/close dropdown only
+              e.preventDefault();
+              e.stopPropagation();
+              const bsDropdown = bootstrap.Dropdown.getOrCreateInstance(this);
+              bsDropdown.toggle();
+
+              // Optional: Smooth dropdown animation (works with your CSS)
+              dropdownMenu.style.transition = "all 0.3s ease";
+            } else {
+              // Go to product.html if text is clicked
+              window.location.href = this.getAttribute("href");
+            }
+          } else {
+            // Desktop behavior
+            if (!dropdownMenu.classList.contains("show")) {
+              e.preventDefault();
+              window.location.href = this.getAttribute("href");
+            }
+          }
+        });
+      });
+    </script>
+<!-- Go to Top Button -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const backToTop = document.querySelector(".back-to-top");
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > window.innerHeight / 2) {
+            // Show button after scrolling halfway down viewport
+            backToTop.classList.add("show");
+          } else {
+            // Hide button at top
+            backToTop.classList.remove("show");
+          }
+        });
+
+        // Smooth scroll to top
+        backToTop.addEventListener("click", (e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      });
+    </script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>

@@ -1743,6 +1743,117 @@
   align-items: center;
 }
 
+
+
+      .team-carousel-wrapper {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .team-carousel {
+        display: flex;
+        gap: 1rem;
+        transition: transform 0.5s ease-in-out;
+        scroll-snap-type: x mandatory;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        padding-bottom: 1rem;
+      }
+
+      .team-item {
+        flex: 0 0 calc(25% - 1rem); /* 4 cards on desktop */ /* four cards per row on desktop */
+        border: none !important; /* remove any border */
+        box-shadow: none !important; /* remove shadow */
+        background: none !important;
+        height: 510px; /* 🔹 fixed equal height for all cards */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .team-item-inner {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        background: none;
+        border: none;
+        box-shadow: none;
+      }
+
+      .team-img img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      .team-content {
+        padding: 15px;
+        text-align: left;
+        flex: 1;
+      }
+      .d-flex.align-items-start .text-muted i {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-top: 2px;
+      }
+
+      .d-flex.align-items-start a {
+        display: flex;
+        align-items: center;
+      }
+
+      /* Tablet view - 2 cards per row */
+      @media (max-width: 991px) {
+        .team-item {
+          flex: 0 0 calc(50% - 1rem);
+          height: 500px;
+        }
+        .team-content {
+          padding: 20px !important;
+        }
+
+        .team-content h4 {
+          font-size: 1.5rem !important;
+        }
+
+        .team-content .d-flex span {
+          font-size: 1.1rem !important;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .team-item {
+          flex: 0 0 95% !important;
+          max-width: 95% !important;
+          margin: 0 auto;
+          height: 430px !important;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .team-img img {
+          height: 250px !important;
+          width: 100% !important;
+          object-fit: cover !important;
+        }
+
+        .team-content {
+          padding: 10px !important;
+        }
+
+        .team-content h4 {
+          font-size: 1.5rem !important;
+          margin-bottom: 10px !important;
+        }
+
+        .team-content .d-flex span {
+          font-size: 1.1rem !important;
+          line-height: 1.4rem !important;
+          display: block; /* 🔹 ensures sentences wrap properly */
+          word-wrap: break-word;
+        }
+      }
+  
 /* Mobile view */
 @media (max-width: 768px) {
   h1.display-4 {
