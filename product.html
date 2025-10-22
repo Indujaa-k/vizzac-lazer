@@ -57,8 +57,110 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
-  </head>
 
+    <!-- Font Awesome & Bootstrap Icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Lightbox CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    .portfolio-item {
+      transition: all 0.4s ease-in-out;
+    }
+
+    .portfolio-box {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .portfolio-title {
+      position: static;
+      background: rgba(
+        13,
+        110,
+        253,
+        0.1
+      ); /* light blue transparent background */
+      padding: 12px 15px;
+      margin-top: 10px;
+      text-decoration: none;
+      border-radius: 6px;
+      display: block; /* ensures full clickable area */
+      transition: background 0.3s ease;
+    }
+
+    .portfolio-title:hover {
+      background: rgba(13, 110, 253, 0.2); /* slightly darker on hover */
+    }
+
+    .portfolio-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(4, 15, 40, 0.6);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: 0.3s;
+    }
+
+    .portfolio-box:hover .portfolio-btn {
+      opacity: 1;
+    }
+
+    .portfolio-box img {
+      width: 100%;
+      height: 350px; /* You can adjust this value as needed */
+      object-fit: cover; /* Ensures image maintains aspect ratio while filling space */
+      transition: transform 0.4s ease;
+    }
+
+    .portfolio-box:hover img {
+      transform: scale(1.05);
+    }
+
+    #portfolio-flters li {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #portfolio-flters li.active {
+      border-color: #0d6efd !important;
+      border-width: 4px;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .portfolio-box img {
+        height: 200px; /* Slightly smaller height for tablets/mobiles */
+      }
+    }
+
+    @media (max-width: 576px) {
+      .portfolio-box img {
+        height: 180px;
+      }
+    }
+  </style>
   <body>
     <!-- Spinner Start -->
     <div
@@ -119,27 +221,48 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="productsDropdown">
                   <li>
-                    <a class="dropdown-item" href="product.html#product1"
-                      >CO2 LASER CUTTING MACHINE</a
+                    <a
+                      class="dropdown-item"
+                      href="product.html#product1"
+                      data-href="#product1"
+                      data-filter=".first"
                     >
+                      CO2 LASER CUTTING MACHINE
+                    </a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="product.html#product2"
+                    <a
+                      class="dropdown-item"
+                      href="product.html#product2"
+                      data-href="#product2"
+                      data-filter=".second"
                       >LASER MARKING MACHINE</a
                     >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="product.html#product3"
+                    <a
+                      class="dropdown-item"
+                      href="product.html#product3"
+                      data-href="#product3"
+                      data-filter=".third"
                       >FIBER LASER CUTTING MACHINE</a
                     >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="product.html#product4"
+                    <a
+                      class="dropdown-item"
+                      href="product.html#product4"
+                      data-href="#product4"
+                      data-filter=".fourth"
                       >CHAIN LINK FENCING MACHINE</a
                     >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="product.html#product5"
+                    <a
+                      class="dropdown-item"
+                      href="product.html#product5"
+                      data-href="#product5"
+                      data-filter=".fifth"
                       >ROLL FORMING</a
                     >
                   </li>
@@ -185,7 +308,11 @@
             engrave, or fetch materials with high precision.
           </div>
           <button class="btn-primary-custom">
-            <a href="#product1" style="text-decoration: none; color: inherit"
+            <a
+              href="product.html#product1"
+              data-href="#product1"
+              data-filter=".first"
+              style="text-decoration: none; color: inherit"
               >View Now!!</a
             >
           </button>
@@ -198,7 +325,11 @@
             materials with high precision.
           </div>
           <button class="btn-primary-custom">
-            <a href="#product2" style="text-decoration: none; color: inherit"
+            <a
+              href="product.html#product2"
+              data-href="#product2"
+              data-filter=".second"
+              style="text-decoration: none; color: inherit"
               >View Now!!</a
             >
           </button>
@@ -244,7 +375,7 @@
         </div>
 
         <div class="machine-card" data-aos="fade-up" data-aos-delay="1200">
-          <div class="title">ROLL FORMING</div>
+          <div class="title">ROLL FORMING MACHINE</div>
           <div class="desc">
             A Roll Forming Machine used to continuously bend a long strip of
             metal into a desired cross-sectional profile.
@@ -258,631 +389,648 @@
       </div>
     </div>
     <!-- Total Machine Cards end -->
+    <!-- demo -->
 
-    <!-- banner-1 -->
-    <div class="banner" id="product1">
-      <div>
-        <h1 class="main-title">CO2 LASER</h1>
+    <!-- Project Section -->
+    <div class="container-fluid bg-light py-6 px-5">
+      <div class="text-center mx-auto mb-5" style="max-width: 600px">
+        <h3 class="mt-4 mb-4">
+          Explore our wide range of high-quality industrial machines designed
+          for precision, efficiency, and durability.
+        </h3>
       </div>
-      <div>
-        <h1 class="main-title second-line">CUTTING MACHINE</h1>
+
+      <!-- Filter Buttons -->
+      <div class="row gx-5">
+        <div class="col-12 text-center">
+          <div class="d-inline-block bg-dark-radial text-center pt-4 px-5 mb-5">
+            <ul class="list-inline mb-0" id="portfolio-flters">
+              <li
+                class="btn btn-outline-primary bg-white p-2 mx-2 mb-4 active"
+                data-filter=".first"
+                data-href="#product1"
+              >
+                <img
+                  src="machines/Laser Engraving and Cutting Machine (Normal).png"
+                  style="width: 150px; height: 100px"
+                />
+                <div
+                  class="position-absolute top-0 start-0 end-0 bottom-0 m-2 d-flex align-items-center justify-content-center"
+                  style="background: rgba(4, 15, 40, 0.3)"
+                >
+                  <h6 class="text-white text-uppercase m-0">
+                    CO2 LASER CUTTING MACHINE
+                  </h6>
+                </div>
+              </li>
+              <li
+                class="btn btn-outline-primary bg-white p-2 mx-2 mb-4"
+                data-filter=".second"
+                data-href="#product2"
+              >
+                <img
+                  src="machines/Fiber Laser Marking Machine.png"
+                  style="width: 150px; height: 100px"
+                />
+                <div
+                  class="position-absolute top-0 start-0 end-0 bottom-0 m-2 d-flex align-items-center justify-content-center"
+                  style="background: rgba(4, 15, 40, 0.3)"
+                >
+                  <h6 class="text-white text-uppercase m-0">
+                    LASER MARKING MACHINE
+                  </h6>
+                </div>
+              </li>
+              <li
+                class="btn btn-outline-primary bg-white p-2 mx-2 mb-4"
+                data-filter=".third"
+              >
+                <img
+                  src="machines/Sheet Metal & Tube Cutting Machine.png"
+                  style="width: 150px; height: 100px"
+                />
+                <div
+                  class="position-absolute top-0 start-0 end-0 bottom-0 m-2 d-flex align-items-center justify-content-center"
+                  style="background: rgba(4, 15, 40, 0.3)"
+                >
+                  <h6 class="text-white text-uppercase m-0">
+                    FIBER LASER CUTTING MACHINE
+                  </h6>
+                </div>
+              </li>
+              <li
+                class="btn btn-outline-primary bg-white p-2 mx-2 mb-4"
+                data-filter=".fourth"
+              >
+                <img
+                  src="machines/Fully Automatic Single Wire Chain Link Fencing Machine.jpeg"
+                  style="width: 150px; height: 100px"
+                />
+                <div
+                  class="position-absolute top-0 start-0 end-0 bottom-0 m-2 d-flex align-items-center justify-content-center"
+                  style="background: rgba(4, 15, 40, 0.3)"
+                >
+                  <h6 class="text-white text-uppercase m-0">
+                    CHAIN LINK FENCING MACHINE
+                  </h6>
+                </div>
+              </li>
+              <li
+                class="btn btn-outline-primary bg-white p-2 mx-2 mb-4"
+                data-filter=".fifth"
+              >
+                <img
+                  src="machines/Corrugation Profile Machine.png"
+                  style="width: 150px; height: 100px"
+                />
+                <div
+                  class="position-absolute top-0 start-0 end-0 bottom-0 m-2 d-flex align-items-center justify-content-center"
+                  style="background: rgba(4, 15, 40, 0.3)"
+                >
+                  <h6 class="text-white text-uppercase m-0">
+                    ROLL FORMING MACHINE
+                  </h6>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Portfolio Grid -->
+      <div class="row g-5 portfolio-container mb-5">
+        <!-- Construction -->
+        <div
+          class="col-xl-4 col-lg-6 col-md-6 portfolio-item first"
+          id="product1"
+        >
+          <div class="position-relative portfolio-box">
+            <img
+              class="img-fluid w-100"
+              src="machines/Laser Engraving and Cutting Machine (Normal).png"
+              alt=""
+            />
+            <a
+              class="portfolio-title shadow-sm p-2"
+              href="productsDetail.html?machine=laser-cutting-normal"
+            >
+              <p class="h5 text-uppercase">
+                Laser Engraving and Cutting Machine (Normal)
+              </p>
+              <span class="text-body">Read More</span>
+            </a>
+            <a
+              class="portfolio-btn"
+              href="machines/Laser Engraving and Cutting Machine (Normal).png"
+              data-lightbox="portfolio"
+            >
+              <i class="bi bi-plus text-white fs-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item first">
+          <div class="position-relative portfolio-box">
+            <img
+              class="img-fluid w-100"
+              src="machines/Small Camera Vision Laser Cutting Machine.png"
+              alt=""
+            />
+            <a
+              class="portfolio-title shadow-sm p-2"
+              href="productsDetail.html?machine=small-camera-vision"
+            >
+              <p class="h5 text-uppercase">
+                Small Camera Vision Laser Cutting Machine
+              </p>
+              <span class="text-body">Read More</span>
+            </a>
+            <a
+              class="portfolio-btn"
+              href="machines/Small Camera Vision Laser Cutting Machine.png"
+              data-lightbox="portfolio"
+            >
+              <i class="bi bi-plus text-white fs-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item first">
+          <div class="position-relative portfolio-box">
+            <img
+              class="img-fluid w-100"
+              src="machines/High Speed Top Camera Laser Cutting Machine.png"
+              alt=""
+            />
+            <a
+              class="portfolio-title shadow-sm p-2"
+              href="productsDetail.html?machine=high-speed-top-camera"
+            >
+              <p class="h5 text-uppercase">
+                High Speed Top Camera Laser Cutting Machine
+              </p>
+              <span class="text-body">Read More</span>
+            </a>
+            <a
+              class="portfolio-btn"
+              href="machines/High Speed Top Camera Laser Cutting Machine.png"
+              data-lightbox="portfolio"
+            >
+              <i class="bi bi-plus text-white fs-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item first">
+          <div class="position-relative portfolio-box">
+            <img
+              class="img-fluid w-100"
+              src="machines/Flying Laser Cutting Machine.png"
+              alt=""
+            />
+            <a
+              class="portfolio-title shadow-sm p-2"
+              href="productsDetail.html?machine=flying-laser-cutting"
+            >
+              <p class="h5 text-uppercase">Flying Laser Cutting Machine</p>
+              <span class="text-body">Read More</span>
+            </a>
+            <a
+              class="portfolio-btn"
+              href="machines/Flying Laser Cutting Machine.png"
+              data-lightbox="portfolio"
+            >
+              <i class="bi bi-plus text-white fs-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- LASER MARKING MACHINE -->
+        <div
+          class="col-xl-4 col-lg-6 col-md-6 portfolio-item second"
+          id="product2"
+        >
+          <div class="position-relative portfolio-box">
+            <img
+              class="img-fluid w-100"
+              src="machines/Fiber Laser Marking Machine.png"
+              alt=""
+            />
+            <a
+              class="portfolio-title shadow-sm p-2"
+              href="productsDetail.html?machine=fiber-laser-marking"
+            >
+              <p class="h5 text-uppercase">Fiber Laser Marking Machine</p>
+              <span class="text-body">Read More</span>
+            </a>
+            <a
+              class="portfolio-btn"
+              href="machines/Fiber Laser Marking Machine.png"
+              data-lightbox="portfolio"
+            >
+              <i class="bi bi-plus text-white fs-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item second">
+          <div class="position-relative portfolio-box">
+            <img
+              class="img-fluid w-100"
+              src="machines/UV Laser Marking Machine.png"
+              alt=""
+            />
+            <a
+              class="portfolio-title shadow-sm p-2"
+              href="productsDetail.html?machine=uv-laser-marking"
+            >
+              <p class="h5 text-uppercase">UV Laser Marking Machine</p>
+              <span class="text-body">Read More</span>
+            </a>
+            <a
+              class="portfolio-btn"
+              href="machines/UV Laser Marking Machine.png"
+              data-lightbox="portfolio"
+            >
+              <i class="bi bi-plus text-white fs-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- FIBER LASER CUTTING MACHINE -->
+        <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item third">
+          <div class="position-relative portfolio-box">
+            <img
+              class="img-fluid w-100"
+              src="machines/Sheet Metal Cutting Machine.jpeg"
+              alt=""
+            />
+            <a
+              class="portfolio-title shadow-sm p-2"
+              href="productsDetail.html?machine=sheet-metal-cutting"
+            >
+              <p class="h5 text-uppercase">Sheet Metal Cutting Machine</p>
+              <span class="text-body">Read More</span>
+            </a>
+            <a
+              class="portfolio-btn"
+              href="machines/Sheet Metal Cutting Machine.jpeg"
+              data-lightbox="portfolio"
+            >
+              <i class="bi bi-plus text-white fs-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item third">
+          <div class="position-relative portfolio-box">
+            <img
+              class="img-fluid w-100"
+              src="machines/Sheet Metal & Tube Cutting Machine.png"
+              alt=""
+            />
+            <a
+              class="portfolio-title shadow-sm p-2"
+              href="productsDetail.html?machine=sheet-metal-tube-cutting"
+            >
+              <p class="h5 text-uppercase">
+                Sheet Metal & Tube Cutting Machine
+              </p>
+              <span class="text-body">Read More</span>
+            </a>
+            <a
+              class="portfolio-btn"
+              href="machines/Sheet Metal & Tube Cutting Machine.png"
+              data-lightbox="portfolio"
+            >
+              <i class="bi bi-plus text-white fs-2"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item third">
+          <div class="position-relative portfolio-box">
+            <img
+              class="img-fluid w-100"
+              src="machines/Enclosed Metal Sheet Cutting Machine.png"
+              alt=""
+            />
+            <a
+              class="portfolio-title shadow-sm p-2"
+              href="productsDetail.html?machine=enclosed-metal-sheet-cutting"
+            >
+              <p class="h5 text-uppercase">
+                Enclosed Metal Sheet Cutting Machine
+              </p>
+              <span class="text-body">Read More</span>
+            </a>
+            <a
+              class="portfolio-btn"
+              href="machines/Enclosed Metal Sheet Cutting Machine.png"
+              data-lightbox="portfolio"
+            >
+              <i class="bi bi-plus text-white fs-2"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item third">
+          <div class="position-relative portfolio-box">
+            <img
+              class="img-fluid w-100"
+              src="machines/Laser Welding Machine.png"
+              alt=""
+            />
+            <a
+              class="portfolio-title shadow-sm p-2"
+              href="productsDetail.html?machine=laser-welding"
+            >
+              <p class="h5 text-uppercase">Laser Welding Machine</p>
+              <span class="text-body">Read More</span>
+            </a>
+            <a
+              class="portfolio-btn"
+              href="machines/Laser Welding Machine.png"
+              data-lightbox="portfolio"
+            >
+              <i class="bi bi-plus text-white fs-2"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item third">
+          <div class="position-relative portfolio-box">
+            <img
+              class="img-fluid w-100"
+              src="machines/Laser Cleaning Machine.png"
+              alt=""
+            />
+            <a
+              class="portfolio-title shadow-sm p-2"
+              href="productsDetail.html?machine=laser-cleaning"
+            >
+              <p class="h5 text-uppercase">Laser Cleaning Machine</p>
+              <span class="text-body">Read More</span>
+            </a>
+            <a
+              class="portfolio-btn"
+              href="machines/Laser Cleaning Machine.png"
+              data-lightbox="portfolio"
+            >
+              <i class="bi bi-plus text-white fs-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- CHAIN LINK FENCING MACHINE -->
+
+        <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item fourth">
+          <div class="position-relative portfolio-box">
+            <img
+              class="img-fluid w-100"
+              src="machines/Fully Automatic Single Wire Chain Link Fencing Machine.jpeg"
+              alt=""
+            />
+            <a
+              class="portfolio-title shadow-sm p-2"
+              href="productsDetail.html?machine=single-wire-chain-link-fencing"
+            >
+              <p class="h5 text-uppercase">
+                Fully Automatic Single Wire Chain Link Fencing Machine
+              </p>
+              <span class="text-body">Read More</span>
+            </a>
+            <a
+              class="portfolio-btn"
+              href="machines/Fully Automatic Single Wire Chain Link Fencing Machine.jpeg"
+              data-lightbox="portfolio"
+            >
+              <i class="bi bi-plus text-white fs-2"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item fourth">
+          <div class="position-relative portfolio-box">
+            <img
+              class="img-fluid w-100"
+              src="machines/Semi – Automatic Single Wire Chain Link Fencing Machine.png"
+              alt=""
+            />
+            <a
+              class="portfolio-title shadow-sm p-2"
+              href="productsDetail.html?machine=semi-auto-single-wire-chain-link-fencing"
+            >
+              <p class="h5 text-uppercase">
+                Semi – Automatic Single Wire Chain Link Fencing Machine
+              </p>
+              <span class="text-body">Read More</span>
+            </a>
+            <a
+              class="portfolio-btn"
+              href="machines/Semi – Automatic Single Wire Chain Link Fencing Machine.png"
+              data-lightbox="portfolio"
+            >
+              <i class="bi bi-plus text-white fs-2"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item fourth">
+          <div class="position-relative portfolio-box">
+            <img
+              class="img-fluid w-100"
+              src="machines/Double Wire Automatic Chain Link Fencing Machine.png"
+              alt=""
+            />
+            <a
+              class="portfolio-title shadow-sm p-2"
+              href="productsDetail.html?machine=double-wire-auto-chain-link-fencing"
+            >
+              <p class="h5 text-uppercase">
+                Double Wire Automatic Chain Link Fencing Machine
+              </p>
+              <span class="text-body">Read More</span>
+            </a>
+            <a
+              class="portfolio-btn"
+              href="machines/Double Wire Automatic Chain Link Fencing Machine.png"
+              data-lightbox="portfolio"
+            >
+              <i class="bi bi-plus text-white fs-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- ROLL FORMING MACHINE -->
+
+        <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item fifth">
+          <div class="position-relative portfolio-box">
+            <img
+              class="img-fluid w-100"
+              src="machines/Standard Profile Roofing Machine With Tile & Without Tile.png"
+              alt=""
+            />
+            <a
+              class="portfolio-title shadow-sm p-2"
+              href="productsDetail.html?machine=standard-profile-roofing"
+            >
+              <p class="h5 text-uppercase">
+                Standard Profile Roofing Machine With Tile & Without Tile
+              </p>
+              <span class="text-body">Read More</span>
+            </a>
+            <a
+              class="portfolio-btn"
+              href="machines/Standard Profile Roofing Machine With Tile & Without Tile.png"
+              data-lightbox="portfolio"
+            >
+              <i class="bi bi-plus text-white fs-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item fifth">
+          <div class="position-relative portfolio-box">
+            <img
+              class="img-fluid w-100"
+              src="machines/Bamboo Tile Profile Machine.png"
+              alt=""
+            />
+            <a
+              class="portfolio-title shadow-sm p-2"
+              href="productsDetail.html?machine=bamboo-tile-profile"
+            >
+              <p class="h5 text-uppercase">Bamboo Tile Profile Machine</p>
+              <span class="text-body">Read More</span>
+            </a>
+            <a
+              class="portfolio-btn"
+              href="machines/Bamboo Tile Profile Machine.png"
+              data-lightbox="portfolio"
+            >
+              <i class="bi bi-plus text-white fs-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item fifth">
+          <div class="position-relative portfolio-box">
+            <img
+              class="img-fluid w-100"
+              src="machines/Corrugation Profile Machine.png"
+              alt=""
+            />
+            <a
+              class="portfolio-title shadow-sm p-2"
+              href="productsDetail.html?machine=corrugation-profile"
+            >
+              <p class="h5 text-uppercase">Corrugation Profile Machine</p>
+              <span class="text-body">Read More</span>
+            </a>
+            <a
+              class="portfolio-btn"
+              href="machines/Corrugation Profile Machine.png"
+              data-lightbox="portfolio"
+            >
+              <i class="bi bi-plus text-white fs-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item fifth">
+          <div class="position-relative portfolio-box">
+            <img
+              class="img-fluid w-100"
+              src="machines/Automatic Decoiler.png"
+              alt=""
+            />
+            <a
+              class="portfolio-title shadow-sm p-2"
+              href="productsDetail.html?machine=automatic-decoiler"
+            >
+              <p class="h5 text-uppercase">Automatic Decoiler</p>
+              <span class="text-body">Read More</span>
+            </a>
+            <a
+              class="portfolio-btn"
+              href="machines/Automatic Decoiler.png"
+              data-lightbox="portfolio"
+            >
+              <i class="bi bi-plus text-white fs-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item fifth">
+          <div class="position-relative portfolio-box">
+            <img
+              class="img-fluid w-100"
+              src="machines/Crimpring Machine.png"
+              alt=""
+            />
+            <a
+              class="portfolio-title shadow-sm p-2"
+              href="productsDetail.html?machine=crimping-machine"
+            >
+              <p class="h5 text-uppercase">Crimpring Machine</p>
+              <span class="text-body">Read More</span>
+            </a>
+            <a
+              class="portfolio-btn"
+              href="machines/Crimpring Machine.png"
+              data-lightbox="portfolio"
+            >
+              <i class="bi bi-plus text-white fs-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item fifth">
+          <div class="position-relative portfolio-box">
+            <img
+              class="img-fluid w-100"
+              src="machines/Bending Machine.png"
+              alt=""
+            />
+            <a
+              class="portfolio-title shadow-sm p-2"
+              href="productsDetail.html?machine=bending-machine"
+            >
+              <p class="h5 text-uppercase">Bending Machine</p>
+              <span class="text-body">Read More</span>
+            </a>
+            <a
+              class="portfolio-btn"
+              href="machines/Bending Machine.png"
+              data-lightbox="portfolio"
+            >
+              <i class="bi bi-plus text-white fs-2"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item fifth">
+          <div class="position-relative portfolio-box">
+            <img
+              class="img-fluid w-100"
+              src="machines/Shearing Machine and Slitting Machine.png"
+              alt=""
+            />
+            <a
+              class="portfolio-title shadow-sm p-2"
+              href="productsDetail.html?machine=shearing-slitting-machine"
+            >
+              <p class="h5 text-uppercase">Shearing and Slitting Machine</p>
+              <span class="text-body">Read More</span>
+            </a>
+            <a
+              class="portfolio-btn"
+              href="machines/Shearing Machine and Slitting Machine.png"
+              data-lightbox="portfolio"
+            >
+              <i class="bi bi-plus text-white fs-2"></i>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
+
     <!--  -->
-    <div class="machines-container">
-      <!-- Machine 1.1 -->
-      <div class="machine">
-        <div class="machine-content">
-          <h3>Laser Engraving and Cutting Machine (Normal)</h3>
-          <p>
-            A laser engraving and cutting machine uses a focused laser beam to
-            cut, engrave, or mark materials. "Normal" refers to standard CO₂ or
-            fiber laser machines.
-          </p>
-          <ul>
-            <li>
-              CO₂ laser suitable for wood, acrylic, leather, paper, plastics.
-            </li>
-            <li>Some machines use fiber lasers for metals.</li>
-            <li>Power usually ranges from 40W to 100W.</li>
-          </ul>
-        </div>
-        <div class="machine-img">
-          <img
-            src="machines/Laser Engraving and Cutting Machine (Normal).png"
-            alt="Laser Engraving and Cutting Machine"
-          />
-        </div>
-      </div>
-
-      <!-- Machine 1.2 -->
-      <div class="machine">
-        <div class="machine-content">
-          <h3>Small Camera Vision Laser Cutting Machine</h3>
-          <p>
-            Integrates a high-resolution camera with a CO₂ laser cutter for
-            precise, automatic contour cutting.
-          </p>
-          <ul>
-            <li>Efficient cutting of printed or embroidered fabrics.</li>
-            <li>Precise cutting of logos and designs for signs.</li>
-            <li>Laser power: 40W–150W for small/medium models.</li>
-          </ul>
-        </div>
-        <div class="machine-img">
-          <img
-            src="machines/Small Camera Vision Laser Cutting Machine.png"
-            alt="Small Camera Vision Laser Cutting Machine"
-          />
-        </div>
-      </div>
-
-      <!-- Machine 1.3 -->
-      <div class="machine">
-        <div class="machine-content">
-          <h3>High Speed Top Camera Laser Cutting Machine</h3>
-          <p>
-            Combines advanced camera systems with high-speed laser technology
-            for precise and efficient cutting of intricate patterns.
-          </p>
-          <ul>
-            <li>Efficient cutting for garments, banners, textiles.</li>
-            <li>Precise cutting of logos and designs.</li>
-            <li>Power ranges from 60W to 300W.</li>
-          </ul>
-        </div>
-        <div class="machine-img">
-          <img
-            src="machines/High Speed Top Camera Laser Cutting Machine.png"
-            alt="High Speed Top Camera Laser Cutting Machine"
-          />
-        </div>
-      </div>
-
-      <!-- Machine 1.4 -->
-      <div class="machine">
-        <div class="machine-content">
-          <h3>Flying Laser Cutting Machine</h3>
-          <p>
-            High-speed laser system designed for continuous material processing.
-            Moves laser head across material at high speeds.
-          </p>
-          <ul>
-            <li>Laser moves rapidly without stopping.</li>
-            <li>
-              High-resolution cameras detect patterns for contour cutting.
-            </li>
-            <li>Power usually ranges from 60W to 200W.</li>
-          </ul>
-        </div>
-        <div class="machine-img">
-          <img
-            src="machines/Flying Laser Cutting Machine.png"
-            alt="Flying Laser Cutting Machine"
-          />
-        </div>
-      </div>
-    </div>
-
-    <!-- banner-2 -->
-
-    <div class="banner" id="product2">
-      <div>
-        <h1 class="main-title">LASER</h1>
-      </div>
-      <div>
-        <h1 class="main-title second-line">Marking Machine</h1>
-      </div>
-    </div>
-
-    <div class="machines-container-2">
-      <!-- Machine 2.1 -->
-      <div class="machine">
-        <div class="machine-content">
-          <h3>Fiber Laser Marking Machine</h3>
-          <p>
-            A fiber laser marking machine uses a high-power fiber laser to
-            permanently mark or engrave metals and some plastics with high
-            precision. Ideal for serial numbers, logos, and detailed designs.
-          </p>
-          <ul>
-            <li>
-              Marks metals like stainless steel, aluminum, copper, and brass.
-            </li>
-            <li>Can also mark plastics and coated materials.</li>
-            <li>
-              Laser power typically ranges from 10W to 50W for standard models.
-            </li>
-          </ul>
-        </div>
-        <div class="machine-img">
-          <img
-            src="machines/Fiber Laser Marking Machine.png"
-            alt="Laser Engraving and Cutting Machine"
-          />
-        </div>
-      </div>
-
-      <!-- Machine 2.2 -->
-      <div class="machine">
-        <div class="machine-content">
-          <h3>UV Laser Marking Machine</h3>
-          <p>
-            A UV laser marking machine uses ultraviolet laser light to create
-            precise, high-contrast marks on materials that are sensitive to
-            heat. It is ideal for plastics, glass, and delicate materials
-          </p>
-          <ul>
-            <li>
-              Marks plastics, glass, ceramics, and thin materials without heat
-              damage.
-            </li>
-            <li>
-              High precision for detailed graphics, QR codes, and serial
-              numbers.
-            </li>
-            <li>
-              Laser power typically ranges from 3W to 20W for standard models.
-            </li>
-          </ul>
-        </div>
-        <div class="machine-img">
-          <img
-            src="machines/UV Laser Marking Machine.png"
-            alt="Small Camera Vision Laser Cutting Machine"
-          />
-        </div>
-      </div>
-    </div>
-
-    <!-- banner-3 -->
-
-    <div class="banner" id="product3">
-      <div>
-        <h1 class="main-title">FIBER LASER</h1>
-      </div>
-      <div>
-        <h1 class="main-title second-line">CUTTING MACHINE</h1>
-      </div>
-    </div>
-
-    <div class="machines-container-3">
-      <!-- Machine 3.1 -->
-      <div class="machine">
-        <div class="machine-content">
-          <h3>Sheet Metal Cutting Machine</h3>
-          <p>
-            A sheet metal cutting machine is designed to cut various types of
-            metal sheets with exceptional precision and speed. It ensures
-            smooth, burr-free edges and supports complex cutting patterns for
-            industrial applications.
-          </p>
-          <ul>
-            <li>
-              Ideal for cutting stainless steel, mild steel, aluminum, and brass
-              sheets.
-            </li>
-            <li>High cutting accuracy with minimal material waste.</li>
-            <li>Available in various power configurations from 1kW to 12kW.</li>
-          </ul>
-        </div>
-        <div class="machine-img">
-          <img
-            src="machines/Sheet Metal Cutting Machine.jpeg"
-            alt="Sheet Metal Cutting Machine"
-          />
-        </div>
-      </div>
-
-      <!-- Machine 3.2 -->
-      <div class="machine">
-        <div class="machine-content">
-          <h3>Sheet Metal & Tube Cutting Machine</h3>
-          <p>
-            The Sheet Metal & Tube Cutting Machine is engineered for
-            dual-purpose operations, allowing precision cutting of both flat
-            metal sheets and round or square tubes. It offers unmatched
-            flexibility and accuracy for industrial fabrication.
-          </p>
-          <ul>
-            <li>
-              Efficiently cuts sheet metals like stainless steel, carbon steel,
-              and aluminum, as well as metal tubes of various shapes.
-            </li>
-            <li>
-              High-speed laser technology ensures smooth, burr-free edges and
-              consistent results.
-            </li>
-            <li>
-              Power options typically range from 1kW to 6kW, suitable for
-              multiple industrial applications.
-            </li>
-          </ul>
-        </div>
-        <div class="machine-img">
-          <img
-            src="machines/Sheet Metal & Tube Cutting Machine.png"
-            alt="Sheet Metal & Tube Cutting Machine"
-          />
-        </div>
-      </div>
-
-      <!-- Machine 3.3 -->
-      <div class="machine">
-        <div class="machine-content">
-          <h3>Enclosed Metal Sheet Cutting Machine.</h3>
-          <p>
-            The Enclosed Metal Sheet Cutting Machine is built with a fully
-            covered design to ensure safe, clean, and efficient cutting
-            operations. It provides high precision and protection against laser
-            radiation and dust.
-          </p>
-          <ul>
-            <li>
-              Fully enclosed design ensures operator safety and maintains a
-              clean working environment.
-            </li>
-            <li>
-              Ideal for cutting stainless steel, carbon steel, aluminum, and
-              other metal sheets.
-            </li>
-            <li>
-              High-performance laser power options ranging from 1kW to 12kW for
-              industrial-grade cutting.
-            </li>
-          </ul>
-        </div>
-        <div class="machine-img">
-          <img
-            src="machines/Enclosed Metal Sheet Cutting Machine.png"
-            alt="Enclosed Metal Sheet Cutting Machine."
-          />
-        </div>
-      </div>
-
-      <!-- Machine 3.4 -->
-      <div class="machine">
-        <div class="machine-content">
-          <h3>Laser Welding Machine</h3>
-          <p>
-            The Laser Welding Machine delivers precise, high-strength welds with
-            minimal distortion. It’s ideal for industries requiring accuracy,
-            speed, and seamless metal joining.
-          </p>
-          <ul>
-            <li>
-              Suitable for stainless steel, carbon steel, aluminum, and other
-              metals.
-            </li>
-            <li>Offers deep penetration welding with smooth, clean seams.</li>
-            <li>
-              Available in various laser power ranges from 1kW to 3kW for
-              different applications.
-            </li>
-          </ul>
-        </div>
-        <div class="machine-img">
-          <img
-            src="machines/Laser Welding Machine.png"
-            alt="Laser Welding Machine"
-          />
-        </div>
-      </div>
-
-      <!-- machine 3.5 -->
-      <div class="machine">
-        <div class="machine-content-3">
-          <h3 style="color: #fff">Laser Cleaning Machine</h3>
-          <p>
-            The Laser Cleaning Machine provides an eco-friendly and efficient
-            solution for removing rust, paint, oil, and contaminants from metal
-            surfaces without damaging the base material.
-          </p>
-          <ul>
-            <li>
-              Non-contact cleaning method — no chemicals or abrasives required.
-            </li>
-            <li>
-              Ideal for rust removal, surface preparation, and paint stripping.
-            </li>
-            <li>
-              Available in laser power options from 100W to 2000W for various
-              industrial uses.
-            </li>
-          </ul>
-        </div>
-        <div class="machine-img">
-          <img
-            src="machines/Laser Cleaning Machine.png"
-            alt="Laser Cleaning Machine"
-          />
-        </div>
-      </div>
-    </div>
-    <!-- banner-4 -->
-
-    <div class="banner" id="product4">
-      <div>
-        <h1 class="main-title">CHAIN LINK</h1>
-      </div>
-      <div>
-        <h1 class="main-title second-line">FENCING MACHINE</h1>
-      </div>
-    </div>
-
-    <div class="machines-container-4">
-      <!-- Machine 4.1 -->
-      <div class="machine">
-        <div class="machine-content">
-          <h3>Fully Automatic Single Wire Chain Link Fencing Machine</h3>
-          <p>
-            The Fully Automatic Single Wire Chain Link Fencing Machine is
-            designed for high-speed and precise production of chain link fences.
-            It offers automatic wire feeding, weaving, and cutting, reducing
-            manual labor and increasing efficiency.
-          </p>
-          <ul>
-            <li>
-              Fully automatic operation with single wire system for smooth
-              performance.
-            </li>
-            <li>Semi – Automatic Single Wire Chain Link Fencing Machine</li>
-            <li>Double Wire Automatic Chain Link Fencing Machine</li>
-          </ul>
-        </div>
-        <div class="machine-img">
-          <img
-            src="machines/Fully Automatic Single Wire Chain Link Fencing Machine.jpeg"
-            alt="Fully Automatic Single Wire Chain Link Fencing Machine"
-          />
-        </div>
-      </div>
-
-      <!-- Machine 4.2 -->
-      <div class="machine">
-        <div class="machine-content">
-          <h3>Semi – Automatic Single Wire Chain Link Fencing Machine</h3>
-          <p>
-            The Semi-Automatic Single Wire Chain Link Fencing Machine is built
-            for reliable and efficient fence production with minimal manual
-            operation. It offers precise wire weaving and cutting, making it
-            ideal for medium-scale manufacturing.
-          </p>
-          <ul>
-            <li>
-              Semi-automatic control with manual assistance for wire setup and
-              adjustment.
-            </li>
-            <li>
-              Suitable for producing fences of various mesh sizes and wire
-              gauges.
-            </li>
-            <li>
-              Durable construction ensures long life and consistent performance
-              with low maintenance.
-            </li>
-          </ul>
-        </div>
-        <div class="machine-img">
-          <img
-            src="machines/Semi – Automatic Single Wire Chain Link Fencing Machine.png"
-            alt="Semi – Automatic Single Wire Chain Link Fencing Machine"
-          />
-        </div>
-      </div>
-
-      <!-- Machine 4.3 -->
-      <div class="machine">
-        <div class="machine-content">
-          <h3>Double Wire Automatic Chain Link Fencing Machine</h3>
-          <p>
-            The Double Wire Automatic Chain Link Fencing Machine is engineered
-            for high-volume production with dual wire feeding technology. It
-            ensures faster output, uniform mesh weaving, and excellent
-            durability for heavy-duty applications.
-          </p>
-          <ul>
-            <li>
-              Dual wire system doubles the production speed and enhances mesh
-              stability.
-            </li>
-            <li>
-              Fully automatic operation with automatic wire feeding, cutting,
-              and rolling.
-            </li>
-            <li>
-              Suitable for producing fencing for industrial, agricultural, and
-              security purposes.
-            </li>
-          </ul>
-        </div>
-        <div class="machine-img">
-          <img
-            src="machines/Double Wire Automatic Chain Link Fencing Machine.png"
-            alt="Double Wire Automatic Chain Link Fencing Machine"
-          />
-        </div>
-      </div>
-    </div>
-
-    <!-- banner-5 -->
-    <div class="banner" id="product5">
-      <div>
-        <h1 class="main-title">ROLL FORMING</h1>
-      </div>
-      <div>
-        <h1 class="main-title second-line">MACHINE</h1>
-      </div>
-    </div>
-
-    <div class="machines-container-5">
-      <!-- Standard Profile Roofing Machine With Tile & Without Tile -->
-      <div class="machine">
-        <div class="machine-content">
-          <h3>Standard Profile Roofing Machine (With Tile & Without Tile)</h3>
-          <p>
-            Produces high-quality metal roofing sheets in both plain and tile
-            patterns. Efficient for large-scale roofing projects, offering
-            durability, precision, and aesthetic appeal.
-          </p>
-          <ul>
-            <li>Produces both plain and tile pattern roofing sheets.</li>
-            <li>High durability and precision for long-lasting performance.</li>
-            <li>
-              Suitable for residential, commercial, and industrial roofing
-              projects.
-            </li>
-          </ul>
-        </div>
-        <div class="machine-img">
-          <img
-            src="machines/Standard Profile Roofing Machine With Tile & Without Tile.png"
-            alt="Standard Profile Roofing Machine"
-          />
-        </div>
-      </div>
-
-      <!-- Bamboo Tile Profile Machine -->
-      <div class="machine">
-        <div class="machine-content">
-          <h3>Bamboo Tile Profile Machine</h3>
-          <p>
-            Designed to create roofing sheets with a bamboo-style texture for
-            decorative roofing. Ideal for resorts, villas, and architectural
-            projects that require an elegant, natural look.
-          </p>
-          <ul>
-            <li>Produces bamboo-style textured roofing sheets.</li>
-            <li>Used for decorative and aesthetic roofing applications.</li>
-            <li>Enhances the visual appeal of buildings and structures.</li>
-          </ul>
-        </div>
-        <div class="machine-img">
-          <img
-            src="machines/Bamboo Tile Profile Machine.png"
-            alt="Bamboo Tile Profile Machine"
-          />
-        </div>
-      </div>
-
-      <!-- Corrugation Profile Machine -->
-      <div class="machine">
-        <div class="machine-content">
-          <h3>Corrugation Profile Machine</h3>
-          <p>
-            Used to produce corrugated sheets for industrial and residential
-            roofing applications. Ensures uniform wave patterns, high structural
-            strength, and weather resistance.
-          </p>
-          <ul>
-            <li>
-              Produces corrugated roofing sheets with uniform wave patterns.
-            </li>
-            <li>High strength and weather-resistant for long-term use.</li>
-            <li>
-              Suitable for industrial, commercial, and residential projects.
-            </li>
-          </ul>
-        </div>
-        <div class="machine-img">
-          <img
-            src="machines/Corrugation Profile Machine.png"
-            alt="Corrugation Profile Machine"
-          />
-        </div>
-      </div>
-
-      <!-- Automatic Decoiler -->
-      <div class="machine">
-        <div class="machine-content">
-          <h3>Automatic Decoiler</h3>
-          <p>
-            A motorized system that automatically feeds metal coils into roll
-            forming machines. Maintains constant tension and alignment,
-            improving production speed and efficiency.
-          </p>
-          <ul>
-            <li>Automatically feeds metal coils into machines.</li>
-            <li>Maintains tension and alignment for consistent output.</li>
-            <li>Enhances production speed and reduces manual labor.</li>
-          </ul>
-        </div>
-        <div class="machine-img">
-          <img src="machines/Automatic Decoiler.png" alt="Automatic Decoiler" />
-        </div>
-      </div>
-
-      <!-- Crimping Machine -->
-      <div class="machine">
-        <div class="machine-content">
-          <h3>Crimping Machine</h3>
-          <p>
-            Used for adding precise curves or crimps to metal sheets, making
-            them suitable for curved or arched roofing designs. Enhances sheet
-            flexibility and aesthetic appeal.
-          </p>
-          <ul>
-            <li>Creates precise crimps or curves in metal sheets.</li>
-            <li>Suitable for curved or decorative roofing designs.</li>
-            <li>Improves flexibility and visual appeal of sheets.</li>
-          </ul>
-        </div>
-        <div class="machine-img">
-          <img src="machines/Crimpring Machine.png" alt="Crimping Machine" />
-        </div>
-      </div>
-
-      <!-- Bending Machine -->
-      <div class="machine">
-        <div class="machine-content">
-          <h3>Bending Machine</h3>
-          <p>
-            A hydraulic or mechanical machine that bends metal sheets or rods
-            into desired angles. Widely used in fabrication workshops for
-            precise metal shaping and forming.
-          </p>
-          <ul>
-            <li>Bends metal sheets or rods accurately into required angles.</li>
-            <li>Used in fabrication workshops and construction projects.</li>
-            <li>Ensures precise shaping with minimal errors.</li>
-          </ul>
-        </div>
-        <div class="machine-img">
-          <img src="machines/Bending Machine.png" alt="Bending Machine" />
-        </div>
-      </div>
-
-      <!-- Shearing Machine and Slitting Machine -->
-      <div class="machine">
-        <div class="machine-content">
-          <h3>Shearing Machine and Slitting Machine</h3>
-          <p>
-            The Shearing Machine cuts metal sheets cleanly into required sizes,
-            while the Slitting Machine slices wide coils into multiple narrower
-            strips for further processing or forming.
-          </p>
-          <ul>
-            <li>Shearing Machine: Cuts metal sheets accurately and cleanly.</li>
-            <li>
-              Slitting Machine: Slices wide coils into narrower strips for
-              forming.
-            </li>
-            <li>
-              Used for industrial and fabrication processes requiring precise
-              cuts.
-            </li>
-          </ul>
-        </div>
-        <div class="machine-img">
-          <img
-            src="machines/Shearing Machine and Slitting Machine.png"
-            alt="Shearing and Slitting Machine"
-          />
-        </div>
-      </div>
-    </div>
-    <!-- Project End -->
-
     <!-- Footer Start -->
     <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
       <div class="container py-5">
@@ -933,15 +1081,17 @@
           <div class="col-md-6 col-lg-6 col-xl-3">
             <div class="footer-item d-flex flex-column">
               <h4 class="text-white mb-4">Contact Info</h4>
-              <a href=""
+              <a href="productsDetail.html?machine="
                 ><i class="fa fa-map-marker-alt me-2"></i>No.22, K.C.M.
                 Compound, Mangalam Road Karuvampalayam, Tiruppur-641604, Tamil
                 Nadu, India</a
               >
-              <a href=""
+              <a href="productsDetail.html?machine="
                 ><i class="fas fa-envelope me-2"></i>vizzaclasers@gmail.com</a
               >
-              <a href=""><i class="fas fa-phone me-2"></i>+91 8048601652</a>
+              <a href="productsDetail.html?machine="
+                ><i class="fas fa-phone me-2"></i>+91 8048601652</a
+              >
               <div class="d-flex align-items-center">
                 <a
                   class="btn btn-light btn-md-square me-2"
@@ -1106,6 +1256,98 @@
               e.preventDefault();
               window.location.href = this.getAttribute("href");
             }
+          }
+        });
+      });
+    </script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <!-- Isotope for filtering -->
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+    <!-- Lightbox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+    <!-- Filter Script -->
+    <!-- <script>
+      $(document).ready(function () {
+        // Initialize Isotope
+        var $grid = $(".portfolio-container").isotope({
+          itemSelector: ".portfolio-item",
+          layoutMode: "fitRows",
+          filter: ".first",
+        });
+
+        // Filter items on button click
+        $("#portfolio-flters li").on("click", function () {
+          $("#portfolio-flters li").removeClass("active");
+          $(this).addClass("active");
+
+          // Isotope filter
+          var filterValue = $(this).attr("data-filter");
+          $grid.isotope({ filter: filterValue });
+
+          // Navigate to corresponding section
+          var href = $(this).attr("data-href");
+          if (href) {
+            $("html, body").animate(
+              {
+                scrollTop: $(href).offset().top - 100, // adjust offset as needed
+              },
+              600
+            );
+          }
+        });
+      });
+    </script> -->
+    <script>
+      $(document).ready(function () {
+        // Initialize Isotope
+        var $grid = $(".portfolio-container").isotope({
+          itemSelector: ".portfolio-item",
+          layoutMode: "fitRows",
+          filter: ".first",
+        });
+
+        // Filter buttons below section
+        $("#portfolio-flters li").on("click", function () {
+          $("#portfolio-flters li").removeClass("active");
+          $(this).addClass("active");
+
+          var filterValue = $(this).attr("data-filter");
+          $grid.isotope({ filter: filterValue });
+
+          var href = $(this).attr("data-href");
+          if (href) {
+            $("html, body").animate(
+              {
+                scrollTop: $(href).offset().top - 100,
+              },
+              600
+            );
+          }
+        });
+
+        // Header menu links
+        $(".dropdown-item").on("click", function (e) {
+          e.preventDefault(); // Prevent default link jump
+
+          var href = $(this).attr("data-href");
+          var filterValue = $(this).attr("data-filter");
+
+          if (filterValue) {
+            $grid.isotope({ filter: filterValue });
+          }
+
+          if (href && $(href).length) {
+            $("html, body").animate(
+              {
+                scrollTop: $(href).offset().top - 100,
+              },
+              600
+            );
           }
         });
       });
