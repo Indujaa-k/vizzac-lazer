@@ -577,7 +577,7 @@
   position: relative;
   overflow: hidden;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(../img/bannerblog.png);
+    url(../img/blog-banner.png);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -622,7 +622,7 @@
   position: relative;
   overflow: hidden;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(../img/Gemini_Generated_Image_7vxqjj7vxqjj7vxq_imgupscaler.ai_General_8K.jpg);
+  url(../img/about-us-banner.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -644,7 +644,7 @@
   position: relative;
   overflow: hidden;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(../img/images/bannercontactt.jpg);
+    url(../img/contact-banner.png);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -664,7 +664,7 @@
   left: 0;
   margin-left: 30px;
   transform: rotate(-30deg);
-  /* background: var(--bs-dark); */
+   background: var(--bs-dark); 
   animation: RotateMoveLeft 5s linear infinite;
   opacity: 0.7;
   z-index: 2 !important;
@@ -1191,7 +1191,7 @@
 
 /*** Service Start ***/
 .service .service-item {
-  height: 530px;
+  /* height: 530px;  */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
