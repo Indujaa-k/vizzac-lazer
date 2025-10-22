@@ -54,6 +54,7 @@
     />
     <style>
       /* --- Stitch-style 3-panel styles (integrated with your theme) --- */
+
       :root {
         --panel-bg: rgba(15, 20, 28, 0.85);
         --muted: #9aa8bd;
@@ -68,7 +69,7 @@
         margin: 28px auto;
         padding: 18px;
         display: grid;
-        grid-template-columns: 360px 1fr 380px;
+        grid-template-columns: 480px 1fr; /* only left + main */
         gap: 22px;
       }
 
@@ -76,9 +77,6 @@
         .stitch-app {
           grid-template-columns: 1fr;
           padding: 14px;
-        }
-        .panel-right {
-          order: 3;
         }
         .panel-left {
           order: 1;
@@ -89,8 +87,7 @@
       }
 
       .panel-left,
-      .panel-main,
-      .panel-right {
+      .panel-main{
         background: linear-gradient(
           180deg,
           rgba(255, 255, 255, 0.02),
@@ -218,43 +215,12 @@
         margin-top: 16px;
       }
 
-      /* === RIGHT DETAIL PANEL === */
-      .meta {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-        margin-bottom: 14px;
-      }
-
-      .badge {
-        padding: 8px 12px;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 8px;
-        color: var(--muted);
-        font-size: 13px;
-      }
-
-      .machines-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: grid;
-        gap: 8px;
-      }
-
-      .machines-list li {
-        padding: 10px;
-        background: rgba(255, 255, 255, 0.03);
-        border-radius: 8px;
-        color: #47484a;
-        font-size: 14px;
-      }
 
       /* === RESPONSIVE FIXES (Improved spacing) === */
       /* --- Desktop thumbnail grid fix --- */
       @media (min-width: 1100px) {
         .thumb-grid {
-          grid-template-columns: repeat(2, 1fr); /* two cards per row */
+          grid-template-columns: repeat(3, 1fr); /* two cards per row */
           gap: 14px; /* balanced spacing */
         }
 
@@ -272,8 +238,7 @@
         }
 
         .panel-left,
-        .panel-main,
-        .panel-right {
+        .panel-main {
           min-height: auto;
           padding: 10px; /* reduced padding */
           margin: 0; /* no unwanted gaps */
@@ -285,9 +250,7 @@
         .panel-main {
           order: 2;
         }
-        .panel-right {
-          order: 3;
-        }
+        
       }
 
       @media (max-width: 992px) {
@@ -327,8 +290,7 @@
         }
 
         .panel-left,
-        .panel-main,
-        .panel-right {
+        .panel-main {
           padding: 8px;
           margin: 0;
         }
@@ -364,8 +326,7 @@
         }
 
         .panel-left,
-        .panel-main,
-        .panel-right {
+        .panel-main {
           padding: 6px;
           margin: 0;
         }
@@ -742,7 +703,7 @@
         <div class="thumb-grid" id="thumbGrid"></div>
       </aside>
 
-      <!-- CENTER: canvas -->
+      <!-- CENTER: canvas + info -->
       <main class="panel-main fade-up" id="panelMain">
         <div class="hero">
           <div>
@@ -758,9 +719,8 @@
               href="contact.html"
               class="btn-primary-custom"
               id="contactSalesBtn"
+              >Get Quote</a
             >
-              Get Quote
-            </a>
           </div>
         </div>
 
@@ -803,47 +763,8 @@
               CO2 Laser, Vision Cutters
             </div>
           </div>
-          <div
-            style="
-              min-width: 160px;
-              background: rgba(255, 255, 255, 0.01);
-              padding: 12px;
-              border-radius: 8px;
-              text-align: center;
-            "
-          >
-            <!-- <div style="color: var(--muted); font-size: 13px">Lead time</div>
-            <div style="font-weight: 700; margin-top: 6px">4–6 weeks</div> -->
-          </div>
         </div>
       </main>
-
-      <!-- RIGHT: details -->
-      <aside class="panel-right fade-up" id="panelRight">
-        <div class="meta">
-          <div class="badge">Industry</div>
-          <div class="badge">B2B</div>
-          <div style="flex: 1"></div>
-          <div style="color: var(--muted); font-size: 13px">
-            Updated: Oct 2025
-          </div>
-        </div>
-
-        <div class="details">
-          <h3 id="detailTitle">Textile & Garment Industry</h3>
-          <p id="detailDesc" style="color: var(--muted)">
-            Reliable textile machines for knitting, fabric processing,
-            finishing—helping apparel businesses boost quality and output.
-          </p>
-
-          <h5 style="margin-top: 12px">Machines Used</h5>
-          <ul class="machines-list" id="machinesList"></ul>
-
-          <div style="margin-top: 14px; display: flex; gap: 8px">
-            <a href="contact.html" class="btn-primary-custom"> Contact Us </a>
-          </div>
-        </div>
-      </aside>
     </div>
 
     <!-- OUR PROCESS SECTION -->
@@ -1158,7 +1079,6 @@
         const p = projects[i];
         const canvasImg = document.getElementById("canvasImg");
 
-        // Smooth fade-out, update content, fade-in
         gsap.to(canvasImg, {
           opacity: 0,
           scale: 0.95,
@@ -1173,14 +1093,6 @@
             document.getElementById("infoMachines").textContent = p.machines
               .slice(0, 3)
               .join(", ");
-            document.getElementById("detailTitle").textContent =
-              p.title + " Industry";
-            document.getElementById("detailDesc").textContent =
-              p.subtitle + " — tailored machine solutions for industry needs.";
-            populateMachines(
-              document.getElementById("machinesList"),
-              p.machines
-            );
 
             gsap.fromTo(
               canvasImg,
