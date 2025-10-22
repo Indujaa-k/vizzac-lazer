@@ -592,7 +592,7 @@
   position: relative;
   overflow: hidden;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(../img/images/VIZZAC\ BANER-03.jpg);
+    url(../img/images/final\ service.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1197,7 +1197,7 @@
 
 /*** Service Start ***/
 .service .service-item {
-  height: 530px; /* ✅ Equal height for all boxes */
+  
   display: flex;
   flex-direction: column;
   justify-content: space-between;
