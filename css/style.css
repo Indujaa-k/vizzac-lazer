@@ -1197,11 +1197,7 @@
 
 /*** Service Start ***/
 .service .service-item {
-<<<<<<< Updated upstream
-  
-=======
   height: 530px; 
->>>>>>> Stashed changes
   display: flex;
   flex-direction: column;
   justify-content: space-between;
