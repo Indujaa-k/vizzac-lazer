@@ -570,8 +570,8 @@
 .bg-breadcrumb {
   position: relative;
   overflow: hidden;
-  /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(../img/carousel-1.jpg); */
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../img/carousel-1.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -586,6 +586,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding: 60px 0 60px 0;
+  height: 400px;
 }
 .bg-breadcrumb-service {
   position: relative;
@@ -596,6 +597,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding: 60px 0 60px 0;
+  height: 400px;
 }
 .bg-breadcrumb-product {
   position: relative;
@@ -606,6 +608,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding: 60px 0 60px 0;
+  height: 400px;
 }
 .bg-breadcrumb-team {
   position: relative;
@@ -616,17 +619,19 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding: 60px 0 60px 0;
+  height: 400px;
 }
 
 .bg-breadcrumb-about {
   position: relative;
   overflow: hidden;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(../img/about-banner.png);
+  url(../img/Gemini_Generated_Image_7vxqjj7vxqjj7vxq_imgupscaler.ai_General_8K.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   padding: 60px 0 60px 0;
+  height: 400px;
 }
 .bg-breadcrumb-testimonial {
   position: relative;
@@ -637,6 +642,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding: 60px 0 60px 0;
+  height: 400px;
 }
 .bg-breadcrumb-contact {
   position: relative;
@@ -647,6 +653,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding: 60px 0 60px 0;
+  height: 400px;
 }
 
 .bg-breadcrumb .breadcrumb-item a {
